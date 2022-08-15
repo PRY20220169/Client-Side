@@ -1,23 +1,107 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import HomePage from "../pages/HomePage.vue";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
+  // General Routes
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    component: HomePage,
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/login",
+    name: "login",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import("../pages/LoginPage.vue"),
+  },
+  {
+    path: "/signup",
+    name: "signup",
+    component: () =>
+      import("../pages/SignupPage.vue"),
+  },
+  {
+    path: "/advanced-search",
+    name: "advanced-search",
+    component: () =>
+      import("../pages/AdvancedSearch.vue"),
+  },
+  {
+    path: "/search-results",
+    name: "search-results",
+    component: () =>
+      import("../pages/SearchResults.vue"),
+  },
+
+  // Collection Routes
+  {
+    path: "/article-collection",
+    name: "article-collection",
+    component: () =>
+      import("../pages/collections/ArticleCollection.vue"),
+  },
+  {
+    path: "/list-collection",
+    name: "list-collection",
+    component: () =>
+      import("../pages/collections/ListCollection.vue"),
+  },
+
+  // Collection Routes
+  {
+    path: "/article-collection",
+    name: "article-collection",
+    component: () =>
+      import("../pages/collections/ArticleCollection.vue"),
+  },
+  {
+    path: "/list-collection",
+    name: "list-collection",
+    component: () =>
+      import("../pages/collections/ListCollection.vue"),
+  },
+
+  // Compare Routes
+  {
+    path: "/article-compare",
+    name: "article-compare",
+    component: () =>
+      import("../pages/compare/ArticleCompare.vue"),
+  },
+  {
+    path: "/author-compare",
+    name: "author-compare",
+    component: () =>
+      import("../pages/compare/AuthorCompare.vue"),
+  },
+  {
+    path: "/journal-compare",
+    name: "journal-compare",
+    component: () =>
+      import("../pages/compare/JournalCompare.vue"),
+  },
+
+  // Details Routes
+  {
+    path: "/article-details",
+    name: "article-details",
+    component: () =>
+      import("../pages/details/ArticleDetails.vue"),
+  },
+  {
+    path: "/author-details",
+    name: "author-details",
+    component: () =>
+      import("../pages/details/AuthorDetails.vue"),
+  },
+  {
+    path: "/journal-details",
+    name: "journal-details",
+    component: () =>
+      import("../pages/details/JournalDetails.vue"),
   },
 ];
 
