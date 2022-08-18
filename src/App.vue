@@ -1,32 +1,24 @@
 <template>
 	<div id="app">
-		<nav>
+
+		<!--<nav>
 			<router-link to="/">Home</router-link> |
 			<router-link to="/login">Login</router-link>
-		</nav>
-		<router-view />
+		</nav>-->
+		<!--<router-view />-->
+    <header-bar></header-bar>
 	</div>
 </template>
 
 <style lang="scss">
-	#app {
-		font-family: Avenir, Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-	}
-
-	nav {
-		padding: 30px;
-
-		a {
-			font-weight: bold;
-			color: #2c3e50;
-
-			&.router-link-exact-active {
-				color: #42b983;
-			}
-		}
-	}
+	*{
+    padding: 0;
+    margin: 0;
+  }
 </style>
+<script>
+import HeaderBar from "@/pages/components/header-bar";
+export default {
+  components: { HeaderBar }
+}
+</script>
