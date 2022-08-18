@@ -1,0 +1,79 @@
+@use '../general-styles';
+
+#header-bar{
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  border-bottom: 1px solid general-styles.$primary-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  #title{
+    padding-left: 50px;
+    h1{
+      font-family: 'Poppins',sans-serif;
+      color: general-styles.$font-color;
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+
+  #account-actions{
+    padding-right: 50px;
+    display: flex;
+    gap: 20px;
+
+    .btn-outline{
+
+      button[type="button"]{
+        all: unset;
+        padding: 12px 40px;
+        border: 1px solid general-styles.$primary-color;
+        border-radius: 10px;
+        font-size: 12px;
+        color: general-styles.$primary-color;
+        font-family: 'Poppins',sans-serif;
+        font-weight: 500;
+      }
+
+    }
+
+    .btn-content{
+
+      button[type="button"]{
+        all: unset;
+        padding: 12px 40px;
+        border: none;
+        border-radius: 10px;
+        font-size: 12px;
+        background-color: general-styles.$primary-color;
+        color: white;
+        font-family: 'Poppins',sans-serif;
+        font-weight: 500;
+      }
+
+
+    }
+
+    button[type="button"]:hover{
+      cursor: pointer;
+      transition: 300ms;
+      transform: scale(0.95);
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  #header-bar{
+    flex-direction: column;
+    #title{
+      padding: 20px 0 0 0;
+    }
+    #account-actions{
+      padding: 0 0 20px 0;
+    }
+  }
+}
