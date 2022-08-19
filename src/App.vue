@@ -5,8 +5,8 @@
 			<router-link to="/">Home</router-link> |
 			<router-link to="/login">Login</router-link>
 		</nav>-->
-		<!--<router-view />-->
     <header-bar></header-bar>
+    <router-view />
 	</div>
 </template>
 
@@ -15,9 +15,13 @@
     padding: 0;
     margin: 0;
   }
+
+  #app{
+    height: 99vh;
+  }
 </style>
 <script>
-import HeaderBar from "@/pages/components/header-bar";
+import HeaderBar from "@/components/header-bar";
 export default {
   components: { HeaderBar }
 }

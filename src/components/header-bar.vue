@@ -1,7 +1,7 @@
 <template>
   <header id="header-bar">
     <div id="title">
-      <h1>PRY20220169</h1>
+      <h2>PRY20220169</h2>
     </div>
     <div id="account-actions">
       <div class="btn-outline">
@@ -21,5 +21,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import "../../assets/styles/header-bar/base-header-bar";
+  @import "../assets/styles/header-bar/base-header-bar";
 </style>
