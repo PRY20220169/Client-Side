@@ -1,0 +1,98 @@
+.btn-outline button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: 1px solid #858aff;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #858aff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-outline button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: #f5f4f4;
+}
+
+.btn-content button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #858aff;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-content button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: rgb(98, 103, 213);
+}
+
+button[type=button]:hover {
+  cursor: pointer;
+}
+
+.home {
+  display: flex;
+  height: 90%;
+  flex-direction: column;
+  align-items: center;
+}
+.home #home-content {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95%;
+  gap: 40px;
+}
+.home #home-content #content-title h1 {
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  color: #47464b;
+  font-size: 56px;
+}
+.home #home-content #content-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.home #home-content #content-actions #search-options {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.home #home-content #content-actions #search-options .search-bar {
+  background-color: #F7F8FC;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+.home #home-content #content-actions #search-options .search-bar .bx {
+  padding: 10px 0 10px 10px;
+  font-size: 28px;
+  color: #B9BABF;
+}
+.home #home-content #content-actions #search-options .search-bar input[type=text] {
+  all: unset;
+  color: #B9BABF;
+  padding: 0 10px;
+  width: 300px;
+}
+.home #home-content #content-actions #search-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.home #home-footer {
+  background-color: #858aff;
+  width: 100%;
+  height: 42px;
+}
+
+/*# sourceMappingURL=base-home-page.css.map */
