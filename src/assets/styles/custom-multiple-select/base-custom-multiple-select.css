@@ -1,0 +1,135 @@
+.btn-outline button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: 1px solid #858aff;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #858aff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-outline button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: #f5f4f4;
+}
+
+.btn-content button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #858aff;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-content button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: rgb(98, 103, 213);
+}
+
+button[type=button]:hover {
+  cursor: pointer;
+}
+
+.custom-multiple-select {
+  position: relative;
+  width: 220px;
+  height: 47px;
+}
+.custom-multiple-select .select-btn {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #F7F8FC;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.custom-multiple-select .select-btn .btn-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #47464b;
+  font-family: "Poppins", sans-serif;
+}
+.custom-multiple-select .select-btn .arrow-dwn {
+  display: flex;
+  height: 21px;
+  width: 21px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 50%;
+  background: #858aff;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.custom-multiple-select .open .arrow-dwn {
+  transform: rotate(-180deg);
+}
+.custom-multiple-select .list-items {
+  position: absolute;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 20px);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+.custom-multiple-select .list-items .item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 0 15px;
+  border-radius: 10px;
+}
+.custom-multiple-select .list-items .item .item-text {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #333;
+}
+.custom-multiple-select .list-items .item .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  margin-right: 12px;
+  border: 1.5px solid #c0c0c0;
+  transition: all 0.3s ease-in-out;
+}
+.custom-multiple-select .list-items .item .checkbox .check-icon {
+  color: transparent;
+}
+.custom-multiple-select .list-items .checked .checkbox {
+  background-color: #858aff;
+  border-color: #858aff;
+}
+.custom-multiple-select .list-items .checked .checkbox .check-icon {
+  color: white;
+  font-size: 11px;
+  transition: all 0.2s ease-in-out;
+}
+.custom-multiple-select .list-items .item:hover {
+  background-color: #e7edfe;
+}
+.custom-multiple-select .selectHide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+/*# sourceMappingURL=base-custom-multiple-select.css.map */

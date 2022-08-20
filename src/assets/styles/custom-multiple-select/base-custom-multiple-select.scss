@@ -1,0 +1,134 @@
+@use "../general-styles";
+
+
+.custom-multiple-select {
+  position: relative;
+  width: 220px;
+  height: 47px;
+
+  .select-btn {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: general-styles.$background-color-items;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    .btn-text {
+      font-size: 16px;
+      font-weight: 400;
+      color: general-styles.$primary-font-color;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .arrow-dwn {
+      display: flex;
+      height: 21px;
+      width: 21px;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 50%;
+      background: general-styles.$primary-color;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+  }
+
+  .open {
+    .arrow-dwn {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .list-items {
+    position: absolute;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    //padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 20px);
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+
+    .item {
+
+      //padding: 16px;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      height: 50px;
+      //width: 150px;
+      //width: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 0 15px;
+      border-radius: 10px;
+
+      .item-text {
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        color: #333;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 16px;
+        width: 16px;
+        border-radius: 4px;
+        margin-right: 12px;
+        border: 1.5px solid #c0c0c0;
+        transition: all 0.3s ease-in-out;
+
+        .check-icon{
+          color: transparent;
+        }
+      }
+
+    }
+
+    .checked {
+
+      .checkbox {
+        background-color: general-styles.$primary-color;
+        border-color: general-styles.$primary-color;
+
+        .check-icon {
+          color: white;
+          font-size: 11px;
+          //transform: scale(0);
+          transition: all 0.2s ease-in-out;
+        }
+
+      }
+
+    }
+
+    .item:hover {
+      background-color: #e7edfe;
+    }
+
+  }
+
+  .selectHide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  }
+
+}
+
+
+
+
