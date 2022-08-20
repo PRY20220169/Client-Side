@@ -80,7 +80,7 @@ button[type=button]:hover {
 }
 .home #home-content #content-actions #search-options .search-bar input[type=text] {
   all: unset;
-  color: #B9BABF;
+  color: #47464b;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   padding: 0 10px;
@@ -108,6 +108,9 @@ button[type=button]:hover {
   .home #home-content #content-actions #search-options {
     flex-direction: column;
     align-items: center;
+  }
+  .home #home-content #content-actions #search-options .search-bar {
+    order: 3;
   }
 }
 

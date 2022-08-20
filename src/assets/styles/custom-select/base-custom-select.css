@@ -37,7 +37,7 @@ button[type=button]:hover {
 
 .custom-select {
   position: relative;
-  width: 200px;
+  width: 220px;
   text-align: left;
   outline: none;
   height: 47px;
@@ -74,7 +74,9 @@ button[type=button]:hover {
   color: #fff;
   margin-top: 10px;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 140px;
   position: absolute;
   background-color: white;
   left: 0;

@@ -56,7 +56,7 @@
             all:unset;
             //background-color: #F7F8FC;
             //padding: 8px;
-            color: general-styles.$secondary-font-color;
+            color: general-styles.$primary-font-color;
             font-family: "Poppins", sans-serif;
             font-weight: 500;
             padding: 0 10px;
@@ -99,6 +99,10 @@
         #search-options {
           flex-direction: column;
           align-items: center;
+
+          .search-bar{
+            order: 3;
+          }
         }
       }
     }
