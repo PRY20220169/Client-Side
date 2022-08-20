@@ -12,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     //width: 700px;
-    height: 95%;
+    height: 100%;
     //border: 1px solid red;
     gap: 40px;
 
@@ -42,6 +42,7 @@
           border-radius: 10px;
           display: flex;
           justify-content: center;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
 
           .bx{
@@ -55,10 +56,17 @@
             all:unset;
             //background-color: #F7F8FC;
             //padding: 8px;
-            color: general-styles.$secondary-font-color;;
+            color: general-styles.$secondary-font-color;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
             padding: 0 10px;
             width: 300px;
           }
+
+          input[type="text"]::placeholder{
+            color: general-styles.$secondary-font-color;
+          }
+
         }
 
       }
@@ -77,4 +85,23 @@
     width: 100%;
     height: 42px;
   }
+}
+
+@media (max-width: 840px) {
+  .home{
+    #home-content{
+      #content-title {
+        h1 {
+          font-size: 44px;
+        }
+      }
+      #content-actions {
+        #search-options {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+
 }

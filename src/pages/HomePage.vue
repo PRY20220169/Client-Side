@@ -6,11 +6,17 @@
       </div>
       <div id="content-actions">
         <div id="search-options">
+          <CustomSelect
+            :options="['Publication titles', 'Author', 'Journal']"
+            :default="'Publication titles'"
+          />
 
           <div class="search-bar">
             <i class='bx bx-search-alt-2'></i>
-            <input type="text">
+            <input type="text" placeholder="Bibliometrics, scientific, workflow">
           </div>
+
+          <custom-multiple-select :options="[{name:'Html & CSS',checked:false}, {name:'Javascript',checked:false}, {name:'Typescript',checked:false}]"/>
 
         </div>
         <div id="search-buttons">
@@ -28,9 +34,13 @@
 </template>
 
 <script>
-	export default {};
+	import CustomSelect from "@/components/custom-select";
+  import CustomMultipleSelect from "@/components/custom-multiple-select";
+  export default {
+    components: { CustomMultipleSelect, CustomSelect }
+  };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   @import "../assets/styles/home-page/base-home-page";
 </style>

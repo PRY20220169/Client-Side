@@ -21,5 +21,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/styles/header-bar/base-header-bar";
+@import "../assets/styles/header-bar/base-header-bar";
 </style>
