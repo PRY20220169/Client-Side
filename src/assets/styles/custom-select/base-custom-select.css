@@ -1,0 +1,109 @@
+.btn-outline button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: 1px solid #858aff;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #858aff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-outline button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: #f5f4f4;
+}
+
+.btn-content button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #858aff;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-content button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: rgb(98, 103, 213);
+}
+
+button[type=button]:hover {
+  cursor: pointer;
+}
+
+.custom-select {
+  position: relative;
+  width: 220px;
+  text-align: left;
+  outline: none;
+  height: 47px;
+  line-height: 47px;
+}
+.custom-select .selected {
+  background-color: #F7F8FC;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #47464b;
+  padding-left: 1em;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.custom-select .open {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.custom-select .selected:after {
+  position: absolute;
+  content: "";
+  top: 22px;
+  right: 1em;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #B9BABF transparent transparent transparent;
+}
+.custom-select .items {
+  color: #fff;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 140px;
+  position: absolute;
+  background-color: white;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 10px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.custom-select .items div {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #47464b;
+  padding-left: 1em;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+}
+.custom-select .items div:hover {
+  background-color: #e7edfe;
+}
+.custom-select .selectHide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+/*# sourceMappingURL=base-custom-select.css.map */
