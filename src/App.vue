@@ -17,7 +17,7 @@
   }
 
   #app{
-    height: 100vh;
+    height: 99vh;
   }
 </style>
 <script>

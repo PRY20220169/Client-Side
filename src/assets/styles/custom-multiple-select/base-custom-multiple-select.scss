@@ -16,6 +16,7 @@
     cursor: pointer;
     background-color: general-styles.$background-color-items;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    user-select: none;
 
     .btn-text {
       font-size: 16px;
@@ -72,6 +73,7 @@
       transition: 0.3s;
       padding: 0 15px;
       border-radius: 10px;
+      user-select: none;
 
       .item-text {
         font-size: 16px;

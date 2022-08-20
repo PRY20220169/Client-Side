@@ -11,7 +11,7 @@
         @click="
           selected = option;
           open = false;
-          $emit('input', option);
+          $emit('selectedOption', option);
         "
       >
         <span>{{ option }}</span>
@@ -50,8 +50,11 @@ export default {
     };
   },
   mounted() {
-    this.$emit("input", this.selected);
+    this.$emit("selectedOption", this.selected);
   },
+  methods:{
+
+  }
 };
 </script>
 

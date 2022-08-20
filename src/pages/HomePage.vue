@@ -7,8 +7,9 @@
       <div id="content-actions">
         <div id="search-options">
           <CustomSelect
-            :options="['Publication titles', 'Author', 'Journal']"
-            :default="'Publication titles'"
+            :options="['Authors', 'Source title', 'Article title','Keywords','Language']"
+            :default="'Article title'"
+            @selectedOption="setSelectedOption"
           />
 
           <div class="search-bar">
@@ -16,7 +17,7 @@
             <input type="text" placeholder="Bibliometrics, scientific, workflow">
           </div>
 
-          <custom-multiple-select :options="[{name:'Html & CSS',checked:false}, {name:'Javascript',checked:false}, {name:'Typescript',checked:false}]"/>
+          <custom-multiple-select :options="[{name:'AND',checked:false}, {name:'OR',checked:false}, {name:'AND NOT',checked:false}]"/>
 
         </div>
         <div id="search-buttons">
@@ -37,7 +38,18 @@
 	import CustomSelect from "@/components/custom-select";
   import CustomMultipleSelect from "@/components/custom-multiple-select";
   export default {
-    components: { CustomMultipleSelect, CustomSelect }
+    components: { CustomMultipleSelect, CustomSelect },
+    data(){
+      return {
+        selectedOption: '',
+      }
+    },
+    methods:{
+      setSelectedOption(option){
+        this.selectedOption = option;
+        //console.log(this.selectedOption)
+      }
+    }
   };
 </script>
 

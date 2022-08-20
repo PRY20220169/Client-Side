@@ -50,6 +50,7 @@ button[type=button]:hover {
   cursor: pointer;
   background-color: #F7F8FC;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  user-select: none;
 }
 .custom-multiple-select .select-btn .btn-text {
   font-size: 16px;
@@ -93,6 +94,7 @@ button[type=button]:hover {
   transition: 0.3s;
   padding: 0 15px;
   border-radius: 10px;
+  user-select: none;
 }
 .custom-multiple-select .list-items .item .item-text {
   font-size: 16px;

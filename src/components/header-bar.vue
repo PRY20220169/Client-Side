@@ -5,10 +5,10 @@
     </div>
     <div id="account-actions">
       <div class="btn-outline">
-        <button type="button">Log In</button>
+        <button type="button" @click="$router.push('login')">Log In</button>
       </div>
       <div class="btn-content">
-        <button type="button">Sign Up</button>
+        <button type="button" @click="$router.push('signup')">Sign Up</button>
       </div>
     </div>
   </header>

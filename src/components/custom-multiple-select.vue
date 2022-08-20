@@ -1,7 +1,7 @@
 <template>
   <div class="custom-multiple-select" :tabindex="tabindex" @blur="open = false">
     <div class="select-btn" :class="{open:open}" @click="open = !open">
-      <span class="btn-text">{{quantity}} criteria selected</span>
+      <span class="btn-text">{{quantity}} criteria added</span>
       <span class="arrow-dwn">
         <i class="bx bx-chevron-down"></i>
       </span>
