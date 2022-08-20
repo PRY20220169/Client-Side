@@ -1,0 +1,44 @@
+@use '../general-styles';
+
+#header-bar {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  border-bottom: 1px solid general-styles.$primary-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  #title {
+    padding-left: 50px;
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      color: general-styles.$primary-font-color;
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+
+  #account-actions {
+    padding-right: 50px;
+    display: flex;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  #header-bar {
+    flex-direction: column;
+
+    #title {
+      padding: 20px 0 0 0;
+    }
+
+    #account-actions {
+      padding: 0 0 20px 0;
+    }
+  }
+}
