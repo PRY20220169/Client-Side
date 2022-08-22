@@ -1,0 +1,119 @@
+@use "../general-colors";
+
+
+//background-color: pink;
+.sc-article {
+  font-family: "Poppins", sans-serif;
+  color: general-colors.$primary-font-color;
+
+  border: 1.5px solid general-colors.$primary-color;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: auto;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 30px;
+  max-width: 1200px;
+
+  .num-article {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    gap: 20px;
+
+    .check {
+      height: 16px;
+      width: 16px;
+      border-radius: 4px;
+      border: 1.5px solid #c0c0c0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .check:hover {
+      cursor: pointer;
+    }
+  }
+
+  .info-article {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h5 {
+      color: general-colors.$primary-color;
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    h6 {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    span {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    a {
+      color: general-colors.$primary-color;
+    }
+
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+
+      max-width: 900px;
+      text-align: justify;
+      text-justify: inter-word;
+      max-height: 180px;
+      overflow: hidden;
+
+    }
+  }
+
+  .bb-data-article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    white-space: nowrap;
+
+    .metadata-art {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .metadata-type {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: general-colors.$primary-color;
+
+        h2 {
+
+          font-size: 28px;
+          font-weight: 500;
+          text-decoration: underline;
+        }
+
+        i {
+          font-size: 24px;
+        }
+
+      }
+
+
+      div {
+        h5 {
+          font-weight: 400;
+        }
+      }
+
+
+    }
+  }
+
+}
