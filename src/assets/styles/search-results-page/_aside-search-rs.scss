@@ -1,0 +1,71 @@
+@use "../general-colors";
+
+#aside{
+  padding-top: 75px;
+  padding-left: 50px;
+  min-width: 200px;
+
+  .filter-block{
+    h3{
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+    }
+
+    .filter-options{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-bottom: 30px;
+
+      .option-check{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+
+        .check{
+          height: 16px;
+          width: 16px;
+          border-radius: 4px;
+          border: 1.5px solid #c0c0c0;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .check:hover{
+          cursor: pointer;
+        }
+
+        h4{
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+        }
+      }
+
+      .checked{
+
+        .check{
+          height: 16px;
+          width: 16px;
+          border-radius: 4px;
+          border: 1.5px solid general-colors.$primary-color;
+          background-color: general-colors.$primary-color;
+
+          .check-icon{
+            color: #fff;
+          }
+        }
+
+
+
+      }
+
+
+
+
+    }
+  }
+
+}
