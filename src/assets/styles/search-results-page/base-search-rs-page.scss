@@ -1,0 +1,29 @@
+@use "aside-search-rs";
+@use "nav-search-rs";
+
+
+@use "../general-styles";
+@use "../general-colors";
+
+.search-results {
+  height: auto;
+
+  #search-results-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 100px;
+
+    #content-section {
+      padding-top: 65px;
+      padding-right: 50px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+    }
+
+  }
+
+}

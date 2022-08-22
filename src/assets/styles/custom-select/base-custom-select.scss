@@ -1,4 +1,5 @@
-@use "../general-styles";
+//@use "../general-styles";
+@use "../general-colors";
 
 .custom-select {
   position: relative;
@@ -15,7 +16,7 @@
     font-weight: 400;
     font-size: 16px;
     //border: 1px solid #666666;
-    color: general-styles.$primary-font-color;
+    color: general-colors.$primary-font-color;
     padding-left: 1em;
     cursor: pointer;
     user-select: none;
@@ -37,7 +38,7 @@
     //border: 5px solid transparent;
     border-width: 5px;
     border-style: solid;
-    border-color: general-styles.$secondary-font-color transparent transparent transparent
+    border-color: general-colors.$secondary-font-color transparent transparent transparent
   }
 
   .items {
@@ -64,7 +65,7 @@
     div {
       font-family: "Poppins", sans-serif;
       font-weight: 400;
-      color: general-styles.$primary-font-color;
+      color: general-colors.$primary-font-color;
       padding-left: 1em;
       cursor: pointer;
       user-select: none;
