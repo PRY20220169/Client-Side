@@ -1,0 +1,159 @@
+#aside {
+  padding-top: 75px;
+  padding-left: 50px;
+  min-width: 200px;
+}
+#aside .filter-block h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+#aside .filter-block .filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+#aside .filter-block .filter-options .option-check {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+#aside .filter-block .filter-options .option-check .check {
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  border: 1.5px solid #c0c0c0;
+  transition: all 0.3s ease-in-out;
+}
+#aside .filter-block .filter-options .option-check .check:hover {
+  cursor: pointer;
+}
+#aside .filter-block .filter-options .option-check h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+#aside .filter-block .filter-options .checked .check {
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  border: 1.5px solid #858aff;
+  background-color: #858aff;
+}
+#aside .filter-block .filter-options .checked .check .check-icon {
+  color: #fff;
+}
+
+#nav-bar {
+  padding-top: 50px;
+  padding-left: 75px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  gap: 10px;
+}
+#nav-bar h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+#nav-bar .nav-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#nav-bar .nav-actions .search-bar {
+  background-color: #F7F8FC;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+#nav-bar .nav-actions .search-bar .bx {
+  padding: 10px 0 10px 10px;
+  font-size: 28px;
+  color: #B9BABF;
+}
+#nav-bar .nav-actions .search-bar input[type=text] {
+  all: unset;
+  color: #47464b;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  padding: 0 10px;
+  width: 425px;
+}
+#nav-bar .nav-actions .search-bar input[type=text]::placeholder {
+  color: #B9BABF;
+}
+#nav-bar .nav-actions #search-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+#nav-bar .nav-actions #search-buttons .btn-content button[type=button] {
+  padding: 14px 50px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.btn-outline button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: 1px solid #858aff;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #858aff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-outline button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: #f5f4f4;
+}
+
+.btn-content button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #858aff;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-content button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: rgb(98, 103, 213);
+}
+
+button[type=button]:hover {
+  cursor: pointer;
+}
+
+.search-results {
+  height: auto;
+}
+.search-results #search-results-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 100px;
+}
+.search-results #search-results-content #content-section {
+  padding-top: 65px;
+  padding-right: 50px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=base-search-rs-page.css.map */
