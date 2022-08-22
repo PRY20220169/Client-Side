@@ -1,4 +1,5 @@
-@use "../general-styles";
+//@use "../general-styles";
+@use "../general-colors";
 
 
 .custom-multiple-select {
@@ -14,14 +15,14 @@
     padding: 0 15px;
     border-radius: 10px;
     cursor: pointer;
-    background-color: general-styles.$background-color-items;
+    background-color: general-colors.$background-color-items;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     user-select: none;
 
     .btn-text {
       font-size: 16px;
       font-weight: 400;
-      color: general-styles.$primary-font-color;
+      color: general-colors.$primary-font-color;
       font-family: "Poppins", sans-serif;
     }
 
@@ -32,7 +33,7 @@
       color: #fff;
       font-size: 14px;
       border-radius: 50%;
-      background: general-styles.$primary-color;
+      background: general-colors.$primary-color;
       align-items: center;
       justify-content: center;
       transition: 0.3s;
@@ -103,8 +104,8 @@
     .checked {
 
       .checkbox {
-        background-color: general-styles.$primary-color;
-        border-color: general-styles.$primary-color;
+        background-color: general-colors.$primary-color;
+        border-color: general-colors.$primary-color;
 
         .check-icon {
           color: white;
