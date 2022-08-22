@@ -25,7 +25,9 @@
             <button type="button">Advanced Search</button>
           </div>
           <div class="btn-content">
-            <button type="button">Search</button>
+            <button type="button"
+                    @click="$router.push('search-results')"
+            >Search</button>
           </div>
         </div>
       </div>
