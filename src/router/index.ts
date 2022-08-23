@@ -32,22 +32,10 @@ const routes: Array<RouteConfig> = [
   {
     path: "/search-results",
     name: "search-results",
+    props: (route) => ({q:route.query.q}),
     component: () =>
       import("../pages/SearchResults.vue"),
-  },
 
-  // Collection Routes
-  {
-    path: "/article-collection",
-    name: "article-collection",
-    component: () =>
-      import("../pages/collections/ArticleCollection.vue"),
-  },
-  {
-    path: "/list-collection",
-    name: "list-collection",
-    component: () =>
-      import("../pages/collections/ListCollection.vue"),
   },
 
   // Collection Routes
