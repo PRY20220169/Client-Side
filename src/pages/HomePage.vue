@@ -14,7 +14,7 @@
 
           <div class="search-bar">
             <i class='bx bx-search-alt-2'></i>
-            <input type="text" placeholder="Bibliometrics, scientific, workflow">
+            <input type="text" placeholder="Bibliometrics, scientific, workflow" v-model="searchText">
           </div>
 
           <custom-multiple-select :options="[{name:'AND',checked:false}, {name:'OR',checked:false}, {name:'AND NOT',checked:false}]"/>
@@ -26,7 +26,7 @@
           </div>
           <div class="btn-content">
             <button type="button"
-                    @click="$router.push('search-results')"
+                    @click="$router.push({name:'search-results',query:{q:searchText}})"
             >Search</button>
           </div>
         </div>
@@ -44,6 +44,7 @@
     data(){
       return {
         selectedOption: '',
+        searchText:'',
       }
     },
     methods:{
