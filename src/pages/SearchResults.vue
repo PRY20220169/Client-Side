@@ -1,17 +1,18 @@
 <template>
   <main class="search-results">
     <nav id="nav-bar">
-      <h3>3 resultados de su búsqueda</h3>
+      <h3>{{filteredDocuments.length}} resultados de su búsqueda</h3>
       <div class="nav-actions">
         <div class="search-bar">
           <i class="bx bx-search-alt-2"></i>
-          <input type="text" placeholder="Bibliometrics, scientific, workflow">
+          <input type="text" placeholder="Bibliometrics, scientific, workflow" v-model="qsearch">
         </div>
         <div id="search-buttons">
           <div class="btn-content">
             <button type="button">Advanced Search</button>
           </div>
-          <div class="btn-content">
+          <div class="btn-content"
+               @click="filterDocuments">
             <button type="button">Edit filters</button>
           </div>
         </div>
@@ -21,7 +22,7 @@
       <aside id="aside">
 
         <div class="filter-block"
-             v-for="(category, i) of filterOptions"
+             v-for="(category, i) of filters"
              :key="i"
         >
           <h3>{{ category.title }}</h3>
@@ -33,9 +34,12 @@
             >
               <div class="check"
                    @click="
+                   handlerFilterOptions(category.categoryType,option.name,option.checked)
                    option.checked = !option.checked;"
               >
-                <i class="bx check-icon" :class="{'bx-check': option.checked}"></i>
+                <i class="bx check-icon"
+                   :class="{'bx-check': option.checked}"
+                ></i>
               </div>
               <h4>{{ option.name }}</h4>
             </div>
@@ -46,8 +50,10 @@
       </aside>
 
       <section id="content-section">
-        <pub-article></pub-article>
-        <pub-article></pub-article>
+        <pub-article v-for="(doc, i) of filteredDocuments"
+                     :key="i"
+                     :document="doc"
+        ></pub-article>
       </section>
     </div>
 
@@ -55,39 +61,139 @@
   </main>
 </template>
 
-<script>
-import PubArticle from "@/components/pub-article";
-export default {
+<script lang="ts">
+import PubArticle from "@/components/pub-article.vue";
+import axios from "axios";
+import Vue from "vue";
+
+import { Article } from "@/interfaces/Article.interface";
+
+export default Vue.extend({
   components: { PubArticle },
-  //components: { PubArticle },
   data() {
     return {
-      filterOptions: [
+      filters: [
         {
           title: "Año de publicación",
+          categoryType: "Year",
           options: [
             { name: "2022", checked: false },
-            { name: "2022", checked: false },
+            { name: "2021", checked: false },
             { name: "2020", checked: false },
             { name: "2019", checked: false }]
         },
         {
           title: "Tipo de documento",
+          categoryType: "Type",
           options: [
-            { name: "Articulo", checked: false },
-            { name: "Journal", checked: false },
-            { name: "Ficha de Autor", checked: false }]
+            { name: "Article", checked: false },
+            { name: "Conference", checked: false },
+            { name: "Composium", checked: false }]
         },
         {
           title: "Quartil",
+          categoryType: "Quartile",
           options: [
             { name: "Q1", checked: false },
             { name: "Q2", checked: false }]
         }
-      ]
+      ],
+      documents: [] as Article[],
+      filteredDocuments: [] as Article[],
+      filterOptions: {
+        years:[] as string[],
+        types:[] as string[],
+        quartiles:[] as string[],
+      },
+      qsearch:"",
     };
+  },
+  methods: {
+    async getDocuments() {
+      const response = await axios.get("http://localhost:3000/documents");
+      this.documents = response.data;
+      this.filteredDocuments = response.data;
+    },
+
+    filterDocuments() {
+      /*this.filterState2.years = this.filterState[0].options;
+      this.filterState2.types = this.filterState[1].options;
+      this.filterState2.quartiles = this.filterState[2].options;*/
+      const {years,types,quartiles} = this.filterOptions;
+
+      this.filteredDocuments = this.documents.filter((article) =>{
+
+        return ((years.length > 0)? years.map( e => {return e}).includes(article.year): true) &&
+          ((types.length > 0)? types.map( e => {return e}).includes(article.typeArticle): true) &&
+          ((quartiles.length > 0)? quartiles.map( e => {return e}).includes(article.journal.quartile): true)
+      })
+
+    },
+
+
+    /*filterDocumentsByQuartile() {
+      const quartile = this.filterState[2].options;
+      if (quartile.length > 0) {
+        this.filteredDocuments = this.documents.filter((el) => {
+          return quartile.map((sel) => {
+            return sel;
+          }).includes(el.journal.quartile);
+        });
+      }
+
+    },*/
+
+
+    handlerFilterOptions(category: string, option: string, checked: boolean) {
+      if (checked) {
+        this.removeFilterOption(category, option);
+        //console.log(this.filterState)
+      } else {
+        this.addFilterOption(category, option);
+      }
+      //console.log(this.filterOptions)
+
+      this.filterDocuments();
+    },
+
+    addFilterOption(category: string, option: string) {
+
+      switch (category){
+        case "Year": this.filterOptions.years.push(option);break;
+        case "Type": this.filterOptions.types.push(option);break;
+        case "Quartile": this.filterOptions.quartiles.push(option);break;
+      }
+
+
+    },
+
+    removeFilterOption(category: string, option: string) {
+      switch (category){
+        case "Year":
+          this.filterOptions.years = this.filterOptions.years.filter(opt => {
+            return opt != option;
+          });break;
+        case "Type":
+          this.filterOptions.types = this.filterOptions.types.filter(opt => {
+            return opt != option;
+          });break;
+        case "Quartile":
+          this.filterOptions.quartiles = this.filterOptions.quartiles.filter(opt => {
+            return opt != option;
+          });break;
+      }
+
+    }
+
+
+  },
+  created() {
+    this.getDocuments();
+  },
+  mounted() {
+    this.qsearch = this.$route.query.q as string;
   }
-};
+});
 </script>
 
 <style scoped lang="scss">
