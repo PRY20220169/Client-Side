@@ -13,12 +13,13 @@
            v-for="(author, i) of document.authors"
            :key="i"
         >
-          {{ author }}
+          {{ author.lastName }}, {{ author.firstName}}
         </a>
       </h6>
-      <span>{{ document.month }} {{ document.year }} | <a href="#">{{ document.journal.title }}</a> {{ document.volume }}</span>
+      <span>{{ document.publicationDate.toLocaleString('EN', { month: 'long' }) }} {{ document.publicationDate.getFullYear() }} |
+        <a href="#">{{ document.journal.name }}</a> {{ document.volume }}</span>
       <p>
-        {{ document.abstract }}
+        {{ document.description }}
       </p>
       <span>
         <a href="#">Free full text from publisher</a> |
@@ -28,19 +29,21 @@
 
     <div class="bb-data-article">
 
-      <div class="metadata-art">
+      <div class="metadata-art"
+            v-for="(metric,i) of document.journal.metrics"
+           :key="i">
         <div class="metadata-type">
-          <h2>{{ document.journal.quartile }}</h2>
+          <h2>{{ metric.score }}</h2>
           <i class="bx bx-link-external"></i>
         </div>
 
         <div>
-          <h5>Category Quartile</h5>
-          <h6> From {{ document.journal.source }}</h6>
+          <h5>{{ metric.name }}</h5>
+          <h6> From {{ metric.source }}</h6>
         </div>
         <hr>
       </div>
-      <div class="metadata-art">
+      <!--<div class="metadata-art">
         <div class="metadata-type">
           <h2>{{ document.journal.impactFactor }}</h2>
           <i class="bx bx-link-external"></i>
@@ -63,7 +66,7 @@
           <h6>From {{ document.journal.source }}</h6>
         </div>
         <hr>
-      </div>
+      </div>-->
     </div>
   </article>
 </template>

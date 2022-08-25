@@ -1,55 +1,246 @@
 {
-  "documents": [
+  "article": [
     {
       "id": 0,
       "title": "Deep learning-based on-line image analysis for continuous industrial crystallization processes",
-      "authors": ["Zong, S.","Zhou, G.","Li, M.","Wang, X."],
-      "month": "March",
-      "year": "2022",
+      "authors":[
+        {
+          "id": 0,
+          "firstName": "S.",
+          "lastName": "Zong",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        },
+        {
+          "id": 1,
+          "firstName": "G.",
+          "lastName": "Zhou",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        },
+        {
+          "id": 2,
+          "firstName": "M.",
+          "lastName": "Li",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        },
+        {
+          "id": 3,
+          "firstName": "X.",
+          "lastName": "Wang",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        }
+      ],
+      "publicationDate": "2022-03-01",
+
       "typeArticle": "Article",
+      "journalId": 0,
       "journal": {
-        "title":"Particuology",
-        "quartile": "Q2",
-        "impactFactor": "3.238",
-        "hIndex": "116",
-        "source": "SJR 2021"
+        "id":0,
+        "name":"Particuology",
+        "metrics": [
+          {
+            "id": 0,
+            "name": "Category Quartile",
+            "score": "Q2",
+            "year": 2021,
+            "source": "SJR"
+          },
+          {
+            "id": 1,
+            "name": "Journal Impact Factor",
+            "score": "3.238",
+            "year": 2021,
+            "source": "SJR"
+          },
+          {
+            "id": 2,
+            "name": "H-Index",
+            "score": "116",
+            "year": 2021,
+            "source": "SJR"
+          }
+        ]
       },
-      "volume": "Volume 74, Pages 173 - 183",
-      "abstract": "In situ microscopic imaging is a useful tool in monitoring crystallization processes, including crystal nucleation, growth, aggregation and breakage, as well as possible polymorphic transition. To convert the qualitative information to be quantitative for the purpose of process optimization and control, accurate analysis of crystal images is essential. However, the accuracy of image segmentation with traditional methods is largely affected by many factors, including solid concentration and image quality. In this study, the deep learning technique using mask region-based convolutional neural network (Mask R-CNN) is investigated for the analysis of on-line images from an industrial crystallizer of 10 m3 operated in continuous mode with high solid concentration and overlapped particles. With detailed label points for each crystal and transfer learning technique, two models trained with 70,908 and 7,709 crystals respectively are compared for the effect of training data amount. The former model effectively segments the aggregated and overlapped crystals even at high solid concentrations. Moreover, it performs much better than the latter one and traditional multi-scale method both in terms of precision and recall, revealing the importance of large number of crystals in deep learning. Some geometrical characteristics of segmented crystals are also analyzed, involving equivalent diameter, circularity, and aspect ratio. © 2022 Chinese Society of Particuology and Institute of Process Engineering, Chinese Academy of Sciences"
+      "description": "In situ microscopic imaging is a useful tool in monitoring crystallization processes, including crystal nucleation, growth, aggregation and breakage, as well as possible polymorphic transition. To convert the qualitative information to be quantitative for the purpose of process optimization and control, accurate analysis of crystal images is essential. However, the accuracy of image segmentation with traditional methods is largely affected by many factors, including solid concentration and image quality. In this study, the deep learning technique using mask region-based convolutional neural network (Mask R-CNN) is investigated for the analysis of on-line images from an industrial crystallizer of 10 m3 operated in continuous mode with high solid concentration and overlapped particles. With detailed label points for each crystal and transfer learning technique, two models trained with 70,908 and 7,709 crystals respectively are compared for the effect of training data amount. The former model effectively segments the aggregated and overlapped crystals even at high solid concentrations. Moreover, it performs much better than the latter one and traditional multi-scale method both in terms of precision and recall, revealing the importance of large number of crystals in deep learning. Some geometrical characteristics of segmented crystals are also analyzed, involving equivalent diameter, circularity, and aspect ratio. © 2022 Chinese Society of Particuology and Institute of Process Engineering, Chinese Academy of Sciences",
+      "keywords": [],
+      "categories": [],
+      "numberOfCitations": 3,
+      "numberOfReferences": 3,
+
+      "volume": "Volume 74, Pages 173 - 183"
     },
     {
       "id": 1,
       "title": "Mass Imbalance Diagnostics inWind Turbines Using Deep Learning with Data Augmentation",
-      "authors": ["Dabetwar, S.","Dabetwar, S.","Dias, J.","Hubner, Guilherme R.","Pinheiro, H"],
-      "month": "March",
-      "year": "2021",
-      "typeArticle": "Article",
-      "journal": {
-        "title":"ASCE-ASME",
-        "quartile": "Q2",
-        "impactFactor": "3.211",
-        "hIndex": "14",
-        "source": "SJR 2021"
-      },
-      "volume": "Volume 9, Issue 1",
-      "abstract": "Wind turbines suffer from mass imbalance due to manufacturing, installation, and severe climatic conditions. Condition monitoring systems are essential to reduce costs in the wind energy sector. Many attempts were made to improve the detection of faults at an early stage to plan predictive maintenance strategies, but effective methods have not yet been developed. Artificial intelligence has a huge potential in the wind turbine industry. However, several shortcomings related to the datasets still need to be overcome. Thus, the research question developed for this paper was \"Can data augmentation and fusion techniques enhance the mass imbalance diagnostics methods applied to wind turbines using deep learning algorithms?\" The specific aims developed were: (i) to perform sensitivity analysis on classification based on how many samples/sample frequencies are required for stabilized results; (ii) to classify the imbalance levels using Gramian angular summation field and Gramian angular difference field and compare against data fusion; and (iii) to classify the imbalance levels using data fusion for augmented data. Convolutional neural network (CNN) techniques were employed to detect rotor mass imbalance for a multiclass problem using the estimated rotor speed as an input variable. A 1.5-MW turbine model was considered and a database was built using the software turbsim, fast, and simulink. The model was tested under different wind speeds and turbulence intensities. The data augmentation and fusion techniques used along with CNN techniques showed improvement in the classification and hence the diagnostics of wind turbines. © 2022 EDP Sciences. All rights reserved."
-    },
-    {"id": 2,
-      "title": "Development of a deep-learning based wave forecasting model using LSTM network",
-      "authors": ["Kyaw, Thit Oo","Shibayama, T","Shibutani, Y"],
-      "month": "December",
-      "year": "2020",
-      "typeArticle": "Conference",
-      "journal": {
-        "title":"Proceedings of the Coastal Engineering Conference",
-        "quartile": "Q1",
-        "impactFactor": "5.222",
-        "hIndex": "30",
-        "source": "SJR 2021"
-      },
-      "volume": "Volume 36, Issue 2020",
-      "abstract": "Forecasting of wave conditions plays an essential role for \noffshore construction and maintenance. At present, the \nreal-time wave forecasting is mainly conducted by \ntraditional numerical wave modelling, which can be\ncomputationally expensive and time consuming. \nRecently, machine learning-based wave forecasting \nmodels have been developed and their integrated usage \nwith physics-based numerical models has become \npopular (O’Donncha et al. 2018). These studies mostly \napply Feed Forward Neural Networks (FFNNs) with an\nemphasis on prediction of time-series of waves, tides and \nstorm surges (Kim et al. 2016). However, FFNNs are \nrelated with varnishing and exploding gradient problems. \nAs a particularly advanced approach, we develop a deep \nlearning-based wave forecasting model using Long \nShort-Term Memory (LSTM) network under Recurrent \nNeural Networks. As a case study, the model will be \nutilized to predict the wave conditions (low or high) near \nthe Tottori Port, Japan. The accurate prediction of low \nwave conditions is important for decision-making process \nof offshore and nearshore construction work. Therefore, \nthe present model can be a practical tool to reduce the \npotential waste of resources in those projects."
-    }
+      "authors":[
+        {
+          "id": 0,
+          "firstName": "S.",
+          "lastName": "Dabetwar",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        },
+        {
+          "id": 1,
+          "firstName": "J.",
+          "lastName": "Dias",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        },
+        {
+          "id": 2,
+          "firstName": "R.",
+          "lastName": "Hubner",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        },
+        {
+          "id": 3,
+          "firstName": "H.",
+          "lastName": "Pinheiro",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        }
+      ],
+      "publicationDate": "2021-03-01",
 
+      "typeArticle": "Article",
+      "journalId": 0,
+      "journal": {
+        "id":0,
+        "name":"ASCE-ASME",
+        "metrics": [
+          {
+            "id": 0,
+            "name": "Category Quartile",
+            "score": "Q2",
+            "year": 2021,
+            "source": "SJR"
+          },
+          {
+            "id": 1,
+            "name": "Journal Impact Factor",
+            "score": "3.211",
+            "year": 2021,
+            "source": "SJR"
+          },
+          {
+            "id": 2,
+            "name": "H-Index",
+            "score": "14",
+            "year": 2021,
+            "source": "SJR"
+          }
+        ]
+      },
+      "description": "Wind turbines suffer from mass imbalance due to manufacturing, installation, and severe climatic conditions. Condition monitoring systems are essential to reduce costs in the wind energy sector. Many attempts were made to improve the detection of faults at an early stage to plan predictive maintenance strategies, but effective methods have not yet been developed. Artificial intelligence has a huge potential in the wind turbine industry. However, several shortcomings related to the datasets still need to be overcome. Thus, the research question developed for this paper was \\\"Can data augmentation and fusion techniques enhance the mass imbalance diagnostics methods applied to wind turbines using deep learning algorithms?\\\" The specific aims developed were: (i) to perform sensitivity analysis on classification based on how many samples/sample frequencies are required for stabilized results; (ii) to classify the imbalance levels using Gramian angular summation field and Gramian angular difference field and compare against data fusion; and (iii) to classify the imbalance levels using data fusion for augmented data. Convolutional neural network (CNN) techniques were employed to detect rotor mass imbalance for a multiclass problem using the estimated rotor speed as an input variable. A 1.5-MW turbine model was considered and a database was built using the software turbsim, fast, and simulink. The model was tested under different wind speeds and turbulence intensities. The data augmentation and fusion techniques used along with CNN techniques showed improvement in the classification and hence the diagnostics of wind turbines. © 2022 EDP Sciences. All rights reserved.",
+      "keywords": [],
+      "categories": [],
+      "numberOfCitations": 2,
+      "numberOfReferences": 7,
+
+      "volume": "Volume 9, Issue 1"
+    },
+    {
+      "id": 2,
+      "title": "Development of a deep-learning based wave forecasting model using LSTM network",
+      "authors":[
+        {
+          "id": 0,
+          "firstName": "T.",
+          "lastName": "Kyaw",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        },
+        {
+          "id": 1,
+          "firstName": "T.",
+          "lastName": "Shibayama",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        },
+        {
+          "id": 2,
+          "firstName": "Y.",
+          "lastName": "Shibutani",
+          "address": "",
+          "email": "",
+          "organizations": [],
+          "metrics": [{
+          }]
+        }
+      ],
+      "publicationDate": "2020-12-07",
+
+      "typeArticle": "Conference",
+      "journalId": 0,
+      "journal": {
+        "id":0,
+        "name":"Proceedings of the Coastal Engineering Conference",
+        "metrics": [
+          {
+            "id": 0,
+            "name": "Category Quartile",
+            "score": "Q1",
+            "year": 2021,
+            "source": "SJR"
+          },
+          {
+            "id": 1,
+            "name": "Journal Impact Factor",
+            "score": "5.222",
+            "year": 2021,
+            "source": "SJR"
+          },
+          {
+            "id": 2,
+            "name": "H-Index",
+            "score": "30",
+            "year": 2021,
+            "source": "SJR"
+          }
+        ]
+      },
+      "description": "Forecasting of wave conditions plays an essential role for \noffshore construction and maintenance. At present, the \nreal-time wave forecasting is mainly conducted by \ntraditional numerical wave modelling, which can be\ncomputationally expensive and time consuming. \nRecently, machine learning-based wave forecasting \nmodels have been developed and their integrated usage \nwith physics-based numerical models has become \npopular (O’Donncha et al. 2018). These studies mostly \napply Feed Forward Neural Networks (FFNNs) with an\nemphasis on prediction of time-series of waves, tides and \nstorm surges (Kim et al. 2016). However, FFNNs are \nrelated with varnishing and exploding gradient problems. \nAs a particularly advanced approach, we develop a deep \nlearning-based wave forecasting model using Long \nShort-Term Memory (LSTM) network under Recurrent \nNeural Networks. As a case study, the model will be \nutilized to predict the wave conditions (low or high) near \nthe Tottori Port, Japan. The accurate prediction of low \nwave conditions is important for decision-making process \nof offshore and nearshore construction work. Therefore, \nthe present model can be a practical tool to reduce the \npotential waste of resources in those projects.",
+      "keywords": [],
+      "categories": [],
+      "numberOfCitations": 4,
+      "numberOfReferences": 6,
+
+      "volume": "Volume 36, Issue 2020"
+    }
   ]
 }
