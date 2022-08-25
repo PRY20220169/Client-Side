@@ -74,7 +74,7 @@ const routes: Array<RouteConfig> = [
 
   // Details Routes
   {
-    path: "/article-details",
+    path: "/article-details/:id",
     name: "article-details",
     component: () =>
       import("../pages/details/ArticleDetails.vue"),

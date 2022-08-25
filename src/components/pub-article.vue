@@ -7,7 +7,10 @@
     </div>
 
     <div class="info-article">
-      <h5>{{ document.title }}</h5>
+      <a @click="$router.push(`article-details/${document.id}`)"
+      >
+        <h5>{{ document.title }}</h5>
+      </a>
       <h6>
         <a href="#"
            v-for="(author, i) of document.authors"
