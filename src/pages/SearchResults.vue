@@ -105,14 +105,25 @@ export default Vue.extend({
         types:[] as string[],
         quartiles:[] as string[],
       },
-      qsearch:"",
+      qsearch:""
     };
   },
   methods: {
     async getDocuments() {
-      const response = await axios.get("http://localhost:3000/documents");
-      this.documents = response.data;
-      this.filteredDocuments = response.data;
+      const {data} = await axios.get("http://localhost:3000/article");
+
+      this.documents = JSON.parse(JSON.stringify(data));
+      this.filteredDocuments = JSON.parse(JSON.stringify(data));
+
+
+      this.documents.map(item => {
+        item.publicationDate = new Date(item.publicationDate)
+      })
+
+      this.filteredDocuments.map(item => {
+        item.publicationDate = new Date(item.publicationDate)
+      })
+
     },
 
     filterDocuments() {
@@ -122,10 +133,11 @@ export default Vue.extend({
       const {years,types,quartiles} = this.filterOptions;
 
       this.filteredDocuments = this.documents.filter((article) =>{
+        const quartile = article.journal.metrics[0].score //osea sy quartil
 
-        return ((years.length > 0)? years.map( e => {return e}).includes(article.year): true) &&
+        return ((years.length > 0)? years.map( e => {return e}).includes(article.publicationDate.getFullYear().toString() ): true) &&
           ((types.length > 0)? types.map( e => {return e}).includes(article.typeArticle): true) &&
-          ((quartiles.length > 0)? quartiles.map( e => {return e}).includes(article.journal.quartile): true)
+          ((quartiles.length > 0)? quartiles.map( e => {return e}).includes(quartile): true)
       })
 
     },
@@ -156,18 +168,19 @@ export default Vue.extend({
       this.filterDocuments();
     },
 
-    addFilterOption(category: string, option: string) {
+    addFilterOption(category: string, option: any) {
 
       switch (category){
         case "Year": this.filterOptions.years.push(option);break;
         case "Type": this.filterOptions.types.push(option);break;
         case "Quartile": this.filterOptions.quartiles.push(option);break;
       }
+      console.log(this.filterOptions.years)
 
 
     },
 
-    removeFilterOption(category: string, option: string) {
+    removeFilterOption(category: string, option: any) {
       switch (category){
         case "Year":
           this.filterOptions.years = this.filterOptions.years.filter(opt => {
