@@ -1,10 +1,12 @@
 <template>
 	<main class="article-details">
-    <div id="container-article">
+    <router-view ref="rv"></router-view>
+    <div id="container-article" v-show="isParentActive">
       <h2>{{article.title}}</h2>
       <h3>By:
         <a v-for="(author,i) of article.authors"
            :key="i"
+           @click="$router.push({name:'author-details',params:{authorId:author.id.toString()}})"
         >
           {{author.lastName}},{{author.firstName}}
         </a>
@@ -36,36 +38,59 @@
 
 <script lang="ts">
 	import axios from "axios";
-  import { Article } from "@/interfaces/Article.interface";
+  import { Article, Journal } from "@/interfaces/Article.interface";
   import Vue from "vue";
 
   export default Vue.extend({
     name:'article-details',
 
     data(){
+
       return{
-        article: {} as Article,
+        article: {
+          authors: [],
+          categories: [],
+          description: "",
+          id: 0,
+          journal: {  } as Journal,
+          journalId: 0,
+          keywords: [],
+          numberOfCitations: 0,
+          numberOfReferences: 0,
+          publicationDate: new Date(),
+          title: "",
+          typeArticle: "",
+          volume: ""
+        } as Article,
         idArticle: 0,
+        isParentActive: true,
       }
     },
     methods:{
       async getArticleById(){
+        this.idArticle = parseInt(this.$route.params.id);
         const {data} = await axios.get(`http://localhost:3000/article/${this.idArticle}`)
         this.article = JSON.parse(JSON.stringify(data));
         this.article.publicationDate = new Date(this.article.publicationDate)
         //console.log(this.article)
       }
     },
-    mounted() {
-      this.idArticle = parseInt(this.$route.params.id);
-      this.getArticleById()
+    updated() {
+      this.isParentActive = typeof this.$refs.rv === 'undefined';
     },
 
+    mounted() {
+      this.isParentActive = typeof this.$refs.rv === 'undefined';
+    },
+    created() {
+      this.getArticleById()
+    }
 
-  }
+
+    }
   )
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../../assets/styles/article-details-page/base-article-details";
 </style>

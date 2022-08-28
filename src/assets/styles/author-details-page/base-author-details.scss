@@ -1,0 +1,117 @@
+@use "../general-colors";
+@use "../general-styles";
+
+#content-author-details{
+  #author-card{
+    border: 1.5px solid general-colors.$secondary-font-color;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 50px;
+
+
+
+    .card__info{
+      display: flex;
+      gap:30px;
+
+      .info__picture{
+        width: 180px;
+        height: 180px;
+        border-radius: 99%;
+        overflow: hidden;
+        object-fit: cover;
+        border: 3.5px dashed general-colors.$primary-color;
+        img{
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .info__data{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-family: "Poppins", sans-serif;
+        h2{
+          font-weight: 500;
+        }
+        h4{
+          font-weight: 400;
+          font-size: 14px;
+        }
+
+        a{
+          color: general-colors.$primary-color;
+        }
+
+        a:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+
+        .btn-outline{
+          button[type="button"]{
+            padding: 12px 20px;
+          }
+        }
+      }
+
+    }
+
+    .card__metrics{
+      display: flex;
+      flex-direction: column;
+      font-family: "Poppins", sans-serif;
+
+      .metrics__title{
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .metrics__subtitle{
+        font-weight: 500;
+        padding-top: 15px;
+        padding-bottom: 25px;
+        font-size: 18px;
+        color: #5E5E5E;
+      }
+
+      .pub-metrics{
+        max-width: 360px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        padding-bottom: 10px;
+      }
+
+      .review-metrics{
+        max-width: 360px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .metrics__metric{
+        //border: 1px solid red;
+        width: 140px;
+
+        h4{
+          font-weight: 400;
+          color: #5E5E5E;
+          font-size: 14px;
+          //max-width: 165px;
+        }
+
+
+      }
+
+
+    }
+
+  }
+}

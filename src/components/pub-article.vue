@@ -12,9 +12,10 @@
         <h5>{{ document.title }}</h5>
       </a>
       <h6>
-        <a href="#"
+        <a
            v-for="(author, i) of document.authors"
            :key="i"
+           @click="$router.push(`article-details/${document.id}/author-details/${author.id}`)"
         >
           {{ author.lastName }}, {{ author.firstName}}
         </a>
