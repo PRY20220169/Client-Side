@@ -60,9 +60,11 @@
     h6 {
       font-size: 14px;
       font-weight: 500;
+      display: inline-flex;
+      gap: 5px;
 
       a{
-        margin-left: 5px;
+        //margin-left: 5px;
         text-decoration: none;
       }
 
