@@ -50,16 +50,39 @@
       </div>
 
       <div id="author-publications">
-        <div class="publications_header"></div>
-        <div class="publications__publication">
-          <div class="publication__title"></div>
-          <div class="publication__authors">
+        <div class="publications__header">
+          <h2>Top publications</h2>
+          <a>See all publications</a>
+        </div>
+        <div class="publications">
+          <div class="publications__publication"
+                v-for="(article,i) of author.articles"
+               :key="i"
+          >
+            <div class="publication__info">
+              <div class="info__title">
+                <h3>{{article.title}}</h3>
+              </div>
+              <div class="info__authors">
+                <h4 v-for="(authorArt,i) of article.authors"
+                    :key="i"
+                >{{getNameAuthor(article.authors.length-1,i,authorArt)}}</h4>
+              </div>
+              <div class="info__journal">
+                <h5>Published {{ getArticleDate(article.publicationDate) }}</h5>
+                <a>{{ article.journal.name }}</a>
+              </div>
 
-          </div>
-          <div class="publication__info">
+            </div>
+
+            <div class="publication__metric">
+              <h1>3</h1>
+              <h3>Times <br>cited</h3>
+            </div>
 
           </div>
         </div>
+
       </div>
 
     </div>
@@ -96,6 +119,15 @@ export default Vue.extend({
       const {data} = await axios.get(`http://localhost:3000/authors/${this.authorId}`)
       this.author = JSON.parse(JSON.stringify(data));
       //console.log(this.author)
+    },
+    getNameAuthor(length:number,position:number,author:Author){
+      if(length === position) return `${author.lastName}, ${author.firstName}`
+      return `${author.lastName}, ${author.firstName};`
+      //{{author.lastName}},{{author.firstName.substring(0,1)}}.
+    },
+    getArticleDate(dateString:string){
+      const dateArticle = new Date(dateString)
+      return `${dateArticle.toLocaleString('EN', { month: 'long' }).substring(0,3)} ${dateArticle.getFullYear()}`
     }
   },
   created() {
