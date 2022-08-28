@@ -66,7 +66,7 @@ import PubArticle from "@/components/pub-article.vue";
 import axios from "axios";
 import Vue from "vue";
 
-import { Article } from "@/interfaces/Article.interface";
+import { Article } from "@/interfaces/article.interface";
 
 export default Vue.extend({
   components: { PubArticle },

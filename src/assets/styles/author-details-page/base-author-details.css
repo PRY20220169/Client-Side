@@ -92,10 +92,10 @@ button[type=button]:hover {
 #content-author-details #author-card .card__metrics .metrics__title {
   font-size: 20px;
   font-weight: 500;
+  padding-bottom: 20px;
 }
 #content-author-details #author-card .card__metrics .metrics__subtitle {
   font-weight: 500;
-  padding-top: 15px;
   padding-bottom: 25px;
   font-size: 18px;
   color: #5E5E5E;
@@ -106,13 +106,11 @@ button[type=button]:hover {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
-  padding-bottom: 10px;
 }
 #content-author-details #author-card .card__metrics .review-metrics {
   max-width: 360px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: space-between;
 }
 #content-author-details #author-card .card__metrics .metrics__metric {

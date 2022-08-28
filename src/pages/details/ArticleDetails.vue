@@ -38,8 +38,10 @@
 
 <script lang="ts">
 	import axios from "axios";
-  import { Article, Author, Journal } from "@/interfaces/Article.interface";
+  import { Article} from "@/interfaces/article.interface";
   import Vue from "vue";
+  import { Journal } from "@/interfaces/journal.interface";
+  import { Author } from "@/interfaces/author.interface";
 
   export default Vue.extend({
     name:'article-details',

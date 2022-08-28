@@ -76,8 +76,9 @@
 </template>
 
 <script lang="ts">
-import { Article, Author } from "@/interfaces/Article.interface";
+import { Article } from "@/interfaces/article.interface";
 import { PropType } from "vue";
+import { Author } from "@/interfaces/author.interface";
 
 export default {
   name: "pub-article",

@@ -70,11 +70,11 @@
       .metrics__title{
         font-size: 20px;
         font-weight: 500;
+        padding-bottom: 20px;
       }
 
       .metrics__subtitle{
         font-weight: 500;
-        padding-top: 15px;
         padding-bottom: 25px;
         font-size: 18px;
         color: #5E5E5E;
@@ -86,14 +86,13 @@
         flex-wrap: wrap;
         gap: 20px;
         justify-content: space-between;
-        padding-bottom: 10px;
+        //padding-bottom: 10px;
       }
 
       .review-metrics{
         max-width: 360px;
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
         justify-content: space-between;
       }
 
