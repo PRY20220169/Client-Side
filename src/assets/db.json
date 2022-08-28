@@ -3,55 +3,62 @@
     {
       "id": 0,
       "title": "Deep learning-based on-line image analysis for continuous industrial crystallization processes",
-      "authors":[
+      "authors": [
         {
           "id": 0,
-          "firstName": "S.",
+          "firstName": "Sara",
           "lastName": "Zong",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         },
         {
           "id": 1,
-          "firstName": "G.",
+          "firstName": "Gamon",
           "lastName": "Zhou",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         },
         {
           "id": 2,
-          "firstName": "M.",
+          "firstName": "Mari",
           "lastName": "Li",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         },
         {
           "id": 3,
-          "firstName": "X.",
+          "firstName": "Xuan",
           "lastName": "Wang",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         }
       ],
       "publicationDate": "2022-03-01",
-
       "typeArticle": "Article",
       "journalId": 0,
       "journal": {
-        "id":0,
-        "name":"Particuology",
+        "id": 0,
+        "name": "Particuology",
         "metrics": [
           {
             "id": 0,
@@ -81,61 +88,67 @@
       "categories": [],
       "numberOfCitations": 3,
       "numberOfReferences": 3,
-
       "volume": "Volume 74, Pages 173 - 183"
     },
     {
       "id": 1,
       "title": "Mass Imbalance Diagnostics inWind Turbines Using Deep Learning with Data Augmentation",
-      "authors":[
+      "authors": [
         {
-          "id": 0,
-          "firstName": "S.",
+          "id": 4,
+          "firstName": "Sebastian",
           "lastName": "Dabetwar",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         },
         {
-          "id": 1,
-          "firstName": "J.",
+          "id": 5,
+          "firstName": "Jhon",
           "lastName": "Dias",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         },
         {
-          "id": 2,
-          "firstName": "R.",
+          "id": 6,
+          "firstName": "Richard",
           "lastName": "Hubner",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         },
         {
-          "id": 3,
-          "firstName": "H.",
+          "id": 7,
+          "firstName": "Hector",
           "lastName": "Pinheiro",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         }
       ],
       "publicationDate": "2021-03-01",
-
       "typeArticle": "Article",
       "journalId": 0,
       "journal": {
-        "id":0,
-        "name":"ASCE-ASME",
+        "id": 0,
+        "name": "ASCE-ASME",
         "metrics": [
           {
             "id": 0,
@@ -165,51 +178,55 @@
       "categories": [],
       "numberOfCitations": 2,
       "numberOfReferences": 7,
-
       "volume": "Volume 9, Issue 1"
     },
     {
       "id": 2,
       "title": "Development of a deep-learning based wave forecasting model using LSTM network",
-      "authors":[
+      "authors": [
         {
-          "id": 0,
-          "firstName": "T.",
+          "id": 8,
+          "firstName": "Thiago",
           "lastName": "Kyaw",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         },
         {
-          "id": 1,
-          "firstName": "T.",
+          "id": 9,
+          "firstName": "Timoteo",
           "lastName": "Shibayama",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         },
         {
-          "id": 2,
-          "firstName": "Y.",
+          "id": 10,
+          "firstName": "Yeni",
           "lastName": "Shibutani",
           "address": "",
           "email": "",
           "organizations": [],
-          "metrics": [{
-          }]
+          "metrics": [
+            {
+            }
+          ]
         }
       ],
       "publicationDate": "2020-12-07",
-
       "typeArticle": "Conference",
       "journalId": 0,
       "journal": {
-        "id":0,
-        "name":"Proceedings of the Coastal Engineering Conference",
+        "id": 0,
+        "name": "Proceedings of the Coastal Engineering Conference",
         "metrics": [
           {
             "id": 0,
@@ -239,8 +256,843 @@
       "categories": [],
       "numberOfCitations": 4,
       "numberOfReferences": 6,
-
       "volume": "Volume 36, Issue 2020"
+    }
+  ],
+  "authors": [
+    {
+      "id": 0,
+      "firstName": "Sara",
+      "lastName": "Zong",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society"],
+      "metrics": [
+        {
+          "id": 0,
+          "name": "H-index",
+          "score": "53",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 1,
+          "name": "Publications in Web of Science",
+          "score": "539",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 2,
+          "name": "Sum of times Cited",
+          "score": "11,575",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 3,
+          "name": "Citing articles",
+          "score": "6,556",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 4,
+          "name": "Verified peer Reviews",
+          "score": "244",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 5,
+          "name": "Verified Editor Records",
+          "score": "60",
+          "year": 2021,
+          "source": "SJR"
+        }
+      ],
+      "articles": [
+        {
+          "id": 0,
+          "title": "Deep learning-based on-line image analysis for continuous industrial crystallization processes",
+          "authors": [
+            {
+              "id": 0,
+              "firstName": "Sara",
+              "lastName": "Zong",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "firstName": "Gamon",
+              "lastName": "Zhou",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "firstName": "Mari",
+              "lastName": "Li",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "firstName": "Xuan",
+              "lastName": "Wang",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            }
+          ],
+          "publicationDate": "2022-03-01",
+          "typeArticle": "Article",
+          "journalId": 0,
+          "journal": {
+            "id": 0,
+            "name": "Particuology",
+            "metrics": [
+              {
+                "id": 0,
+                "name": "Category Quartile",
+                "score": "Q2",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 1,
+                "name": "Journal Impact Factor",
+                "score": "3.238",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 2,
+                "name": "H-Index",
+                "score": "116",
+                "year": 2021,
+                "source": "SJR"
+              }
+            ]
+          },
+          "description": "In situ microscopic imaging is a useful tool in monitoring crystallization processes, including crystal nucleation, growth, aggregation and breakage, as well as possible polymorphic transition. To convert the qualitative information to be quantitative for the purpose of process optimization and control, accurate analysis of crystal images is essential. However, the accuracy of image segmentation with traditional methods is largely affected by many factors, including solid concentration and image quality. In this study, the deep learning technique using mask region-based convolutional neural network (Mask R-CNN) is investigated for the analysis of on-line images from an industrial crystallizer of 10 m3 operated in continuous mode with high solid concentration and overlapped particles. With detailed label points for each crystal and transfer learning technique, two models trained with 70,908 and 7,709 crystals respectively are compared for the effect of training data amount. The former model effectively segments the aggregated and overlapped crystals even at high solid concentrations. Moreover, it performs much better than the latter one and traditional multi-scale method both in terms of precision and recall, revealing the importance of large number of crystals in deep learning. Some geometrical characteristics of segmented crystals are also analyzed, involving equivalent diameter, circularity, and aspect ratio. © 2022 Chinese Society of Particuology and Institute of Process Engineering, Chinese Academy of Sciences",
+          "keywords": [],
+          "categories": [],
+          "numberOfCitations": 3,
+          "numberOfReferences": 3,
+          "volume": "Volume 74, Pages 173 - 183"
+        },
+        {
+          "id": 1,
+          "title": "Deep Learning: A Comprehensive Overview on Techniques, Taxonomy, Applications and Research Directions",
+          "authors": [
+            {
+              "id": 0,
+              "firstName": "Sara",
+              "lastName": "Zong",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "firstName": "Sarker",
+              "lastName": "Iqbar",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            }
+
+          ],
+          "publicationDate": "2022-03-01",
+          "typeArticle": "Article",
+          "journalId": 0,
+          "journal": {
+            "id": 0,
+            "name": "Particuology",
+            "metrics": [
+              {
+                "id": 0,
+                "name": "Category Quartile",
+                "score": "Q2",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 1,
+                "name": "Journal Impact Factor",
+                "score": "3.238",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 2,
+                "name": "H-Index",
+                "score": "116",
+                "year": 2021,
+                "source": "SJR"
+              }
+            ]
+          },
+          "description": "In situ microscopic imaging is a useful tool in monitoring crystallization processes, including crystal nucleation, growth, aggregation and breakage, as well as possible polymorphic transition. To convert the qualitative information to be quantitative for the purpose of process optimization and control, accurate analysis of crystal images is essential. However, the accuracy of image segmentation with traditional methods is largely affected by many factors, including solid concentration and image quality. In this study, the deep learning technique using mask region-based convolutional neural network (Mask R-CNN) is investigated for the analysis of on-line images from an industrial crystallizer of 10 m3 operated in continuous mode with high solid concentration and overlapped particles. With detailed label points for each crystal and transfer learning technique, two models trained with 70,908 and 7,709 crystals respectively are compared for the effect of training data amount. The former model effectively segments the aggregated and overlapped crystals even at high solid concentrations. Moreover, it performs much better than the latter one and traditional multi-scale method both in terms of precision and recall, revealing the importance of large number of crystals in deep learning. Some geometrical characteristics of segmented crystals are also analyzed, involving equivalent diameter, circularity, and aspect ratio. © 2022 Chinese Society of Particuology and Institute of Process Engineering, Chinese Academy of Sciences",
+          "keywords": [],
+          "categories": [],
+          "numberOfCitations": 3,
+          "numberOfReferences": 3,
+          "volume": "Volume 74, Pages 173 - 183"
+        },
+        {
+          "id": 2,
+          "title": "Artificial intelligence in information systems research: A systematic literature review and research agenda",
+          "authors": [
+            {
+              "id": 0,
+              "firstName": "Sara",
+              "lastName": "Zong",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "firstName": "Cristopher",
+              "lastName": "Collins",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "firstName": "Dennis",
+              "lastName": "Dennehy",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "firstName": "Kieran",
+              "lastName": "Comboy",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "firstName": "Patrick",
+              "lastName": "Mikalef",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            }
+
+          ],
+          "publicationDate": "2022-03-01",
+          "typeArticle": "Article",
+          "journalId": 0,
+          "journal": {
+            "id": 0,
+            "name": "Particuology",
+            "metrics": [
+              {
+                "id": 0,
+                "name": "Category Quartile",
+                "score": "Q2",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 1,
+                "name": "Journal Impact Factor",
+                "score": "3.238",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 2,
+                "name": "H-Index",
+                "score": "116",
+                "year": 2021,
+                "source": "SJR"
+              }
+            ]
+          },
+          "description": "In situ microscopic imaging is a useful tool in monitoring crystallization processes, including crystal nucleation, growth, aggregation and breakage, as well as possible polymorphic transition. To convert the qualitative information to be quantitative for the purpose of process optimization and control, accurate analysis of crystal images is essential. However, the accuracy of image segmentation with traditional methods is largely affected by many factors, including solid concentration and image quality. In this study, the deep learning technique using mask region-based convolutional neural network (Mask R-CNN) is investigated for the analysis of on-line images from an industrial crystallizer of 10 m3 operated in continuous mode with high solid concentration and overlapped particles. With detailed label points for each crystal and transfer learning technique, two models trained with 70,908 and 7,709 crystals respectively are compared for the effect of training data amount. The former model effectively segments the aggregated and overlapped crystals even at high solid concentrations. Moreover, it performs much better than the latter one and traditional multi-scale method both in terms of precision and recall, revealing the importance of large number of crystals in deep learning. Some geometrical characteristics of segmented crystals are also analyzed, involving equivalent diameter, circularity, and aspect ratio. © 2022 Chinese Society of Particuology and Institute of Process Engineering, Chinese Academy of Sciences",
+          "keywords": [],
+          "categories": [],
+          "numberOfCitations": 3,
+          "numberOfReferences": 3,
+          "volume": "Volume 74, Pages 173 - 183"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "firstName": "Gamon",
+      "lastName": "Zhou",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society", "USA Science Society"],
+      "metrics": [
+        {
+          "id": 6,
+          "name": "H-index",
+          "score": "65",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 7,
+          "name": "Publications in Web of Science",
+          "score": "412",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 8,
+          "name": "Sum of times Cited",
+          "score": "11,000",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 9,
+          "name": "Citing articles",
+          "score": "6,100",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 10,
+          "name": "Verified peer Reviews",
+          "score": "300",
+          "year": 2021,
+          "source": "SJR"
+        },
+        {
+          "id": 11,
+          "name": "Verified Editor Records",
+          "score": "70",
+          "year": 2021,
+          "source": "SJR"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Mari",
+      "lastName": "Li",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society", "Canada BigData"],
+      "metrics": [
+        {
+          "id":12,
+          "name":"H-index",
+          "score":"87",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":13,
+          "name":"Publications in Web of Science",
+          "score":"477",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":14,
+          "name":"Sum of times Cited",
+          "score":"10,777",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":15,
+          "name":"Citing articles",
+          "score":"5,588",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":16,
+          "name":"Verified peer Reviews",
+          "score":"145",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":17,
+          "name":"Verified Editor Records",
+          "score":"40",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "firstName": "Xuan",
+      "lastName": "Wang",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society", "Huawei Investigations"],
+      "metrics": [
+        {
+          "id":18,
+          "name":"H-index",
+          "score":"77",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":19,
+          "name":"Publications in Web of Science",
+          "score":"855",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":20,
+          "name":"Sum of times Cited",
+          "score":"17,575",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":21,
+          "name":"Citing articles",
+          "score":"12,556",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":22,
+          "name":"Verified peer Reviews",
+          "score":"800",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":23,
+          "name":"Verified Editor Records",
+          "score":"158",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "firstName": "Sebastian",
+      "lastName": "Dabetwar",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society"],
+      "metrics": [
+        {
+          "id":24,
+          "name":"H-index",
+          "score":"77",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":25,
+          "name":"Publications in Web of Science",
+          "score":"424",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":26,
+          "name":"Sum of times Cited",
+          "score":"11,444",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":27,
+          "name":"Citing articles",
+          "score":"3,789",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":28,
+          "name":"Verified peer Reviews",
+          "score":"144",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":29,
+          "name":"Verified Editor Records",
+          "score":"87",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "firstName": "Jhon",
+      "lastName": "Dias",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society"],
+      "metrics": [
+        {
+          "id":24,
+          "name":"H-index",
+          "score":"77",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":25,
+          "name":"Publications in Web of Science",
+          "score":"424",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":26,
+          "name":"Sum of times Cited",
+          "score":"11,444",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":27,
+          "name":"Citing articles",
+          "score":"3,789",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":28,
+          "name":"Verified peer Reviews",
+          "score":"144",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":29,
+          "name":"Verified Editor Records",
+          "score":"87",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "firstName": "Richard",
+      "lastName": "Hubner",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society"],
+      "metrics": [
+        {
+          "id":24,
+          "name":"H-index",
+          "score":"77",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":25,
+          "name":"Publications in Web of Science",
+          "score":"424",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":26,
+          "name":"Sum of times Cited",
+          "score":"11,444",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":27,
+          "name":"Citing articles",
+          "score":"3,789",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":28,
+          "name":"Verified peer Reviews",
+          "score":"144",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":29,
+          "name":"Verified Editor Records",
+          "score":"87",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "firstName": "Hector",
+      "lastName": "Pinheiro",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society"],
+      "metrics": [
+        {
+          "id":24,
+          "name":"H-index",
+          "score":"77",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":25,
+          "name":"Publications in Web of Science",
+          "score":"424",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":26,
+          "name":"Sum of times Cited",
+          "score":"11,444",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":27,
+          "name":"Citing articles",
+          "score":"3,789",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":28,
+          "name":"Verified peer Reviews",
+          "score":"144",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":29,
+          "name":"Verified Editor Records",
+          "score":"87",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "firstName": "Thiago",
+      "lastName": "Kyaw",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society"],
+      "metrics": [
+        {
+          "id":24,
+          "name":"H-index",
+          "score":"77",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":25,
+          "name":"Publications in Web of Science",
+          "score":"424",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":26,
+          "name":"Sum of times Cited",
+          "score":"11,444",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":27,
+          "name":"Citing articles",
+          "score":"3,789",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":28,
+          "name":"Verified peer Reviews",
+          "score":"144",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":29,
+          "name":"Verified Editor Records",
+          "score":"87",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "firstName": "Timoteo",
+      "lastName": "Shibayama",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society"],
+      "metrics": [
+        {
+          "id":24,
+          "name":"H-index",
+          "score":"77",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":25,
+          "name":"Publications in Web of Science",
+          "score":"424",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":26,
+          "name":"Sum of times Cited",
+          "score":"11,444",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":27,
+          "name":"Citing articles",
+          "score":"3,789",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":28,
+          "name":"Verified peer Reviews",
+          "score":"144",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":29,
+          "name":"Verified Editor Records",
+          "score":"87",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "firstName": "Yeni",
+      "lastName": "Shibutani",
+      "address": "",
+      "email": "",
+      "organizations": ["Max Planck Society"],
+      "metrics": [
+        {
+          "id":24,
+          "name":"H-index",
+          "score":"77",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":25,
+          "name":"Publications in Web of Science",
+          "score":"424",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":26,
+          "name":"Sum of times Cited",
+          "score":"11,444",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":27,
+          "name":"Citing articles",
+          "score":"3,789",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":28,
+          "name":"Verified peer Reviews",
+          "score":"144",
+          "year":2021,
+          "source":"SJR"
+        },
+        {
+          "id":29,
+          "name":"Verified Editor Records",
+          "score":"87",
+          "year":2021,
+          "source":"SJR"
+        }
+      ]
     }
   ]
 }

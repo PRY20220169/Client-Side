@@ -66,7 +66,7 @@ import PubArticle from "@/components/pub-article.vue";
 import axios from "axios";
 import Vue from "vue";
 
-import { Article } from "@/interfaces/Article.interface";
+import { Article } from "@/interfaces/article.interface";
 
 export default Vue.extend({
   components: { PubArticle },
@@ -167,7 +167,7 @@ export default Vue.extend({
 
       this.filterDocuments();
     },
-
+    // eslint-disable-next-line
     addFilterOption(category: string, option: any) {
 
       switch (category){
@@ -179,7 +179,7 @@ export default Vue.extend({
 
 
     },
-
+    // eslint-disable-next-line
     removeFilterOption(category: string, option: any) {
       switch (category){
         case "Year":
