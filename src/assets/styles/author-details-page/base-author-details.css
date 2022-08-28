@@ -68,6 +68,7 @@ button[type=button]:hover {
 }
 #content-author-details #author-card .card__info .info__data h2 {
   font-weight: 500;
+  max-width: 150px;
 }
 #content-author-details #author-card .card__info .info__data h4 {
   font-weight: 400;

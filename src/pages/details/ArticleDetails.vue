@@ -8,7 +8,7 @@
            :key="i"
            @click="$router.push({name:'author-details',params:{authorId:author.id.toString()}})"
         >
-          {{author.lastName}},{{author.firstName}}
+          {{getNameAuthor(article.authors.length-1,i,author)}}
         </a>
       </h3>
       <a>+ Add to Collection</a>
@@ -38,7 +38,7 @@
 
 <script lang="ts">
 	import axios from "axios";
-  import { Article, Journal } from "@/interfaces/Article.interface";
+  import { Article, Author, Journal } from "@/interfaces/Article.interface";
   import Vue from "vue";
 
   export default Vue.extend({
@@ -73,6 +73,12 @@
         this.article = JSON.parse(JSON.stringify(data));
         this.article.publicationDate = new Date(this.article.publicationDate)
         //console.log(this.article)
+      },
+
+      getNameAuthor(length:number,position:number,author:Author){
+        if(length === position) return `and ${author.lastName}, ${author.firstName.substring(0,1)}.`
+        return `${author.lastName}, ${author.firstName.substring(0,1)}.`
+        //{{author.lastName}},{{author.firstName.substring(0,1)}}.
       }
     },
     updated() {

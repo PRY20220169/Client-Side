@@ -17,7 +17,7 @@
            :key="i"
            @click="$router.push(`article-details/${document.id}/author-details/${author.id}`)"
         >
-          {{ author.lastName }}, {{ author.firstName}}
+          {{ getNameAuthor(document.authors.length-1,i,author) }}
         </a>
       </h6>
       <span>{{ document.publicationDate.toLocaleString('EN', { month: 'long' }) }} {{ document.publicationDate.getFullYear() }} |
@@ -76,7 +76,7 @@
 </template>
 
 <script lang="ts">
-import {Article} from "@/interfaces/Article.interface";
+import { Article, Author } from "@/interfaces/Article.interface";
 import { PropType } from "vue";
 
 export default {
@@ -85,6 +85,13 @@ export default {
     document: {
       type: Object as PropType<Article>,
       required: true
+    }
+  },
+  methods:{
+    getNameAuthor(length:number,position:number,author:Author){
+      if(length === position) return `and ${author.lastName}, ${author.firstName.substring(0,1)}.`
+      return `${author.lastName}, ${author.firstName.substring(0,1)}.`
+      //{{author.lastName}},{{author.firstName.substring(0,1)}}.
     }
   }
 };
