@@ -167,7 +167,7 @@ export default Vue.extend({
 
       this.filterDocuments();
     },
-
+    // eslint-disable-next-line
     addFilterOption(category: string, option: any) {
 
       switch (category){
@@ -179,7 +179,7 @@ export default Vue.extend({
 
 
     },
-
+    // eslint-disable-next-line
     removeFilterOption(category: string, option: any) {
       switch (category){
         case "Year":

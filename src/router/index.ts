@@ -78,13 +78,21 @@ const routes: Array<RouteConfig> = [
     name: "article-details",
     component: () =>
       import("../pages/details/ArticleDetails.vue"),
+    children:[
+      {
+        path: "author-details/:authorId",
+        name: "author-details",
+        component: () =>
+          import("../pages/details/AuthorDetails.vue")
+      }
+    ],
   },
-  {
+  /*{
     path: "/author-details",
     name: "author-details",
     component: () =>
       import("../pages/details/AuthorDetails.vue"),
-  },
+  },*/
   {
     path: "/journal-details",
     name: "journal-details",

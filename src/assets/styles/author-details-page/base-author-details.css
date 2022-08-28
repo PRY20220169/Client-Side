@@ -1,0 +1,126 @@
+.btn-outline button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: 1px solid #858aff;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #858aff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-outline button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: #f5f4f4;
+}
+
+.btn-content button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #858aff;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-content button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: rgb(98, 103, 213);
+}
+
+button[type=button]:hover {
+  cursor: pointer;
+}
+
+#content-author-details #author-card {
+  border: 1.5px solid #B9BABF;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 50px;
+}
+#content-author-details #author-card .card__info {
+  display: flex;
+  gap: 30px;
+}
+#content-author-details #author-card .card__info .info__picture {
+  width: 180px;
+  height: 180px;
+  border-radius: 99%;
+  overflow: hidden;
+  object-fit: cover;
+  border: 3.5px dashed #858aff;
+}
+#content-author-details #author-card .card__info .info__picture img {
+  height: 100%;
+  width: 100%;
+}
+#content-author-details #author-card .card__info .info__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Poppins", sans-serif;
+}
+#content-author-details #author-card .card__info .info__data h2 {
+  font-weight: 500;
+}
+#content-author-details #author-card .card__info .info__data h4 {
+  font-weight: 400;
+  font-size: 14px;
+}
+#content-author-details #author-card .card__info .info__data a {
+  color: #858aff;
+}
+#content-author-details #author-card .card__info .info__data a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+#content-author-details #author-card .card__info .info__data .btn-outline button[type=button] {
+  padding: 12px 20px;
+}
+#content-author-details #author-card .card__metrics {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+#content-author-details #author-card .card__metrics .metrics__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+#content-author-details #author-card .card__metrics .metrics__subtitle {
+  font-weight: 500;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  font-size: 18px;
+  color: #5E5E5E;
+}
+#content-author-details #author-card .card__metrics .pub-metrics {
+  max-width: 360px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+#content-author-details #author-card .card__metrics .review-metrics {
+  max-width: 360px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+#content-author-details #author-card .card__metrics .metrics__metric {
+  width: 140px;
+}
+#content-author-details #author-card .card__metrics .metrics__metric h4 {
+  font-weight: 400;
+  color: #5E5E5E;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=base-author-details.css.map */
