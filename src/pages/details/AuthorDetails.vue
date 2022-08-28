@@ -25,32 +25,23 @@
           <h3 class="metrics__title">Metrics</h3>
           <span class="metrics__subtitle">Publication Metrics</span>
           <div class="pub-metrics">
-            <div class="metrics__metric">
-              <h3>{{ author.metrics[0].score }}</h3>
-              <h4>{{ author.metrics[0].name }}</h4>
-            </div>
-            <div class="metrics__metric">
-              <h3>{{ author.metrics[1].score }}</h3>
-              <h4>{{ author.metrics[1].name }}</h4>
-            </div>
-            <div class="metrics__metric">
-              <h3>{{ author.metrics[2].score }}</h3>
-              <h4>{{ author.metrics[2].name }}</h4>
-            </div>
-            <div class="metrics__metric">
-              <h3>{{ author.metrics[3].score }}</h3>
-              <h4>{{ author.metrics[3].name }}</h4>
+            <div class="metrics__metric"
+                  v-for="(metric,i) of author.metrics"
+                  :key="i"
+            >
+              <h3 v-if="i < 4">{{ metric.score }}</h3>
+              <h4 v-if="i < 4">{{ metric.name }}</h4>
             </div>
           </div>
+
           <span class="metrics__subtitle">Peer Review Metrics</span>
           <div class="review-metrics">
-            <div class="metrics__metric">
-              <h3>{{ author.metrics[4].score }}</h3>
-              <h4>{{ author.metrics[4].name }}</h4>
-            </div>
-            <div class="metrics__metric">
-              <h3>{{ author.metrics[5].score }}</h3>
-              <h4>{{ author.metrics[5].name }}</h4>
+            <div class="metrics__metric"
+                 v-for="(metric,i) of author.metrics"
+                 :key="i"
+            >
+              <h3 v-if="i >= 4">{{ metric.score }}</h3>
+              <h4 v-if="i >= 4">{{ metric.name }}</h4>
             </div>
           </div>
 
@@ -78,14 +69,25 @@
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
-import { Author } from "@/interfaces/Article.interface";
+import { Article} from "@/interfaces/article.interface";
+import { Metric } from "@/interfaces/metric.interface";
+import { Author } from "@/interfaces/author.interface";
 
 export default Vue.extend({
   name:'author-details',
   data() {
     return {
       authorId:0,
-      author:{} as Author
+      author:{
+        id:0,
+        firstName: '',
+        lastName: '',
+        address: '',
+        email: '',
+        organizations: [] as string[],
+        metrics:[] as Metric[],
+        articles:[] as Article[],
+      } as Author
     };
   },
   methods:{
