@@ -310,6 +310,268 @@
           "year": 2021,
           "source": "SJR"
         }
+      ],
+      "articles": [
+        {
+          "id": 0,
+          "title": "Deep learning-based on-line image analysis for continuous industrial crystallization processes",
+          "authors": [
+            {
+              "id": 0,
+              "firstName": "Sara",
+              "lastName": "Zong",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "firstName": "Gamon",
+              "lastName": "Zhou",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "firstName": "Mari",
+              "lastName": "Li",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "firstName": "Xuan",
+              "lastName": "Wang",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            }
+          ],
+          "publicationDate": "2022-03-01",
+          "typeArticle": "Article",
+          "journalId": 0,
+          "journal": {
+            "id": 0,
+            "name": "Particuology",
+            "metrics": [
+              {
+                "id": 0,
+                "name": "Category Quartile",
+                "score": "Q2",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 1,
+                "name": "Journal Impact Factor",
+                "score": "3.238",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 2,
+                "name": "H-Index",
+                "score": "116",
+                "year": 2021,
+                "source": "SJR"
+              }
+            ]
+          },
+          "description": "In situ microscopic imaging is a useful tool in monitoring crystallization processes, including crystal nucleation, growth, aggregation and breakage, as well as possible polymorphic transition. To convert the qualitative information to be quantitative for the purpose of process optimization and control, accurate analysis of crystal images is essential. However, the accuracy of image segmentation with traditional methods is largely affected by many factors, including solid concentration and image quality. In this study, the deep learning technique using mask region-based convolutional neural network (Mask R-CNN) is investigated for the analysis of on-line images from an industrial crystallizer of 10 m3 operated in continuous mode with high solid concentration and overlapped particles. With detailed label points for each crystal and transfer learning technique, two models trained with 70,908 and 7,709 crystals respectively are compared for the effect of training data amount. The former model effectively segments the aggregated and overlapped crystals even at high solid concentrations. Moreover, it performs much better than the latter one and traditional multi-scale method both in terms of precision and recall, revealing the importance of large number of crystals in deep learning. Some geometrical characteristics of segmented crystals are also analyzed, involving equivalent diameter, circularity, and aspect ratio. © 2022 Chinese Society of Particuology and Institute of Process Engineering, Chinese Academy of Sciences",
+          "keywords": [],
+          "categories": [],
+          "numberOfCitations": 3,
+          "numberOfReferences": 3,
+          "volume": "Volume 74, Pages 173 - 183"
+        },
+        {
+          "id": 1,
+          "title": "Deep Learning: A Comprehensive Overview on Techniques, Taxonomy, Applications and Research Directions",
+          "authors": [
+            {
+              "id": 0,
+              "firstName": "Sara",
+              "lastName": "Zong",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "firstName": "Sarker",
+              "lastName": "Iqbar",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            }
+
+          ],
+          "publicationDate": "2022-03-01",
+          "typeArticle": "Article",
+          "journalId": 0,
+          "journal": {
+            "id": 0,
+            "name": "Particuology",
+            "metrics": [
+              {
+                "id": 0,
+                "name": "Category Quartile",
+                "score": "Q2",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 1,
+                "name": "Journal Impact Factor",
+                "score": "3.238",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 2,
+                "name": "H-Index",
+                "score": "116",
+                "year": 2021,
+                "source": "SJR"
+              }
+            ]
+          },
+          "description": "In situ microscopic imaging is a useful tool in monitoring crystallization processes, including crystal nucleation, growth, aggregation and breakage, as well as possible polymorphic transition. To convert the qualitative information to be quantitative for the purpose of process optimization and control, accurate analysis of crystal images is essential. However, the accuracy of image segmentation with traditional methods is largely affected by many factors, including solid concentration and image quality. In this study, the deep learning technique using mask region-based convolutional neural network (Mask R-CNN) is investigated for the analysis of on-line images from an industrial crystallizer of 10 m3 operated in continuous mode with high solid concentration and overlapped particles. With detailed label points for each crystal and transfer learning technique, two models trained with 70,908 and 7,709 crystals respectively are compared for the effect of training data amount. The former model effectively segments the aggregated and overlapped crystals even at high solid concentrations. Moreover, it performs much better than the latter one and traditional multi-scale method both in terms of precision and recall, revealing the importance of large number of crystals in deep learning. Some geometrical characteristics of segmented crystals are also analyzed, involving equivalent diameter, circularity, and aspect ratio. © 2022 Chinese Society of Particuology and Institute of Process Engineering, Chinese Academy of Sciences",
+          "keywords": [],
+          "categories": [],
+          "numberOfCitations": 3,
+          "numberOfReferences": 3,
+          "volume": "Volume 74, Pages 173 - 183"
+        },
+        {
+          "id": 2,
+          "title": "Artificial intelligence in information systems research: A systematic literature review and research agenda",
+          "authors": [
+            {
+              "id": 0,
+              "firstName": "Sara",
+              "lastName": "Zong",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "firstName": "Cristopher",
+              "lastName": "Collins",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "firstName": "Dennis",
+              "lastName": "Dennehy",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "firstName": "Kieran",
+              "lastName": "Comboy",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "firstName": "Patrick",
+              "lastName": "Mikalef",
+              "address": "",
+              "email": "",
+              "organizations": [],
+              "metrics": [
+                {
+                }
+              ]
+            }
+
+          ],
+          "publicationDate": "2022-03-01",
+          "typeArticle": "Article",
+          "journalId": 0,
+          "journal": {
+            "id": 0,
+            "name": "Particuology",
+            "metrics": [
+              {
+                "id": 0,
+                "name": "Category Quartile",
+                "score": "Q2",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 1,
+                "name": "Journal Impact Factor",
+                "score": "3.238",
+                "year": 2021,
+                "source": "SJR"
+              },
+              {
+                "id": 2,
+                "name": "H-Index",
+                "score": "116",
+                "year": 2021,
+                "source": "SJR"
+              }
+            ]
+          },
+          "description": "In situ microscopic imaging is a useful tool in monitoring crystallization processes, including crystal nucleation, growth, aggregation and breakage, as well as possible polymorphic transition. To convert the qualitative information to be quantitative for the purpose of process optimization and control, accurate analysis of crystal images is essential. However, the accuracy of image segmentation with traditional methods is largely affected by many factors, including solid concentration and image quality. In this study, the deep learning technique using mask region-based convolutional neural network (Mask R-CNN) is investigated for the analysis of on-line images from an industrial crystallizer of 10 m3 operated in continuous mode with high solid concentration and overlapped particles. With detailed label points for each crystal and transfer learning technique, two models trained with 70,908 and 7,709 crystals respectively are compared for the effect of training data amount. The former model effectively segments the aggregated and overlapped crystals even at high solid concentrations. Moreover, it performs much better than the latter one and traditional multi-scale method both in terms of precision and recall, revealing the importance of large number of crystals in deep learning. Some geometrical characteristics of segmented crystals are also analyzed, involving equivalent diameter, circularity, and aspect ratio. © 2022 Chinese Society of Particuology and Institute of Process Engineering, Chinese Academy of Sciences",
+          "keywords": [],
+          "categories": [],
+          "numberOfCitations": 3,
+          "numberOfReferences": 3,
+          "volume": "Volume 74, Pages 173 - 183"
+        }
       ]
     },
     {
