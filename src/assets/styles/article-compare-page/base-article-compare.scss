@@ -1,0 +1,56 @@
+@use "../general-colors";
+
+.article-compare{
+  //height: 80%;
+  //overflow-y: scroll;
+  #article-compare__description{
+    font-family: "Poppins", sans-serif;
+    padding-left: 50px;
+    padding-top: 25px;
+  }
+
+  #article-compare__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    //align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    //height: 100%;
+
+    .article-card{
+      padding: 15px;
+      display: inline-flex;
+      width: 330px;
+      flex-direction: column;
+      border: 1.5px solid general-colors.$secondary-font-color;
+      border-radius: 10px;
+      font-family: "Poppins", sans-serif;
+      gap: 70px;
+
+      .card__title{
+        max-width: 330px;
+      }
+
+      .card__details{
+        display: inline-flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 100px;
+
+        hr{
+          color: #c2c2c2;
+        }
+
+        .details__purple{
+          color: general-colors.$primary-color;
+        }
+
+        .details__dark{
+          color: general-colors.$primary-font-color;
+        }
+      }
+    }
+  }
+}
