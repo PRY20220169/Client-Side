@@ -12,9 +12,21 @@
         </a>
       </h3>
       <a>+ Add to Collection</a>
-      <div class="btn-outline">
-        <button type="button">Compare articles</button>
+      <div v-if="isSelected" class="btn-content">
+        <button type="button"
+                @click="removeArticleFromComparePage"
+        >
+          Uncheck compare item
+        </button>
       </div>
+      <div v-else class="btn-outline">
+        <button type="button"
+                @click="addArticleToComparePage"
+        >
+          Mark item to compare
+        </button>
+      </div>
+
 
       <div id="article-journal">
         <span>{{article.journal.name}}</span>
@@ -66,6 +78,7 @@
         } as Article,
         idArticle: 0,
         isParentActive: true,
+        isSelected: false,
       }
     },
     methods:{
@@ -75,6 +88,33 @@
         this.article = JSON.parse(JSON.stringify(data));
         this.article.publicationDate = new Date(this.article.publicationDate)
         //console.log(this.article)
+        this.updateSelectedProperty()
+      },
+
+      updateSelectedProperty(){
+        const arts:Article[] = this.$store.getters.getArticles;
+
+        let aux: Article | undefined;
+        aux = arts.find(e => e.id === this.article.id)
+
+        if(typeof aux !== "undefined"){
+          this.isSelected = true;
+        }
+      },
+
+      addArticleToComparePage(){
+        //this.$store.state.article = this.article;
+        //this.isSelected = true;
+        this.$store.dispatch('addArticleToCompare',this.article);
+        this.$router.push({name:'article-compare'});
+
+      },
+
+      removeArticleFromComparePage(){
+        //this.$store.state.article = this.article;
+        this.$store.dispatch('removeArticleOfComparison',this.article);
+        this.isSelected = false;
+        //this.$router.push({name:'article-compare'});
       },
 
       getNameAuthor(length:number,position:number,author:Author){
@@ -90,6 +130,8 @@
     mounted() {
       this.isParentActive = typeof this.$refs.rv === 'undefined';
     },
+
+
     created() {
       this.getArticleById()
     }
