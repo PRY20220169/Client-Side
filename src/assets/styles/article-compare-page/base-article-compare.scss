@@ -20,14 +20,15 @@
     //height: 100%;
 
     .article-card{
-      padding: 15px;
+      padding: 20px;
       display: inline-flex;
       width: 330px;
       flex-direction: column;
       border: 1.5px solid general-colors.$secondary-font-color;
-      border-radius: 10px;
+      border-radius: 15px;
       font-family: "Poppins", sans-serif;
       gap: 70px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);;
 
       .card__title{
         max-width: 330px;
