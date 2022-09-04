@@ -85,6 +85,9 @@ button[type=button]:hover {
 #author-card .card__info .info__data .btn-outline button[type=button] {
   padding: 12px 20px;
 }
+#author-card .card__info .info__data .btn-content button[type=button] {
+  padding: 12px 20px;
+}
 #author-card .card__metrics {
   display: flex;
   flex-direction: column;

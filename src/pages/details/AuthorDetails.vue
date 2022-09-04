@@ -14,8 +14,17 @@
             >- {{ org }}
             </h4>
             <a>+ Add to collection</a>
-            <div class="btn-outline">
-              <button type="button">Compare Author</button>
+
+            <div v-if="isSelected" class="btn-content">
+              <button type="button"
+                      @click="removeAuthorFromComparePage"
+              >Unmark Author</button>
+            </div>
+
+            <div v-else class="btn-outline">
+              <button type="button"
+                      @click="addAuthorToComparePage"
+              >Compare Author</button>
             </div>
 
           </div>
@@ -110,7 +119,8 @@ export default Vue.extend({
         organizations: [] as string[],
         metrics:[] as Metric[],
         articles:[] as Article[],
-      } as Author
+      } as Author,
+      isSelected:false,
     };
   },
   methods:{
@@ -118,6 +128,8 @@ export default Vue.extend({
       this.authorId = parseInt(this.$route.params.authorId);
       const {data} = await axios.get(`http://localhost:3000/authors/${this.authorId}`)
       this.author = JSON.parse(JSON.stringify(data));
+
+      this.updateSelectedProperty()
       //console.log(this.author)
     },
     getNameAuthor(length:number,position:number,author:Author){
@@ -128,7 +140,33 @@ export default Vue.extend({
     getArticleDate(dateString:string){
       const dateArticle = new Date(dateString)
       return `${dateArticle.toLocaleString('EN', { month: 'long' }).substring(0,3)} ${dateArticle.getFullYear()}`
-    }
+    },
+
+    updateSelectedProperty(){
+      const authr:Author[] = this.$store.getters.getAuthors;
+
+      let aux: Author | undefined;
+      aux = authr.find(e => e.id === this.author.id)
+
+      if(typeof aux !== "undefined"){
+        this.isSelected = true;
+      }
+    },
+
+    addAuthorToComparePage(){
+      //this.$store.state.article = this.article;
+      //this.isSelected = true;
+      this.$store.dispatch('addAuthorToCompare',this.author);
+      this.$router.push({name:'author-compare'});
+
+    },
+
+    removeAuthorFromComparePage(){
+      //this.$store.state.article = this.article;
+      this.$store.dispatch('removeAuthorOfComparison',this.author);
+      this.isSelected = false;
+      //this.$router.push({name:'article-compare'});
+    },
   },
   created() {
     this.getAuthorById()
