@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { Article } from "@/interfaces/article.interface";
+import { Author } from "@/interfaces/author.interface";
+
 
 Vue.use(Vuex);
 
@@ -8,11 +10,14 @@ export default new Vuex.Store({
 
   state: {
     articles:[] as Article[],
-
+    authors:[] as Author[]
   },
   getters: {
     getArticles(state){
       return state.articles;
+    },
+    getAuthors(state){
+      return state.authors;
     }
   },
   mutations: {
@@ -23,6 +28,15 @@ export default new Vuex.Store({
     },
     removeArticle(state,article:Article){
       state.articles = state.articles.filter( e => {return e.id !== article.id})
+    },
+
+    addAuthor(state,author:Author){
+      if(state.authors.find(e => e.id === author.id) === undefined){
+        state.authors = [...state.authors,author]
+      }
+    },
+    removeAuthor(state,author:Author){
+      state.authors = state.authors.filter( e => {return e.id !== author.id})
     }
   },
   actions: {
@@ -31,6 +45,12 @@ export default new Vuex.Store({
     },
     removeArticleOfComparison(context, article:Article){
       context.commit('removeArticle',article)
+    },
+    addAuthorToCompare(context,author:Author){
+      context.commit('addAuthor',author)
+    },
+    removeAuthorOfComparison(context, author:Author){
+      context.commit('removeAuthor',author)
     }
   },
 
