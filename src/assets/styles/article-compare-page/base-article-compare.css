@@ -12,14 +12,15 @@
   padding-bottom: 50px;
 }
 .article-compare #article-compare__content .article-card {
-  padding: 15px;
+  padding: 20px;
   display: inline-flex;
   width: 330px;
   flex-direction: column;
   border: 1.5px solid #B9BABF;
-  border-radius: 10px;
+  border-radius: 15px;
   font-family: "Poppins", sans-serif;
   gap: 70px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 .article-compare #article-compare__content .article-card .card__title {
   max-width: 330px;
