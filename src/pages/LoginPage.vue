@@ -77,7 +77,10 @@
 <script>
 	export default {
 		data() {
-			return {};
+			return {
+				email: "",
+				password: "",
+			};
 		},
 		methods: {
 			login(email, password) {
