@@ -4,12 +4,12 @@
 			<div class="bg-main"></div>
 			<div>
 				<div class="flex flex-col items-center justify-center h-full">
-					<div class="w-1/2">
+					<div class="w-1/2 text-white">
 						<h1 class="text-3xl text-start pb-8 text-gray-dark">Sign Up</h1>
 						<div class="pb-3">
 							<label
 								for="fullName"
-								class="block mb-2 text-sm font-medium text-gray-900"
+								class="block mb-2 text-sm font-medium text-black"
 								>Full Name</label
 							>
 							<input
@@ -24,7 +24,7 @@
 						<div class="pb-3">
 							<label
 								for="email"
-								class="block mb-2 text-sm font-medium text-gray-900"
+								class="block mb-2 text-sm font-medium text-black"
 								>Email Address</label
 							>
 							<input
@@ -39,7 +39,7 @@
 						<div class="pb-3">
 							<label
 								for="password"
-								class="block mb-2 text-sm font-medium text-gray-900"
+								class="block mb-2 text-sm font-medium text-black"
 								>Password</label
 							>
 							<input
@@ -54,7 +54,7 @@
 						<div class="pb-8">
 							<label
 								for="repeatPassword"
-								class="block mb-2 text-sm font-medium text-gray-900"
+								class="block mb-2 text-sm font-medium text-black"
 								>Repeat Password</label
 							>
 							<input
@@ -74,7 +74,7 @@
 							Sign Up
 						</button>
 						<div class="flex items-center pb-6">
-							<label class="ml-2 text-sm font-medium text-gray-900"
+							<label class="ml-2 text-sm font-medium text-black"
 								>Already have an account?</label
 							>
 							<router-link
