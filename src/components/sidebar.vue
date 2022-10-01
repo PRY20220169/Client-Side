@@ -17,7 +17,7 @@
 				<li class="mb-2">
 					<router-link
 						class="flex items-center justify-center flex-col p-2 text-base font-normal text-white rounded-lg hover:bg-gray-100"
-						to="/article-compare"
+						to="/compare"
 						><Icon icon="mdi:file-compare" width="36" height="36" />
 						<span class="text-xs flex-1 whitespace-nowrap"
 							>Compare</span
