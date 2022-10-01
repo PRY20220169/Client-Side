@@ -41,14 +41,14 @@ const routes: Array<RouteConfig> = [
 
 	// Collection Routes
 	{
-		path: "/article-collection",
-		name: "article-collection",
-		component: () => import("../pages/collections/ArticleCollection.vue"),
-	},
-	{
 		path: "/list-collection",
 		name: "list-collection",
 		component: () => import("../pages/collections/ListCollection.vue"),
+	},
+	{
+		path: "/collection/:id",
+		name: "collection",
+		component: () => import("../pages/collections/ArticleCollection.vue"),
 	},
 
 	// Compare Routes
