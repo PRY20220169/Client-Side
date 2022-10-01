@@ -53,33 +53,37 @@ const routes: Array<RouteConfig> = [
 
 	// Compare Routes
 	{
-		path: "/article-compare",
-		name: "article-compare",
-		component: () => import("../pages/compare/ArticleCompare.vue"),
+		path: "/compare",
+		name: "compare",
+		component: () => import("../pages/compare/CompareParent.vue"),
+		children: [
+			{
+				path: "/compare",
+				name: "article-compare",
+				component: () => import("../pages/compare/ArticleCompare.vue"),
+			},
+			{
+				path: "/compare/author-compare",
+				name: "author-compare",
+				component: () => import("../pages/compare/AuthorCompare.vue"),
+			},
+			{
+				path: "/compare/journal-compare",
+				name: "journal-compare",
+				component: () => import("../pages/compare/JournalCompare.vue"),
+			},
+		],
 	},
-	{
-		path: "/author-compare",
-		name: "author-compare",
-		component: () => import("../pages/compare/AuthorCompare.vue"),
-	},
-	{
-		path: "/journal-compare",
-		name: "journal-compare",
-		component: () => import("../pages/compare/JournalCompare.vue"),
-	},
-
 	// Details Routes
 	{
 		path: "/article-details/:id",
 		name: "article-details",
 		component: () => import("../pages/details/ArticleDetails.vue"),
-		children: [
-			{
-				path: "author-details/:authorId",
-				name: "author-details",
-				component: () => import("../pages/details/AuthorDetails.vue"),
-			},
-		],
+	},
+	{
+		path: "/author-details/:authorId",
+		name: "author-details",
+		component: () => import("../pages/details/AuthorDetails.vue"),
 	},
 	/*{
     path: "/author-details",
