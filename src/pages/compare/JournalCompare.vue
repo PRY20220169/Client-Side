@@ -1,5 +1,5 @@
 <template>
-	<main class="journal-compare">Journal Compare</main>
+	<main class="journal-compare">Comparing 2 journals</main>
 </template>
 
 <script>

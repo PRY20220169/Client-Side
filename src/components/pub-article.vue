@@ -4,7 +4,6 @@
 			<div class="check"></div>
 			<span>{{ document.id + 1 }}</span>
 		</div>
-
 		<div class="info-article">
 			<a @click="$router.push(`/article-details/${document.id}`)">
 				<h5>{{ document.title }}</h5>
@@ -31,7 +30,6 @@
 				<a href="#">Google Scholar Lookup</a>
 			</span>
 		</div>
-
 		<div class="bb-data-article">
 			<div
 				class="metadata-art"
