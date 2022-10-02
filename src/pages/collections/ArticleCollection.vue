@@ -1,7 +1,7 @@
 <template>
 	<main class="article-collection search-results">
 		<nav id="nav-bar">
-			<h3>Colección #{{ $route.params.id }}</h3>
+			<h3>{{ $route.params.name }}</h3>
 			<div class="nav-actions"></div>
 		</nav>
 		<div id="search-results-content">
@@ -37,23 +37,22 @@
 				</div>
 			</aside>
 			<section id="content-section">
-				<pub-article
+				<list-article-collection
 					v-for="(doc, i) of filteredDocuments"
 					:key="i"
 					:document="doc"
-				></pub-article>
+				></list-article-collection>
 			</section>
 		</div>
 	</main>
 </template>
 
 <script lang="ts">
-	import PubArticle from "@/components/pub-article.vue";
+	import ListArticleCollection from "@/components/list-article-collection.vue";
 	import axios from "axios";
-
 	import { Article } from "@/interfaces/article.interface";
 	export default {
-		components: { PubArticle },
+		components: { ListArticleCollection },
 		data() {
 			return {
 				filters: [
@@ -96,9 +95,13 @@
 			};
 		},
 		methods: {
-			async getDocuments() {
-				const { data } = await axios.get("http://localhost:3000/article");
+			async getArticlesFromCollection() {
+				let { data } = await axios.get(
+					`${process.env.VUE_APP_API_URL}/collections/${this.$route.params.id}`
+				);
 
+				// TODO: Remove this when API is implemented
+				data = data.articles;
 				this.documents = JSON.parse(JSON.stringify(data));
 				this.filteredDocuments = JSON.parse(JSON.stringify(data));
 
@@ -112,10 +115,8 @@
 			},
 			filterDocuments() {
 				const { years, types, quartiles } = this.filterOptions;
-
 				this.filteredDocuments = this.documents.filter((article) => {
 					const quartile = article.journal.metrics[0].score; //osea sy quartil
-
 					return (
 						(years.length > 0
 							? years
@@ -191,7 +192,7 @@
 			},
 		},
 		created() {
-			this.getDocuments();
+			this.getArticlesFromCollection();
 		},
 		mounted() {
 			this.qsearch = this.$route.query.q as string;
