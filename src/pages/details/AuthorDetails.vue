@@ -148,19 +148,12 @@
 					this.isSelected = true;
 				}
 			},
-
 			addAuthorToComparePage() {
-				//this.$store.state.article = this.article;
-				//this.isSelected = true;
 				this.$store.dispatch("addAuthorToCompare", this.author);
-				this.$router.push({ name: "author-compare" });
 			},
-
 			removeAuthorFromComparePage() {
-				//this.$store.state.article = this.article;
 				this.$store.dispatch("removeAuthorOfComparison", this.author);
 				this.isSelected = false;
-				//this.$router.push({name:'article-compare'});
 			},
 		},
 		created() {
