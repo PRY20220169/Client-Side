@@ -7,6 +7,16 @@ import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
 
+const getDefaultState = () => {
+	return {
+		articles: [] as Article[],
+		authors: [] as Author[],
+		journals: [] as Journal[],
+		isLogged: false,
+		token: "",
+	};
+};
+
 export default new Vuex.Store({
 	plugins: [
 		createPersistedState({
@@ -18,6 +28,8 @@ export default new Vuex.Store({
 		articles: [] as Article[],
 		authors: [] as Author[],
 		journals: [] as Journal[],
+		isLogged: false,
+		token: "",
 	},
 	getters: {
 		getArticles(state) {
@@ -61,10 +73,19 @@ export default new Vuex.Store({
 				return e.id !== journal.id;
 			});
 		},
+		login(state, token: string) {
+			state.isLogged = true;
+			state.token = token;
+			console.log("succesfully logged in");
+			console.log(state.token);
+		},
+		logout(state) {
+			Object.assign(state, getDefaultState());
+			sessionStorage.clear();
+		},
 	},
 	actions: {
 		addArticleToCompare(context, article: Article) {
-			console.log(article);
 			context.commit("addArticle", article);
 		},
 		removeArticleOfComparison(context, article: Article) {
@@ -81,6 +102,12 @@ export default new Vuex.Store({
 		},
 		removeJournalOfComparison(context, journal: Journal) {
 			context.commit("removeJournal", journal);
+		},
+		login(context, token: string) {
+			context.commit("login", token);
+		},
+		logout(context) {
+			context.commit("logout");
 		},
 	},
 	modules: {},

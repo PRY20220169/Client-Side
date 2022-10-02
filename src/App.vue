@@ -1,6 +1,11 @@
 <template>
 	<v-app id="app" class="h-screen flex flex-col">
-		<header-bar v-if="!$route.meta.hideNavbar"></header-bar>
+		<header-bar
+			v-if="!$route.meta.hideNavbar && !this.$store.state.isLogged"
+		></header-bar>
+		<logged-header-bar
+			v-if="!$route.meta.hideNavbar && this.$store.state.isLogged"
+		></logged-header-bar>
 		<div class="flex h-full max-h-full">
 			<sidebar
 				class="flex-none h-full"
@@ -16,15 +21,15 @@
 		padding: 0;
 		margin: 0;
 	}
-
 	#app {
 		height: 100vh;
 	}
 </style>
 <script>
 	import HeaderBar from "@/components/header-bar";
-	import Sidebar from "./components/sidebar.vue";
+	import LoggedHeaderBar from "@/components/header-bar-logged";
+	import Sidebar from "@/components/sidebar.vue";
 	export default {
-		components: { HeaderBar, Sidebar },
+		components: { HeaderBar, Sidebar, LoggedHeaderBar },
 	};
 </script>
