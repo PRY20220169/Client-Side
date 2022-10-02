@@ -144,7 +144,6 @@
 			},
 			addArticleToComparePage() {
 				this.$store.dispatch("addArticleToCompare", this.article);
-				this.$router.push({ name: "article-compare" });
 			},
 			removeArticleFromComparePage() {
 				this.$store.dispatch("removeArticleOfComparison", this.article);

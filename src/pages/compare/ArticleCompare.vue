@@ -23,7 +23,7 @@
 					</h3>
 					<hr />
 					<h3 class="details__dark">
-						Año de publicación: {{ art.publicationDate.getFullYear() }}
+						Año de publicación: {{ art.publicationDate }}
 					</h3>
 					<hr />
 					<h3 class="details__purple">Journal: {{ art.journal.name }}</h3>
@@ -43,7 +43,6 @@
 				articles: [] as Article[],
 			};
 		},
-
 		created() {
 			this.articles = this.$store.getters.getArticles;
 		},

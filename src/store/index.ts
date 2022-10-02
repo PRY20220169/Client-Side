@@ -3,10 +3,17 @@ import Vuex from "vuex";
 import { Article } from "@/interfaces/article.interface";
 import { Author } from "@/interfaces/author.interface";
 import { Journal } from "@/interfaces/journal.interface";
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+	plugins: [
+		createPersistedState({
+			// paths: ["articles", "authors", "journals"],
+			storage: window.sessionStorage,
+		}),
+	],
 	state: {
 		articles: [] as Article[],
 		authors: [] as Author[],
@@ -57,6 +64,7 @@ export default new Vuex.Store({
 	},
 	actions: {
 		addArticleToCompare(context, article: Article) {
+			console.log(article);
 			context.commit("addArticle", article);
 		},
 		removeArticleOfComparison(context, article: Article) {
