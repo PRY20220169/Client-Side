@@ -84,7 +84,9 @@
 		},
 		methods: {
 			login(email, password) {
-				console.log(email + password);
+				this.$store.dispatch("login", {
+					token: "11arstxcvarstarswf21245689tar",
+				});
 				this.$router.push({ name: "home" });
 			},
 		},
