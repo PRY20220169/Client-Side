@@ -15,7 +15,6 @@
 						<h4 v-for="(org, i) of author.organizations" :key="i">
 							- {{ org }}
 						</h4>
-						<a>+ Add to collection</a>
 						<div v-if="isSelected" class="btn-content">
 							<button type="button" @click="removeAuthorFromComparePage">
 								Unmark Author
@@ -119,7 +118,7 @@
 			async getAuthorById() {
 				this.authorId = parseInt(this.$route.params.authorId);
 				const { data } = await axios.get(
-					`http://localhost:3000/authors/${this.authorId}`
+					`${process.env.VUE_APP_API_URL}/authors/${this.authorId}`
 				);
 				this.author = JSON.parse(JSON.stringify(data));
 

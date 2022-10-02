@@ -25,6 +25,7 @@
 			<p>
 				{{ document.description }}
 			</p>
+			<a @click="removeFromCollection({})">- Remove From Collection</a>
 		</div>
 		<div class="bb-data-article">
 			<div
@@ -51,9 +52,10 @@
 	import { Article } from "@/interfaces/article.interface";
 	import { PropType } from "vue";
 	import { Author } from "@/interfaces/author.interface";
+	import axios from "axios";
 
 	export default {
-		name: "pub-article",
+		name: "list-article-collection",
 		props: {
 			document: {
 				type: Object as PropType<Article>,
@@ -65,6 +67,13 @@
 				if (length === position)
 					return `and ${author.lastName}, ${author.firstName.substring(0, 1)}.`;
 				return `${author.lastName}, ${author.firstName.substring(0, 1)}.`;
+			},
+			async removeFromCollection() {
+				// TODO: Verify if delete works with this endpoint: /collection/collectionId/article/articleId
+				let { data } = await axios.delete(
+					`${process.env.VUE_APP_API_URL}/collections/${this.$route.params.id}/articles/${this.document.id}`
+				);
+				// TODO: Watcher for updating the ArticleCollection.vue on remove
 			},
 		},
 	};

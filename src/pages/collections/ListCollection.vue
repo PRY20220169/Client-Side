@@ -63,6 +63,7 @@
 </template>
 
 <script>
+	import axios from "axios";
 	import router from "@/router";
 	export default {
 		watch: {
@@ -102,49 +103,49 @@
 						value: "actions",
 					},
 				],
-				collections: [
-					{
-						id: 1,
-						name: "Bibliometrics Research - UPC",
-						lastModified: "15-09-2022",
-						numberOfArticles: 10,
-					},
-					{
-						id: 2,
-						name: "Academic Research - PUCP",
-						lastModified: "10-09-2022",
-						numberOfArticles: 15,
-					},
-					{
-						id: 3,
-						name: "Conference Paper IEEE",
-						lastModified: "22-10-2022",
-						numberOfArticles: 30,
-					},
-				],
+				collections: [],
 			};
 		},
+		created() {
+			this.getCollections();
+		},
 		methods: {
+			async getCollections() {
+				const { data } = await axios.get(
+					`${process.env.VUE_APP_API_URL}/collections`
+				);
+				this.collections = data;
+			},
 			openCollection(item) {
-				router.push({ name: "collection", params: { id: item.id } });
+				router.push({
+					name: "collection",
+					params: { id: item.id, name: item.name },
+				});
 			},
 			editItem(item) {
 				//TODO: Send PUT request to API
+				console.log(item);
 			},
-			createCollection() {
-				//TODO: Send POST request to API
+			async createCollection() {
 				var utc = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
-				this.collections.unshift({
-					name: "New Collection",
-					lastModified: utc.toString(),
-					numberOfArticles: 0,
-				});
-			},
-			deleteCollections() {
-				//TODO: Send DELETE request to API
-				this.collections = this.collections.filter(
-					(item) => !this.selected.includes(item)
+				const { data } = await axios.post(
+					`${process.env.VUE_APP_API_URL}/collections`,
+					{
+						name: "New Collection",
+						lastModified: utc.toString(),
+						numberOfArticles: 0,
+					}
 				);
+				this.getCollections();
+			},
+			async deleteCollections() {
+				for (const selectedItem in this.selected) {
+					let id = this.selected[selectedItem].id;
+					const contents = await axios.delete(
+						`${process.env.VUE_APP_API_URL}/collections/${id}`
+					);
+				}
+				await this.getCollections();
 			},
 		},
 	};
