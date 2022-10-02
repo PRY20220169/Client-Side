@@ -1,5 +1,5 @@
 <template>
-	<div id="app" class="h-screen flex flex-col">
+	<v-app id="app" class="h-screen flex flex-col">
 		<header-bar v-if="!$route.meta.hideNavbar"></header-bar>
 		<div class="flex h-full max-h-full">
 			<sidebar
@@ -8,7 +8,7 @@
 			></sidebar>
 			<router-view class="w-full h-full" />
 		</div>
-	</div>
+	</v-app>
 </template>
 
 <style lang="scss">
