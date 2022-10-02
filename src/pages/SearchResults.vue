@@ -116,7 +116,9 @@
 		},
 		methods: {
 			async getDocuments() {
-				const { data } = await axios.get("http://localhost:3000/article");
+				const { data } = await axios.get(
+					`${process.env.VUE_APP_API_URL}/article`
+				);
 
 				this.documents = JSON.parse(JSON.stringify(data));
 				this.filteredDocuments = JSON.parse(JSON.stringify(data));
@@ -131,14 +133,9 @@
 			},
 
 			filterDocuments() {
-				/*this.filterState2.years = this.filterState[0].options;
-      this.filterState2.types = this.filterState[1].options;
-      this.filterState2.quartiles = this.filterState[2].options;*/
 				const { years, types, quartiles } = this.filterOptions;
-
 				this.filteredDocuments = this.documents.filter((article) => {
-					const quartile = article.journal.metrics[0].score; //osea sy quartil
-
+					const quartile = article.journal.metrics[0].score;
 					return (
 						(years.length > 0
 							? years
@@ -164,19 +161,6 @@
 					);
 				});
 			},
-
-			/*filterDocumentsByQuartile() {
-      const quartile = this.filterState[2].options;
-      if (quartile.length > 0) {
-        this.filteredDocuments = this.documents.filter((el) => {
-          return quartile.map((sel) => {
-            return sel;
-          }).includes(el.journal.quartile);
-        });
-      }
-
-    },*/
-
 			handlerFilterOptions(category: string, option: string, checked: boolean) {
 				if (checked) {
 					this.removeFilterOption(category, option);

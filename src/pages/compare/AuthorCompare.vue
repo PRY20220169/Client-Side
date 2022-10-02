@@ -11,14 +11,12 @@
 							src="https://storage.googleapis.com/www-paredro-com/uploads/2015/08/shutterstock_188419790-e1439475344980.jpg"
 							alt="profile image"
 						/>
-						<!--<img src="https://www.uprm.edu/natatorio/wp-content/uploads/sites/142/2018/11/profile-placeholder.png" alt="image profile">-->
 					</div>
 					<div class="info__data">
 						<h2>{{ author.lastName }}, {{ author.firstName }}</h2>
 						<h4 v-for="(org, i) of author.organizations" :key="i">
 							- {{ org }}
 						</h4>
-						<a>+ Add to collection</a>
 					</div>
 				</div>
 				<div class="card__metrics">
