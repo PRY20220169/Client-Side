@@ -10,23 +10,23 @@
 				</div>
 				<div class="card__details">
 					<hr />
-					<h3 class="details__purple">
-						Cuartil: {{ art.journal.metrics[0].score }}
-					</h3>
+					<h3 class="text-main">Cuartil: {{ art.journal.metrics[0].score }}</h3>
 					<hr />
-					<h3 class="details__dark">
+					<h3 class="">
 						Journal Inpact Factor: {{ art.journal.metrics[1].score }}
 					</h3>
 					<hr />
-					<h3 class="details__purple">
-						H-Index: {{ art.journal.metrics[2].score }}
-					</h3>
+					<h3 class="text-main">H-Index: {{ art.journal.metrics[2].score }}</h3>
 					<hr />
-					<h3 class="details__dark">
-						Año de publicación: {{ art.publicationDate }}
-					</h3>
+					<h3 class="">Año de publicación: {{ art.publicationDate }}</h3>
 					<hr />
-					<h3 class="details__purple">Journal: {{ art.journal.name }}</h3>
+					<h3 class="text-main">Journal: {{ art.journal.name }}</h3>
+					<div
+						class="w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-secondary hover:bg-white hover:text-secondary transition ease-in-out mx-auto mt-5"
+						@click="removeArticleFromComparePage(art)"
+					>
+						Remove Article
+					</div>
 				</div>
 			</div>
 		</div>
@@ -40,8 +40,14 @@
 		name: "article-compare",
 		data() {
 			return {
-				articles: [] as Article[],
+				articles: [],
 			};
+		},
+		methods: {
+			removeArticleFromComparePage(art: any) {
+				this.$store.dispatch("removeArticleOfComparison", art);
+				this.articles = this.$store.getters.getArticles;
+			},
 		},
 		created() {
 			this.articles = this.$store.getters.getArticles;
