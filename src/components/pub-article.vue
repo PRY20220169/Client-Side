@@ -20,7 +20,10 @@
 			<span
 				>{{ document.publicationDate.toLocaleString("EN", { month: "long" }) }}
 				{{ document.publicationDate.getFullYear() }} |
-				<a href="#">{{ document.journal.name }}</a> {{ document.volume }}</span
+				<a @click="$router.push(`/journal-details/${document.journal.id}`)">{{
+					document.journal.name
+				}}</a>
+				{{ document.volume }}</span
 			>
 			<p>
 				{{ document.description }}

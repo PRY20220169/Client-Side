@@ -55,7 +55,11 @@
 				</button>
 			</div>
 			<div id="article-journal">
-				<span>{{ article.journal.name }}</span>
+				<a
+					class="text-2xl"
+					@click="$router.push(`/journal-details/${article.journal.id}`)"
+					>{{ article.journal.name }}</a
+				>
 				<div id="journal-details">
 					<div>
 						Volume:
