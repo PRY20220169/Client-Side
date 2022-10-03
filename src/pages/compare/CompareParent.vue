@@ -5,19 +5,19 @@
 				class="hover:cursor-pointer text-lg font-medium underline"
 				exact-active-class="text-main"
 				to="/compare"
-				>Article</router-link
+				>Articles</router-link
 			>
 			<router-link
 				class="hover:cursor-pointer text-lg font-medium underline"
 				exact-active-class="text-main"
 				to="/compare/author-compare"
-				>Author</router-link
+				>Authors</router-link
 			>
 			<router-link
 				class="hover:cursor-pointer text-lg font-medium underline"
 				exact-active-class="text-main"
 				to="/compare/journal-compare"
-				>Journal</router-link
+				>Journals</router-link
 			>
 		</nav>
 		<router-view></router-view>
