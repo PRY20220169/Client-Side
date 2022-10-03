@@ -123,13 +123,11 @@
 				this.author = JSON.parse(JSON.stringify(data));
 
 				this.updateSelectedProperty();
-				//console.log(this.author)
 			},
 			getNameAuthor(length: number, position: number, author: Author) {
 				if (length === position)
 					return `${author.lastName}, ${author.firstName}`;
 				return `${author.lastName}, ${author.firstName};`;
-				//{{author.lastName}},{{author.firstName.substring(0,1)}}.
 			},
 			getArticleDate(dateString: string) {
 				const dateArticle = new Date(dateString);
@@ -137,7 +135,6 @@
 					.toLocaleString("EN", { month: "long" })
 					.substring(0, 3)} ${dateArticle.getFullYear()}`;
 			},
-
 			updateSelectedProperty() {
 				const authr: Author[] = this.$store.getters.getAuthors;
 
@@ -149,7 +146,12 @@
 				}
 			},
 			addAuthorToComparePage() {
-				this.$store.dispatch("addAuthorToCompare", this.author);
+				if (this.$store.getters.getAuthors.length < 2) {
+					this.$store.dispatch("addAuthorToCompare", this.author);
+					this.isSelected = true;
+				} else {
+					alert("Cannot add more than 2 authors");
+				}
 			},
 			removeAuthorFromComparePage() {
 				this.$store.dispatch("removeAuthorOfComparison", this.author);
