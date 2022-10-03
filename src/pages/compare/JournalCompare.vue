@@ -23,6 +23,12 @@
 						{{ metric.score }}
 					</p>
 				</li>
+				<div
+					class="w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-secondary hover:bg-white hover:text-secondary transition ease-in-out mb-6 mx-auto"
+					@click="removeJournalFromComparePage(journal)"
+				>
+					Remove Journal
+				</div>
 			</div>
 		</div>
 	</main>
@@ -36,6 +42,12 @@
 			return {
 				journals: [],
 			};
+		},
+		methods: {
+			removeJournalFromComparePage(journal: any) {
+				this.$store.dispatch("removeJournalOfComparison", journal);
+				this.journals = this.$store.getters.getJournals;
+			},
 		},
 		created() {
 			this.journals = this.$store.getters.getJournals;
