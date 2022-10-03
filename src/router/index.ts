@@ -85,14 +85,8 @@ const routes: Array<RouteConfig> = [
 		name: "author-details",
 		component: () => import("../pages/details/AuthorDetails.vue"),
 	},
-	/*{
-    path: "/author-details",
-    name: "author-details",
-    component: () =>
-      import("../pages/details/AuthorDetails.vue"),
-  },*/
 	{
-		path: "/journal-details",
+		path: "/journal-details/:journalId",
 		name: "journal-details",
 		component: () => import("../pages/details/JournalDetails.vue"),
 	},

@@ -43,9 +43,9 @@
 			],
 			"publicationDate": "2022-03-01",
 			"typeArticle": "Article",
-			"journalId": 0,
+			"journalId": 1,
 			"journal": {
-				"id": 0,
+				"id": 1,
 				"name": "Particuology",
 				"metrics": [
 					{
@@ -121,9 +121,9 @@
 			],
 			"publicationDate": "2021-03-01",
 			"typeArticle": "Article",
-			"journalId": 0,
+			"journalId": 2,
 			"journal": {
-				"id": 0,
+				"id": 2,
 				"name": "ASCE-ASME",
 				"metrics": [
 					{
@@ -190,9 +190,9 @@
 			],
 			"publicationDate": "2020-12-07",
 			"typeArticle": "Conference",
-			"journalId": 0,
+			"journalId": 3,
 			"journal": {
-				"id": 0,
+				"id": 3,
 				"name": "Proceedings of the Coastal Engineering Conference",
 				"metrics": [
 					{
@@ -1120,6 +1120,89 @@
 			"numberOfArticles": 0,
 			"id": 2,
 			"articles": []
+		}
+	],
+	"journals": [
+		{
+			"id": 1,
+			"name": "Particuology",
+			"metrics": [
+				{
+					"id": 1,
+					"name": "Category Quartile",
+					"score": "Q2",
+					"year": 2021,
+					"source": "SJR"
+				},
+				{
+					"id": 1,
+					"name": "Journal Impact Factor",
+					"score": "3.238",
+					"year": 2021,
+					"source": "SJR"
+				},
+				{
+					"id": 2,
+					"name": "H-Index",
+					"score": "116",
+					"year": 2021,
+					"source": "SJR"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "ASCE-ASME",
+			"metrics": [
+				{
+					"id": 2,
+					"name": "Category Quartile",
+					"score": "Q2",
+					"year": 2021,
+					"source": "SJR"
+				},
+				{
+					"id": 1,
+					"name": "Journal Impact Factor",
+					"score": "3.211",
+					"year": 2021,
+					"source": "SJR"
+				},
+				{
+					"id": 2,
+					"name": "H-Index",
+					"score": "14",
+					"year": 2021,
+					"source": "SJR"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Proceedings of the Coastal Engineering Conference",
+			"metrics": [
+				{
+					"id": 0,
+					"name": "Category Quartile",
+					"score": "Q1",
+					"year": 2021,
+					"source": "SJR"
+				},
+				{
+					"id": 1,
+					"name": "Journal Impact Factor",
+					"score": "5.222",
+					"year": 2021,
+					"source": "SJR"
+				},
+				{
+					"id": 2,
+					"name": "H-Index",
+					"score": "30",
+					"year": 2021,
+					"source": "SJR"
+				}
+			]
 		}
 	]
 }
