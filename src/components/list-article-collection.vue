@@ -79,6 +79,6 @@
 	};
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 	@import "../assets/styles/search-results-page/articles-search-rs";
 </style>

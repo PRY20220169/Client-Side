@@ -66,7 +66,7 @@
 	});
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 	@import "../../assets/styles/author-details-page/author-card";
 
 	.author-compare {

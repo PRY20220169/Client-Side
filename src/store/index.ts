@@ -68,7 +68,7 @@ export default new Vuex.Store({
 				state.journals = [...state.journals, journal];
 			}
 		},
-		removeJournals(state, journal: Journal) {
+		removeJournal(state, journal: Journal) {
 			state.journals = state.journals.filter((e) => {
 				return e.id !== journal.id;
 			});
