@@ -223,6 +223,6 @@
 	});
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 	@import "../assets/styles/search-results-page/base-search-rs-page";
 </style>

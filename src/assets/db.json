@@ -1135,14 +1135,14 @@
 					"source": "SJR"
 				},
 				{
-					"id": 1,
+					"id": 2,
 					"name": "Journal Impact Factor",
 					"score": "3.238",
 					"year": 2021,
 					"source": "SJR"
 				},
 				{
-					"id": 2,
+					"id": 3,
 					"name": "H-Index",
 					"score": "116",
 					"year": 2021,
@@ -1155,21 +1155,21 @@
 			"name": "ASCE-ASME",
 			"metrics": [
 				{
-					"id": 2,
+					"id": 4,
 					"name": "Category Quartile",
 					"score": "Q2",
 					"year": 2021,
 					"source": "SJR"
 				},
 				{
-					"id": 1,
+					"id": 5,
 					"name": "Journal Impact Factor",
 					"score": "3.211",
 					"year": 2021,
 					"source": "SJR"
 				},
 				{
-					"id": 2,
+					"id": 6,
 					"name": "H-Index",
 					"score": "14",
 					"year": 2021,
@@ -1182,21 +1182,21 @@
 			"name": "Proceedings of the Coastal Engineering Conference",
 			"metrics": [
 				{
-					"id": 0,
+					"id": 7,
 					"name": "Category Quartile",
 					"score": "Q1",
 					"year": 2021,
 					"source": "SJR"
 				},
 				{
-					"id": 1,
+					"id": 8,
 					"name": "Journal Impact Factor",
 					"score": "5.222",
 					"year": 2021,
 					"source": "SJR"
 				},
 				{
-					"id": 2,
+					"id": 9,
 					"name": "H-Index",
 					"score": "30",
 					"year": 2021,

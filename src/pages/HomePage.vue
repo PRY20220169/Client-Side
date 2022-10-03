@@ -78,6 +78,6 @@
 	};
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 	@import "../assets/styles/home-page/base-home-page";
 </style>
