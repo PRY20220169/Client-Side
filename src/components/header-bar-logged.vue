@@ -1,7 +1,12 @@
 <template>
 	<header id="header-bar">
 		<div id="title">
-			<h2>PRY20220169</h2>
+			<h2
+				class="hover:cursor-pointer hover:brightness-90 transition ease-in-out"
+				@click="$router.push('/')"
+			>
+				PRY20220169
+			</h2>
 		</div>
 		<div id="account-actions">
 			<div class="btn-outline">

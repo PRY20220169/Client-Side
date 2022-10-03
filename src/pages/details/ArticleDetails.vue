@@ -49,12 +49,11 @@
 					Uncheck compare item
 				</button>
 			</div>
-			<div v-else class="btn-outline">
+			<div v-if="!isSelected" class="btn-outline">
 				<button type="button" @click="addArticleToComparePage">
 					Mark item to compare
 				</button>
 			</div>
-
 			<div id="article-journal">
 				<span>{{ article.journal.name }}</span>
 				<div id="journal-details">
@@ -96,7 +95,6 @@
 
 	export default Vue.extend({
 		name: "article-details",
-
 		data() {
 			return {
 				dialog: false,
@@ -143,7 +141,12 @@
 				}
 			},
 			addArticleToComparePage() {
-				this.$store.dispatch("addArticleToCompare", this.article);
+				if (this.$store.getters.getArticles.length < 2) {
+					this.$store.dispatch("addArticleToCompare", this.article);
+					this.isSelected = true;
+				} else {
+					alert("Cannot add more than 2 articles");
+				}
 			},
 			removeArticleFromComparePage() {
 				this.$store.dispatch("removeArticleOfComparison", this.article);
