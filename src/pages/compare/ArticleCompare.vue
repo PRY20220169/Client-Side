@@ -49,6 +49,6 @@
 	});
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 	@import "../../assets/styles/article-compare-page/base-article-compare.scss";
 </style>

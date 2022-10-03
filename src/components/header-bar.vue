@@ -3,7 +3,7 @@
 		<div id="title">
 			<h2
 				class="hover:cursor-pointer hover:brightness-90 transition ease-in-out"
-				@click="$router.push('/')"
+				@click="goToHome()"
 			>
 				PRY20220169
 			</h2>
@@ -22,9 +22,16 @@
 <script>
 	export default {
 		name: "header-bar",
+		methods: {
+			goToHome() {
+				if (this.$route.path !== "/") {
+					this.$router.push("/");
+				}
+			},
+		},
 	};
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 	@import "../assets/styles/header-bar/base-header-bar";
 </style>

@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.v-application {
+	font-family: "Poppins", sans-serif !important;
+}
+
+.v-application .title {
+	font-family: "Poppins", sans-serif !important;
+}
