@@ -84,8 +84,12 @@
 				}
 			},
 			addJournalToComparePage() {
-				this.$store.dispatch("addJournalToCompare", this.journal);
-				this.isSelected = true;
+				if (this.$store.getters.getJournals.length < 2) {
+					this.$store.dispatch("addJournalToCompare", this.journal);
+					this.isSelected = true;
+				} else {
+					alert("Cannot add more than 2 journals");
+				}
 			},
 			removeJournalFromComparePage() {
 				this.$store.dispatch("removeJournalOfComparison", this.journal);

@@ -1,10 +1,15 @@
 <template>
 	<main class="author-compare">
-		<h3 id="author-compare__description">
+		<h3 id="author-compare__description" class="mb-10">
 			Comparing {{ authors.length }} authors
 		</h3>
-		<div id="author-compare__content">
-			<div id="author-card" v-for="(author, i) of authors" :key="i">
+		<div id="" class="flex flex-row justify-center space-x-10">
+			<div
+				id="author-card"
+				v-for="(author, i) of authors"
+				:key="i"
+				class="w-1 mb-10"
+			>
 				<div class="card__info">
 					<div class="info__picture">
 						<img
@@ -18,6 +23,12 @@
 							- {{ org }}
 						</h4>
 					</div>
+				</div>
+				<div
+					class="w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-secondary hover:bg-white hover:text-secondary transition ease-in-out mx-auto mt-5"
+					@click="removeAuthorFromComparePage(author)"
+				>
+					Remove Author
 				</div>
 				<div class="card__metrics">
 					<h3 class="metrics__title">Metrics</h3>
@@ -59,7 +70,12 @@
 				authors: [] as Author[],
 			};
 		},
-
+		methods: {
+			removeAuthorFromComparePage(author: any) {
+				this.$store.dispatch("removeAuthorOfComparison", author);
+				this.authors = this.$store.getters.getAuthors;
+			},
+		},
 		created() {
 			this.authors = this.$store.getters.getAuthors;
 		},

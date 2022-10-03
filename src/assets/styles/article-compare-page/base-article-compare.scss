@@ -1,57 +1,56 @@
 @use "../general-colors";
 
-.article-compare{
-  //height: 80%;
-  //overflow-y: scroll;
-  #article-compare__description{
-    font-family: "Poppins", sans-serif;
-    padding-left: 50px;
-    padding-top: 25px;
-  }
+.article-compare {
+	//height: 80%;
+	//overflow-y: scroll;
+	#article-compare__description {
+		font-family: "Poppins", sans-serif;
+		padding-left: 50px;
+		padding-top: 25px;
+	}
 
-  #article-compare__content{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    //align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    //height: 100%;
+	#article-compare__content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 40px;
+		//align-items: center;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		//height: 100%;
 
-    .article-card{
-      padding: 20px;
-      display: inline-flex;
-      width: 330px;
-      flex-direction: column;
-      border: 1.5px solid general-colors.$secondary-font-color;
-      border-radius: 15px;
-      font-family: "Poppins", sans-serif;
-      gap: 70px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);;
+		.article-card {
+			padding: 20px;
+			display: inline-flex;
+			width: 330px;
+			flex-direction: column;
+			border: 1.5px solid general-colors.$secondary-font-color;
+			border-radius: 15px;
+			font-family: "Poppins", sans-serif;
+			gap: 20px;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
-      .card__title{
-        max-width: 330px;
-      }
+			.card__title {
+				max-width: 330px;
+			}
 
-      .card__details{
-        display: inline-flex;
-        flex-direction: column;
-        gap: 20px;
-        padding-bottom: 100px;
+			.card__details {
+				display: inline-flex;
+				flex-direction: column;
+				gap: 20px;
 
-        hr{
-          color: #c2c2c2;
-        }
+				hr {
+					color: #c2c2c2;
+				}
 
-        .details__purple{
-          color: general-colors.$primary-color;
-        }
+				.details__purple {
+					color: general-colors.$primary-color;
+				}
 
-        .details__dark{
-          color: general-colors.$primary-font-color;
-        }
-      }
-    }
-  }
+				.details__dark {
+					color: general-colors.$primary-font-color;
+				}
+			}
+		}
+	}
 }
