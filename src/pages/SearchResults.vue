@@ -13,10 +13,7 @@
 				</div>
 				<div id="search-buttons">
 					<div class="btn-content">
-						<button type="button">Advanced Search</button>
-					</div>
-					<div class="btn-content" @click="filterDocuments">
-						<button type="button">Edit filters</button>
+						<button type="button" @click="updateSearch()">Update Search</button>
 					</div>
 				</div>
 			</div>
@@ -54,11 +51,16 @@
 				</div>
 			</aside>
 			<section id="content-section">
-				<pub-article
-					v-for="(doc, i) of filteredDocuments"
-					:key="i"
-					:document="doc"
-				></pub-article>
+				<div v-if="filteredDocuments.length > 0" class="space-y-5">
+					<pub-article
+						v-for="(doc, i) of filteredDocuments"
+						:key="i"
+						:document="doc"
+					></pub-article>
+				</div>
+				<div v-if="filteredDocuments.length == 0">
+					<h3>No articles found</h3>
+				</div>
 			</section>
 		</div>
 	</main>
@@ -86,15 +88,15 @@
 							{ name: "2019", checked: false },
 						],
 					},
-					{
-						title: "Tipo de documento",
-						categoryType: "Type",
-						options: [
-							{ name: "Article", checked: false },
-							{ name: "Conference", checked: false },
-							{ name: "Composium", checked: false },
-						],
-					},
+					// {
+					// 	title: "Tipo de documento",
+					// 	categoryType: "Type",
+					// 	options: [
+					// 		{ name: "Article", checked: false },
+					// 		{ name: "Conference", checked: false },
+					// 		{ name: "Composium", checked: false },
+					// 	],
+					// },
 					{
 						title: "Quartil",
 						categoryType: "Quartile",
@@ -112,26 +114,38 @@
 					quartiles: [] as string[],
 				},
 				qsearch: "",
+				parameters: [] as string[],
 			};
 		},
 		methods: {
+			async updateSearch() {
+				this.getDocuments();
+			},
 			async getDocuments() {
-				const { data } = await axios.get(
-					`${process.env.VUE_APP_API_URL}/api/articles`
+				this.parameters = this.qsearch.split(",");
+				const articlesByKeyword = await axios.post(
+					`${process.env.VUE_APP_API_URL}/api/articles/search/keywords`,
+					{ keywords: this.parameters }
 				);
-				console.log(data);
-				this.documents = JSON.parse(JSON.stringify(data));
-				this.filteredDocuments = JSON.parse(JSON.stringify(data));
+				const articlesByCategory = await axios.post(
+					`${process.env.VUE_APP_API_URL}/api/articles/search/categories`,
+					{ categories: this.parameters }
+				);
+				this.documents = [];
+				this.documents = [articlesByKeyword.data.content];
+				this.documents = [...articlesByCategory.data.content];
+				this.documents.filter(
+					(v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+				);
 
+				this.filteredDocuments = this.documents;
 				this.documents.map((item) => {
 					item.publicationDate = new Date(item.publicationDate);
 				});
-
 				this.filteredDocuments.map((item) => {
 					item.publicationDate = new Date(item.publicationDate);
 				});
 			},
-
 			filterDocuments() {
 				const { years, types, quartiles } = this.filterOptions;
 				this.filteredDocuments = this.documents.filter((article) => {
@@ -185,7 +199,6 @@
 						this.filterOptions.quartiles.push(option);
 						break;
 				}
-				console.log(this.filterOptions.years);
 			},
 			// eslint-disable-next-line
 			removeFilterOption(category: string, option: any) {
@@ -215,6 +228,7 @@
 			},
 		},
 		created() {
+			this.qsearch = this.$route.query.q as string;
 			this.getDocuments();
 		},
 		mounted() {
