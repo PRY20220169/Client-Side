@@ -14,6 +14,7 @@ const getDefaultState = () => {
 		journals: [] as Journal[],
 		isLogged: false,
 		token: "",
+		userId: null,
 	};
 };
 
@@ -30,6 +31,7 @@ export default new Vuex.Store({
 		journals: [] as Journal[],
 		isLogged: false,
 		token: "",
+		userId: null,
 	},
 	getters: {
 		getArticles(state) {
@@ -73,11 +75,10 @@ export default new Vuex.Store({
 				return e.id !== journal.id;
 			});
 		},
-		login(state, token: string) {
+		login(state: any, loginInfo: any) {
 			state.isLogged = true;
-			state.token = token;
-			console.log("succesfully logged in");
-			console.log(state.token);
+			state.token = loginInfo.token;
+			state.userId = loginInfo.userId;
 		},
 		logout(state) {
 			Object.assign(state, getDefaultState());
@@ -103,8 +104,8 @@ export default new Vuex.Store({
 		removeJournalOfComparison(context, journal: Journal) {
 			context.commit("removeJournal", journal);
 		},
-		login(context, token: string) {
-			context.commit("login", token);
+		login(context: any, loginInfo: any) {
+			context.commit("login", loginInfo);
 		},
 		logout(context) {
 			context.commit("logout");
