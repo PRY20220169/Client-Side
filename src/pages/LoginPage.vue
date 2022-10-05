@@ -75,19 +75,37 @@
 </template>
 
 <script>
+	import axios from "axios";
 	export default {
 		data() {
 			return {
 				email: "",
 				password: "",
+				token: "",
+				userId: null,
+				httpStatus: null,
 			};
 		},
 		methods: {
-			login(email, password) {
-				this.$store.dispatch("login", {
-					token: "11arstxcvarstarswf21245689tar",
-				});
-				this.$router.push({ name: "home" });
+			async login(email, password) {
+				try {
+					const { data } = await axios.post(
+						`${process.env.VUE_APP_API_URL}/security/users/login`,
+						{
+							username: email,
+							password: password,
+						}
+					);
+					this.token = data.access_token;
+					this.userId = data.id;
+					this.$store.dispatch("login", {
+						token: this.token,
+						userId: this.userId,
+					});
+					this.$router.push({ name: "home" });
+				} catch (error) {
+					alert("Wrong Username or Password");
+				}
 			},
 		},
 	};
