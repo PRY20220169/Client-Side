@@ -117,9 +117,9 @@
 		methods: {
 			async getDocuments() {
 				const { data } = await axios.get(
-					`${process.env.VUE_APP_API_URL}/article`
+					`${process.env.VUE_APP_API_URL}/api/articles`
 				);
-
+				console.log(data);
 				this.documents = JSON.parse(JSON.stringify(data));
 				this.filteredDocuments = JSON.parse(JSON.stringify(data));
 

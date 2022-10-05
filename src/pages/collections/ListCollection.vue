@@ -112,9 +112,10 @@
 		methods: {
 			async getCollections() {
 				const { data } = await axios.get(
-					`${process.env.VUE_APP_API_URL}/collections`
+					`${process.env.VUE_APP_API_URL}/api/users/${this.$store.state.userId}/account/collections`
 				);
-				this.collections = data;
+				console.log(data.content);
+				this.collections = data.content;
 			},
 			openCollection(item) {
 				router.push({
@@ -127,13 +128,10 @@
 				console.log(item);
 			},
 			async createCollection() {
-				var utc = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
 				const { data } = await axios.post(
-					`${process.env.VUE_APP_API_URL}/collections`,
+					`${process.env.VUE_APP_API_URL}/api/users/${this.$store.state.userId}/account/collections`,
 					{
 						name: "New Collection",
-						lastModified: utc.toString(),
-						numberOfArticles: 0,
 					}
 				);
 				this.getCollections();
@@ -142,7 +140,7 @@
 				for (const selectedItem in this.selected) {
 					let id = this.selected[selectedItem].id;
 					const contents = await axios.delete(
-						`${process.env.VUE_APP_API_URL}/collections/${id}`
+						`${process.env.VUE_APP_API_URL}/api/collections/${id}`
 					);
 				}
 				await this.getCollections();
