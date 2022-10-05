@@ -8,16 +8,31 @@
 						<h1 class="text-3xl text-start pb-8 text-gray-dark">Sign Up</h1>
 						<div class="pb-3">
 							<label
-								for="fullName"
+								for="firstName"
 								class="block mb-2 text-sm font-medium text-black"
-								>Full Name</label
+								>First Name</label
 							>
 							<input
 								type="text"
-								id="fullName"
-								v-model="fullName"
+								id="firstName"
+								v-model="firstName"
 								class="bg-gray-light border border-[#F2F2F4] text-black font-normal text-sm rounded-lg block w-full p-2.5"
-								placeholder="John Doe"
+								placeholder="John"
+								required
+							/>
+						</div>
+						<div class="pb-3">
+							<label
+								for="lastName"
+								class="block mb-2 text-sm font-medium text-black"
+								>Last Name</label
+							>
+							<input
+								type="text"
+								id="lastName"
+								v-model="lastName"
+								class="bg-gray-light border border-[#F2F2F4] text-black font-normal text-sm rounded-lg block w-full p-2.5"
+								placeholder="Doe"
 								required
 							/>
 						</div>
@@ -69,7 +84,9 @@
 						<button
 							type="button"
 							class="bg-main text-white font-normal text-sm rounded-lg block w-full p-2.5 hover:brightness-90 transition ease-in-out mb-6"
-							@click="signUp(fullName, email, password, repeatPassword)"
+							@click="
+								signUp(firstName, lastName, email, password, repeatPassword)
+							"
 						>
 							Sign Up
 						</button>
@@ -91,26 +108,61 @@
 </template>
 
 <script>
+	import axios from "axios";
 	export default {
 		data() {
 			return {
 				email: "",
-				fullName: "",
+				firstName: "",
+				lastName: "",
 				password: "",
 				repeatPassword: "",
+				token: "",
+				userId: null,
+				httpStatus: null,
+				validEmail: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
 			};
 		},
 		methods: {
-			signUp(fullName, email, password, repeatPassword) {
+			async signUp(firstName, lastName, email, password, repeatPassword) {
 				if (password != repeatPassword) {
-					alert("Password doesn't match");
+					alert("Passwords don't match");
+				} else if (
+					password == "" ||
+					firstName == "" ||
+					lastName == "" ||
+					email == ""
+				) {
+					alert("Please fill in all fields");
+				} else if (this.validEmail.test(email) == false) {
+					alert("Please enter a valid email address");
 				} else {
-					this.$store.dispatch("signUp", {
-						fullName,
-						email,
-						password,
-					});
-					this.$router.push({ name: "home" });
+					try {
+						const { data } = await axios.post(
+							`${process.env.VUE_APP_API_URL}/security/users/register`,
+							{
+								username: email,
+								password: password,
+								firstName: firstName,
+								lastName: lastName,
+							}
+						);
+						this.httpStatus = data.httpStatus;
+						if (this.httpStatus == "OK") {
+							this.token = data.access_token;
+							this.userId = data.id;
+							this.$store.dispatch("login", {
+								token: this.token,
+								userId: this.userId,
+							});
+							this.$router.push({ name: "home" });
+						} else {
+							alert("Couldn't sign up");
+						}
+					} catch (error) {
+						console.log(error);
+						alert("Couldn't sign up");
+					}
 				}
 			},
 		},
