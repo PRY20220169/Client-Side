@@ -37,10 +37,14 @@
 				</div>
 			</aside>
 			<section id="content-section">
+				<div v-if="filteredDocuments.length == 0">
+					<p>No articles in your collection</p>
+				</div>
 				<list-article-collection
 					v-for="(doc, i) of filteredDocuments"
 					:key="i"
 					:document="doc"
+					@remove-element="removeElement($event)"
 				></list-article-collection>
 			</section>
 		</div>
@@ -66,15 +70,15 @@
 							{ name: "2019", checked: false },
 						],
 					},
-					{
-						title: "Tipo de documento",
-						categoryType: "Type",
-						options: [
-							{ name: "Article", checked: false },
-							{ name: "Conference", checked: false },
-							{ name: "Composium", checked: false },
-						],
-					},
+					// {
+					// 	title: "Tipo de documento",
+					// 	categoryType: "Type",
+					// 	options: [
+					// 		{ name: "Article", checked: false },
+					// 		{ name: "Conference", checked: false },
+					// 		{ name: "Composium", checked: false },
+					// 	],
+					// },
 					{
 						title: "Quartil",
 						categoryType: "Quartile",
@@ -97,7 +101,7 @@
 		methods: {
 			async getArticlesFromCollection() {
 				let { data } = await axios.get(
-					`${process.env.VUE_APP_API_URL}/collections/${this.$route.params.id}`
+					`${process.env.VUE_APP_API_URL}/api/collections/${this.$route.params.id}`
 				);
 
 				// TODO: Remove this when API is implemented
@@ -190,12 +194,16 @@
 						break;
 				}
 			},
+			removeElement() {
+				this.getArticlesFromCollection();
+			},
 		},
 		created() {
 			this.getArticlesFromCollection();
 		},
 		mounted() {
 			this.qsearch = this.$route.query.q as string;
+			this.getArticlesFromCollection();
 		},
 	};
 </script>
