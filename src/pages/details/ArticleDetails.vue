@@ -127,12 +127,16 @@
 		methods: {
 			async getArticleById() {
 				this.idArticle = parseInt(this.$route.params.id);
-				const { data } = await axios.get(
-					`${process.env.VUE_APP_API_URL}/article/${this.idArticle}`
-				);
-				this.article = JSON.parse(JSON.stringify(data));
-				this.article.publicationDate = new Date(this.article.publicationDate);
-				this.updateSelectedProperty();
+				try {
+					const { data } = await axios.get(
+						`${process.env.VUE_APP_API_URL}/api/articles/${this.idArticle}`
+					);
+					this.article = JSON.parse(JSON.stringify(data));
+					this.article.publicationDate = new Date(this.article.publicationDate);
+					this.updateSelectedProperty();
+				} catch (error) {
+					alert("Could not get articles of collection");
+				}
 			},
 			updateSelectedProperty() {
 				const arts: Article[] = this.$store.getters.getArticles;
@@ -163,22 +167,37 @@
 			},
 			async getCollections() {
 				this.dialogCompose = true;
-				let { data } = await axios.get(
-					`${process.env.VUE_APP_API_URL}/collections`
-				);
-				this.collections = data;
+				try {
+					let { data } = await axios.get(
+						`${process.env.VUE_APP_API_URL}/api/users/${this.$store.state.userId}/account/collections`
+					);
+					this.collections = data.content;
+				} catch (error) {
+					alert("Could not get collections");
+				}
 			},
 			closeModal() {
 				this.dialogCompose = false;
 			},
 			async addArticleToCollection(collection: any) {
-				//TODO: Verify if POST accepts an object or an array
-				const res = await axios.post(
-					`${process.env.VUE_APP_API_URL}/collections/${collection.id}/articles`,
-					this.article
-				);
-				console.log("Collection ID" + collection.id);
-				console.log("Article ID" + this.article.id);
+				try {
+					let { data } = await axios.get(
+						`${process.env.VUE_APP_API_URL}/api/collections/${collection.id}`
+					);
+					const found = data.articles.some(
+						(item: any) => item.id === this.article.id
+					);
+					if (!found) {
+						const res = await axios.post(
+							`${process.env.VUE_APP_API_URL}/api/collections/${collection.id}/articles/${this.article.id}`
+						);
+					} else {
+						alert("Article already exists in collection");
+					}
+				} catch (error) {
+					console.log(error);
+					alert("Could not add article to collection");
+				}
 				this.dialogCompose = false;
 			},
 		},

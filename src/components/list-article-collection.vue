@@ -69,11 +69,14 @@
 				return `${author.lastName}, ${author.firstName.substring(0, 1)}.`;
 			},
 			async removeFromCollection() {
-				// TODO: Verify if delete works with this endpoint: /collection/collectionId/article/articleId
-				let { data } = await axios.delete(
-					`${process.env.VUE_APP_API_URL}/collections/${this.$route.params.id}/articles/${this.document.id}`
-				);
-				// TODO: Watcher for updating the ArticleCollection.vue on remove
+				try {
+					let { data } = await axios.delete(
+						`${process.env.VUE_APP_API_URL}/api/collections/${this.$route.params.id}/articles/${this.document.id}`
+					);
+					this.$emit("remove-element", this.document.id);
+				} catch (error) {
+					alert("Could not remove article from collection");
+				}
 			},
 		},
 	};
