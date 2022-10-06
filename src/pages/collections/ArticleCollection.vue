@@ -2,7 +2,18 @@
 	<main class="article-collection search-results">
 		<nav id="nav-bar">
 			<h3>{{ $route.params.name }}</h3>
-			<div class="nav-actions"></div>
+			<div class="nav-actions">
+				<div id="search-buttons">
+					<div class="btn-content">
+						<div
+							class="w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-main hover:bg-white hover:text-main transition ease-in-out"
+							@click="CopyReferencesToClipboard()"
+						>
+							Copy References to Clipboard
+						</div>
+					</div>
+				</div>
+			</div>
 		</nav>
 		<div id="search-results-content">
 			<aside id="aside">
@@ -196,6 +207,17 @@
 			},
 			removeElement() {
 				this.getArticlesFromCollection();
+			},
+			async CopyReferencesToClipboard() {
+				try {
+					let { data } = await axios.get(
+						`${process.env.VUE_APP_API_URL}/api/collections/${this.$route.params.id}/reference`
+					);
+					await navigator.clipboard.writeText(data.reference);
+					alert("Copied");
+				} catch (error) {
+					alert("Could not copy references");
+				}
 			},
 		},
 		created() {
