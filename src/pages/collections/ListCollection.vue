@@ -38,7 +38,7 @@
 			>
 				<template v-slot:[`item.name`]="{ item }">
 					<p
-						class="text-main hover:cursor-pointer"
+						class="text-main hover:cursor-pointer my-auto"
 						@click="openCollection(item)"
 					>
 						{{ item.name }}
@@ -88,7 +88,7 @@
 						text: "Last Modified",
 						align: "start",
 						sortable: true,
-						value: "lastModified",
+						value: "updatedAt",
 					},
 					{
 						text: "N. of Articles",
@@ -114,8 +114,11 @@
 				const { data } = await axios.get(
 					`${process.env.VUE_APP_API_URL}/api/users/${this.$store.state.userId}/account/collections`
 				);
-				console.log(data.content);
 				this.collections = data.content;
+				this.collections.map((item) => {
+					item.numberOfArticles = item.articles.length;
+					item.updatedAt = item.updatedAt.slice(0, 10);
+				});
 			},
 			openCollection(item) {
 				router.push({
@@ -123,27 +126,44 @@
 					params: { id: item.id, name: item.name },
 				});
 			},
-			editItem(item) {
-				//TODO: Send PUT request to API
-				console.log(item);
+			async editItem(item) {
+				try {
+					const { data } = await axios.put(
+						`${process.env.VUE_APP_API_URL}/api/collections/${item.id}`,
+						{
+							name: item.name,
+						}
+					);
+					this.getCollections();
+				} catch (error) {
+					alert("Couldn't update collection");
+				}
 			},
 			async createCollection() {
-				const { data } = await axios.post(
-					`${process.env.VUE_APP_API_URL}/api/users/${this.$store.state.userId}/account/collections`,
-					{
-						name: "New Collection",
-					}
-				);
-				this.getCollections();
+				try {
+					const { data } = await axios.post(
+						`${process.env.VUE_APP_API_URL}/api/users/${this.$store.state.userId}/account/collections`,
+						{
+							name: "New Collection",
+						}
+					);
+					this.getCollections();
+				} catch (error) {
+					alert("Couldn't create collection");
+				}
 			},
 			async deleteCollections() {
-				for (const selectedItem in this.selected) {
-					let id = this.selected[selectedItem].id;
-					const contents = await axios.delete(
-						`${process.env.VUE_APP_API_URL}/api/collections/${id}`
-					);
+				try {
+					for (const selectedItem in this.selected) {
+						let id = this.selected[selectedItem].id;
+						const contents = await axios.delete(
+							`${process.env.VUE_APP_API_URL}/api/collections/${id}`
+						);
+					}
+					await this.getCollections();
+				} catch (error) {
+					alert("Couldn't delete selected collections");
 				}
-				await this.getCollections();
 			},
 		},
 	};
