@@ -26,6 +26,12 @@
 				{{ document.description }}
 			</p>
 			<a @click="removeFromCollection({})">- Remove From Collection</a>
+			<div
+				class="w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-main hover:bg-white hover:text-main transition ease-in-out"
+				@click="getCitationFromArticle(document)"
+			>
+				Copy Citation to Clipboard
+			</div>
 		</div>
 		<div class="bb-data-article">
 			<div
@@ -76,6 +82,17 @@
 					this.$emit("remove-element", this.document.id);
 				} catch (error) {
 					alert("Could not remove article from collection");
+				}
+			},
+			async getCitationFromArticle(article: any) {
+				try {
+					let { data } = await axios.get(
+						`${process.env.VUE_APP_API_URL}/api/articles/${article.id}/reference`
+					);
+					await navigator.clipboard.writeText(data.reference);
+					alert("Copied");
+				} catch (error) {
+					alert("Could not copy citation");
 				}
 			},
 		},
