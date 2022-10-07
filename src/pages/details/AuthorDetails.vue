@@ -2,16 +2,14 @@
 	<main class="author-details m-10">
 		<div id="content-author-details">
 			<div id="author-card">
-				<div class="card__info">
-					<div class="info__picture">
-						<img
-							src="https://storage.googleapis.com/www-paredro-com/uploads/2015/08/shutterstock_188419790-e1439475344980.jpg"
-							alt="profile image"
-						/>
-						<!--<img src="https://www.uprm.edu/natatorio/wp-content/uploads/sites/142/2018/11/profile-placeholder.png" alt="image profile">-->
-					</div>
+				<div class="">
+					<img
+						class="w-36 h-36 rounded-full mb-10"
+						:src="getImgUrl(author)"
+						alt="profile image"
+					/>
 					<div class="info__data">
-						<h2>{{ author.lastName }}, {{ author.firstName }}</h2>
+						<h2 class="mb-10">{{ author.lastName }}, {{ author.firstName }}</h2>
 						<h4 v-for="(org, i) of author.organizations" :key="i">
 							- {{ org }}
 						</h4>
@@ -38,17 +36,6 @@
 						>
 							<h3 v-if="i < 4">{{ metric.score }}</h3>
 							<h4 v-if="i < 4">{{ metric.name }}</h4>
-						</div>
-					</div>
-					<span class="metrics__subtitle">Peer Review Metrics</span>
-					<div class="review-metrics">
-						<div
-							class="metrics__metric"
-							v-for="(metric, i) of author.metrics"
-							:key="i"
-						>
-							<h3 v-if="i >= 4">{{ metric.score }}</h3>
-							<h4 v-if="i >= 4">{{ metric.name }}</h4>
 						</div>
 					</div>
 				</div>
@@ -118,8 +105,9 @@
 			async getAuthorById() {
 				this.authorId = parseInt(this.$route.params.authorId);
 				const { data } = await axios.get(
-					`${process.env.VUE_APP_API_URL}/authors/${this.authorId}`
+					`${process.env.VUE_APP_API_URL}/api/authors/${this.authorId}`
 				);
+				console.log(data);
 				this.author = JSON.parse(JSON.stringify(data));
 
 				this.updateSelectedProperty();
@@ -156,6 +144,15 @@
 			removeAuthorFromComparePage() {
 				this.$store.dispatch("removeAuthorOfComparison", this.author);
 				this.isSelected = false;
+			},
+			getImgUrl(author: any) {
+				return (
+					"https://avatars.dicebear.com/api/initials/" +
+					author.firstName +
+					"-" +
+					author.lastName +
+					".svg"
+				);
 			},
 		},
 		created() {
