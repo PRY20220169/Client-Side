@@ -104,7 +104,11 @@
 					});
 					this.$router.push({ name: "home" });
 				} catch (error) {
-					alert("Wrong Username or Password");
+					this.$swal.fire({
+						icon: "error",
+						title: "Oops...",
+						text: "Wrong Username or Password!",
+					});
 				}
 			},
 		},

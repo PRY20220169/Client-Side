@@ -6,6 +6,7 @@
 				<div id="search-buttons">
 					<div class="btn-content">
 						<div
+							v-if="filteredDocuments.length != 0"
 							class="w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-main hover:bg-white hover:text-main transition ease-in-out"
 							@click="CopyReferencesToClipboard()"
 						>
@@ -206,6 +207,12 @@
 				}
 			},
 			removeElement() {
+				this.$swal.fire({
+					icon: "success",
+					title: "Succesfully Removed Article",
+					showConfirmButton: false,
+					timer: 1000,
+				});
 				this.getArticlesFromCollection();
 			},
 			async CopyReferencesToClipboard() {
@@ -214,9 +221,18 @@
 						`${process.env.VUE_APP_API_URL}/api/collections/${this.$route.params.id}/reference`
 					);
 					await navigator.clipboard.writeText(data.reference);
-					alert("Copied");
+					this.$swal.fire({
+						icon: "success",
+						title: "All References Copied To Clipboard",
+						showConfirmButton: false,
+						timer: 1000,
+					});
 				} catch (error) {
-					alert("Could not copy references");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Copy References",
+						text: "Please Try Again Later",
+					});
 				}
 			},
 		},

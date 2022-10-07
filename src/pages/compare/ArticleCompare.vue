@@ -51,11 +51,16 @@
 			removeArticleFromComparePage(art: any) {
 				this.$store.dispatch("removeArticleOfComparison", art);
 				this.articles = this.$store.getters.getArticles;
+				this.$swal.fire({
+					icon: "success",
+					title: "Removed Article From Compare",
+					showConfirmButton: false,
+					timer: 1000,
+				});
 			},
 		},
 		created() {
 			this.articles = this.$store.getters.getArticles;
-			console.log(this.articles);
 		},
 	});
 </script>

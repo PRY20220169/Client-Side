@@ -72,7 +72,6 @@
 		methods: {
 			setSelectedOption(option) {
 				this.selectedOption = option;
-				//console.log(this.selectedOption)
 			},
 		},
 	};

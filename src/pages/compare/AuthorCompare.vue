@@ -62,6 +62,12 @@
 			removeAuthorFromComparePage(author: any) {
 				this.$store.dispatch("removeAuthorOfComparison", author);
 				this.authors = this.$store.getters.getAuthors;
+				this.$swal.fire({
+					icon: "success",
+					title: "Removed Author From Compare",
+					showConfirmButton: false,
+					timer: 1000,
+				});
 			},
 			getImgUrl(author: any) {
 				return (
