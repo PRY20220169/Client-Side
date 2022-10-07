@@ -78,6 +78,12 @@
 			removeJournalFromComparePage(journal: any) {
 				this.$store.dispatch("removeJournalOfComparison", journal);
 				this.journals = this.$store.getters.getJournals;
+				this.$swal.fire({
+					icon: "success",
+					title: "Removed Journal From Compare",
+					showConfirmButton: false,
+					timer: 1000,
+				});
 			},
 		},
 		created() {
