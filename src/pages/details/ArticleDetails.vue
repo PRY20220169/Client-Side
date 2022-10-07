@@ -28,8 +28,11 @@
 							:key="collection.id"
 							@click="addArticleToCollection(collection)"
 						>
-							<p class="text-main underline hover:cursor-pointer">
-								Add to: {{ collection.name }}
+							<p class="text-black hover:cursor-pointer">
+								Add to:
+								<span class="text-main underline hover:cursor-pointer">{{
+									collection.name
+								}}</span>
 							</p>
 						</div>
 					</v-card-text>
@@ -39,7 +42,7 @@
 							@click="closeModal()"
 							outlined
 							color="primary"
-							>Cancel</v-btn
+							>Close</v-btn
 						>
 					</v-card-actions>
 				</v-card>
@@ -135,7 +138,11 @@
 					this.article.publicationDate = new Date(this.article.publicationDate);
 					this.updateSelectedProperty();
 				} catch (error) {
-					alert("Could not get articles of collection");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Get Articles",
+						text: "Please Try Again Later",
+					});
 				}
 			},
 			updateSelectedProperty() {
@@ -152,13 +159,28 @@
 				if (this.$store.getters.getArticles.length < 2) {
 					this.$store.dispatch("addArticleToCompare", this.article);
 					this.isSelected = true;
+					this.$swal.fire({
+						icon: "success",
+						title: "Added Article To Compare",
+						showConfirmButton: false,
+						timer: 1000,
+					});
 				} else {
-					alert("Cannot add more than 2 articles");
+					this.$swal.fire({
+						icon: "error",
+						title: "Cannot Add More Than 2 Articles",
+					});
 				}
 			},
 			removeArticleFromComparePage() {
 				this.$store.dispatch("removeArticleOfComparison", this.article);
 				this.isSelected = false;
+				this.$swal.fire({
+					icon: "success",
+					title: "Removed Article From Compare",
+					showConfirmButton: false,
+					timer: 1000,
+				});
 			},
 			getNameAuthor(length: number, position: number, author: Author) {
 				if (length === position)
@@ -173,7 +195,11 @@
 					);
 					this.collections = data.content;
 				} catch (error) {
-					alert("Could not get collections");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Get Collections",
+						text: "Please Try Again Later",
+					});
 				}
 			},
 			closeModal() {
@@ -191,12 +217,26 @@
 						const res = await axios.post(
 							`${process.env.VUE_APP_API_URL}/api/collections/${collection.id}/articles/${this.article.id}`
 						);
+						this.$swal.fire({
+							icon: "success",
+							title: "Article Added to Collection",
+							showConfirmButton: false,
+							timer: 1000,
+						});
 					} else {
-						alert("Article already exists in collection");
+						this.$swal.fire({
+							icon: "error",
+							title: "Article Already Exists In This Collection",
+							text: "Please Choose Another Collection",
+						});
 					}
 				} catch (error) {
 					console.log(error);
-					alert("Could not add article to collection");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Add Article",
+						text: "Please Try Again Later",
+					});
 				}
 				this.dialogCompose = false;
 			},

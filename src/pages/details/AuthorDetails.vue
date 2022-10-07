@@ -107,9 +107,7 @@
 				const { data } = await axios.get(
 					`${process.env.VUE_APP_API_URL}/api/authors/${this.authorId}`
 				);
-				console.log(data);
 				this.author = JSON.parse(JSON.stringify(data));
-
 				this.updateSelectedProperty();
 			},
 			getNameAuthor(length: number, position: number, author: Author) {
@@ -137,13 +135,28 @@
 				if (this.$store.getters.getAuthors.length < 2) {
 					this.$store.dispatch("addAuthorToCompare", this.author);
 					this.isSelected = true;
+					this.$swal.fire({
+						icon: "success",
+						title: "Added Author To Compare",
+						showConfirmButton: false,
+						timer: 1000,
+					});
 				} else {
-					alert("Cannot add more than 2 authors");
+					this.$swal.fire({
+						icon: "error",
+						title: "Cannot Add More Than 2 Authors",
+					});
 				}
 			},
 			removeAuthorFromComparePage() {
 				this.$store.dispatch("removeAuthorOfComparison", this.author);
 				this.isSelected = false;
+				this.$swal.fire({
+					icon: "success",
+					title: "Removed Author From Compare",
+					showConfirmButton: false,
+					timer: 1000,
+				});
 			},
 			getImgUrl(author: any) {
 				return (
