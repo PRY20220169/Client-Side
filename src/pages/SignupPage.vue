@@ -126,16 +126,28 @@
 		methods: {
 			async signUp(firstName, lastName, email, password, repeatPassword) {
 				if (password != repeatPassword) {
-					alert("Passwords don't match");
+					this.$swal.fire({
+						icon: "error",
+						title: "Passwords Don't Match",
+						text: "Please Try Again",
+					});
 				} else if (
 					password == "" ||
 					firstName == "" ||
 					lastName == "" ||
 					email == ""
 				) {
-					alert("Please fill in all fields");
+					this.$swal.fire({
+						icon: "error",
+						title: "There Are Empty Fields",
+						text: "Please Fill In All Fields",
+					});
 				} else if (this.validEmail.test(email) == false) {
-					alert("Please enter a valid email address");
+					this.$swal.fire({
+						icon: "error",
+						title: "Invalid Email Address",
+						text: "Please Enter A Valid Email Address",
+					});
 				} else {
 					try {
 						const { data } = await axios.post(
@@ -157,11 +169,19 @@
 							});
 							this.$router.push({ name: "home" });
 						} else {
-							alert("Couldn't sign up");
+							this.$swal.fire({
+								icon: "error",
+								title: "Our Server Failed To Respond",
+								text: "Please Try Again Later",
+							});
 						}
 					} catch (error) {
+						this.$swal.fire({
+							icon: "error",
+							title: "Our Server Failed To Respond",
+							text: "Please Try Again Later",
+						});
 						console.log(error);
-						alert("Couldn't sign up");
 					}
 				}
 			},

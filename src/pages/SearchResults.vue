@@ -178,11 +178,9 @@
 			handlerFilterOptions(category: string, option: string, checked: boolean) {
 				if (checked) {
 					this.removeFilterOption(category, option);
-					//console.log(this.filterState)
 				} else {
 					this.addFilterOption(category, option);
 				}
-				//console.log(this.filterOptions)
 
 				this.filterDocuments();
 			},

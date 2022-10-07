@@ -136,7 +136,11 @@
 					);
 					this.getCollections();
 				} catch (error) {
-					alert("Couldn't update collection");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Update Collection",
+						text: "Please Try Again Later",
+					});
 				}
 			},
 			async createCollection() {
@@ -147,9 +151,19 @@
 							name: "New Collection",
 						}
 					);
+					this.$swal.fire({
+						icon: "success",
+						title: "Succesfully Created New Collection",
+						showConfirmButton: false,
+						timer: 1000,
+					});
 					this.getCollections();
 				} catch (error) {
-					alert("Couldn't create collection");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Create Collection",
+						text: "Please Try Again Later",
+					});
 				}
 			},
 			async deleteCollections() {
@@ -161,8 +175,18 @@
 						);
 					}
 					await this.getCollections();
+					this.$swal.fire({
+						icon: "success",
+						title: "Succesfully Deleted Selected Collections",
+						showConfirmButton: false,
+						timer: 1000,
+					});
 				} catch (error) {
-					alert("Couldn't delete selected collections");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Delete Collection",
+						text: "Please Try Again Later",
+					});
 				}
 			},
 		},

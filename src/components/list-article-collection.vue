@@ -20,7 +20,10 @@
 			<span
 				>{{ document.publicationDate.toLocaleString("EN", { month: "long" }) }}
 				{{ document.publicationDate.getFullYear() }} |
-				<a href="#">{{ document.journal.name }}</a> {{ document.volume }}</span
+				<a @click="$router.push(`/journal-details/${document.journal.id}`)">{{
+					document.journal.name
+				}}</a>
+				{{ document.volume }}</span
 			>
 			<p>
 				{{ document.description }}
@@ -81,7 +84,11 @@
 					);
 					this.$emit("remove-element", this.document.id);
 				} catch (error) {
-					alert("Could not remove article from collection");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Remove Article",
+						text: "Please Try Again Later",
+					});
 				}
 			},
 			async getCitationFromArticle(article: any) {
@@ -90,9 +97,18 @@
 						`${process.env.VUE_APP_API_URL}/api/articles/${article.id}/reference`
 					);
 					await navigator.clipboard.writeText(data.reference);
-					alert("Copied");
+					this.$swal.fire({
+						icon: "success",
+						title: "Citation Copied To Clipboard",
+						showConfirmButton: false,
+						timer: 1000,
+					});
 				} catch (error) {
-					alert("Could not copy citation");
+					this.$swal.fire({
+						icon: "error",
+						title: "Could Not Copy Citation",
+						text: "Please Try Again Later",
+					});
 				}
 			},
 		},

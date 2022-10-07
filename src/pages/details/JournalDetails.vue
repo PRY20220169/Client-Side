@@ -39,7 +39,7 @@
 						{{ journal.publisher }}
 					</p>
 					<a
-						class="text-main mb-4"
+						class="text-main mb-4 hover:underline"
 						:href="`https://www.scimagojr.com/journalsearch.php?q=${journal.scimagoId}&tip=sid`"
 						target="_blank"
 					>
@@ -98,7 +98,6 @@
 				const { data } = await axios.get(
 					`${process.env.VUE_APP_API_URL}/api/journals/${this.idJournal}`
 				);
-				console.log(data);
 				this.journal = JSON.parse(JSON.stringify(data));
 				this.updateSelectedProperty();
 			},
@@ -116,13 +115,28 @@
 				if (this.$store.getters.getJournals.length < 2) {
 					this.$store.dispatch("addJournalToCompare", this.journal);
 					this.isSelected = true;
+					this.$swal.fire({
+						icon: "success",
+						title: "Added Journal To Compare",
+						showConfirmButton: false,
+						timer: 1000,
+					});
 				} else {
-					alert("Cannot add more than 2 journals");
+					this.$swal.fire({
+						icon: "error",
+						title: "Cannot Add More Than 2 Journals",
+					});
 				}
 			},
 			removeJournalFromComparePage() {
 				this.$store.dispatch("removeJournalOfComparison", this.journal);
 				this.isSelected = false;
+				this.$swal.fire({
+					icon: "success",
+					title: "Removed Journal From Compare",
+					showConfirmButton: false,
+					timer: 1000,
+				});
 			},
 		},
 		updated() {
