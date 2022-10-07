@@ -6,19 +6,24 @@
 		<div id="article-compare__content">
 			<div class="article-card" v-for="(art, i) of articles" :key="i">
 				<div class="card__title">
-					<h3>{{ art.title }}</h3>
+					<h3 class="font-bold">{{ art.title }}</h3>
 				</div>
+				<hr />
 				<div class="card__details">
-					<hr />
-					<h3 class="text-main">Cuartil: {{ art.journal.metrics[0].score }}</h3>
-					<hr />
+					<div
+						class="metadata-art space-y-4 divide-y divide-gray-lighter"
+						v-for="(metric, i) of art.journal.metrics"
+						:key="i"
+					>
+						<span class="text-main mb-4"
+							>{{ metric.bibliometric }}{{ `: ` }}{{ metric.score }}</span
+						>
+						<hr class="divide-main" />
+					</div>
 					<h3 class="">
-						Journal Inpact Factor: {{ art.journal.metrics[1].score }}
+						Año de publicación:
+						{{ art.publicationDate.toString().slice(11, 15) }}
 					</h3>
-					<hr />
-					<h3 class="text-main">H-Index: {{ art.journal.metrics[2].score }}</h3>
-					<hr />
-					<h3 class="">Año de publicación: {{ art.publicationDate }}</h3>
 					<hr />
 					<h3 class="text-main">Journal: {{ art.journal.name }}</h3>
 					<div
@@ -35,7 +40,6 @@
 
 <script lang="ts">
 	import Vue from "vue";
-	import { Article } from "@/interfaces/article.interface";
 	export default Vue.extend({
 		name: "article-compare",
 		data() {
@@ -51,6 +55,7 @@
 		},
 		created() {
 			this.articles = this.$store.getters.getArticles;
+			console.log(this.articles);
 		},
 	});
 </script>
