@@ -11,12 +11,11 @@
 				class="w-1 mb-10"
 			>
 				<div class="card__info">
-					<div class="info__picture">
-						<img
-							src="https://storage.googleapis.com/www-paredro-com/uploads/2015/08/shutterstock_188419790-e1439475344980.jpg"
-							alt="profile image"
-						/>
-					</div>
+					<img
+						class="w-36 h-36 rounded-full mb-10"
+						:src="getImgUrl(author)"
+						alt="profile image"
+					/>
 					<div class="info__data">
 						<h2>{{ author.lastName }}, {{ author.firstName }}</h2>
 						<h4 v-for="(org, i) of author.organizations" :key="i">
@@ -43,17 +42,6 @@
 							<h4 v-if="i < 4">{{ metric.name }}</h4>
 						</div>
 					</div>
-					<span class="metrics__subtitle">Peer Review Metrics</span>
-					<div class="review-metrics">
-						<div
-							class="metrics__metric"
-							v-for="(metric, i) of author.metrics"
-							:key="i"
-						>
-							<h3 v-if="i >= 4">{{ metric.score }}</h3>
-							<h4 v-if="i >= 4">{{ metric.name }}</h4>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -74,6 +62,15 @@
 			removeAuthorFromComparePage(author: any) {
 				this.$store.dispatch("removeAuthorOfComparison", author);
 				this.authors = this.$store.getters.getAuthors;
+			},
+			getImgUrl(author: any) {
+				return (
+					"https://avatars.dicebear.com/api/initials/" +
+					author.firstName +
+					"-" +
+					author.lastName +
+					".svg"
+				);
 			},
 		},
 		created() {
