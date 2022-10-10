@@ -1,32 +1,35 @@
 <template>
-	<div id="app">
-		<nav>
-			<router-link to="/">Home</router-link> |
-			<router-link to="/login">Login</router-link>
-		</nav>
-		<router-view />
-	</div>
+	<v-app id="app" class="h-screen flex flex-col">
+		<header-bar
+			v-if="!$route.meta.hideNavbar && !this.$store.state.isLogged"
+		></header-bar>
+		<logged-header-bar
+			v-if="!$route.meta.hideNavbar && this.$store.state.isLogged"
+		></logged-header-bar>
+		<div class="flex h-full max-h-full">
+			<sidebar
+				class="flex-none h-full"
+				v-if="!$route.meta.hideNavbar"
+			></sidebar>
+			<router-view class="w-full h-full" />
+		</div>
+	</v-app>
 </template>
 
 <style lang="scss">
-	#app {
-		font-family: Avenir, Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
+	* {
+		padding: 0;
+		margin: 0;
 	}
-
-	nav {
-		padding: 30px;
-
-		a {
-			font-weight: bold;
-			color: #2c3e50;
-
-			&.router-link-exact-active {
-				color: #42b983;
-			}
-		}
+	#app {
+		height: 100vh;
 	}
 </style>
+<script>
+	import HeaderBar from "@/components/header-bar";
+	import LoggedHeaderBar from "@/components/header-bar-logged";
+	import Sidebar from "@/components/sidebar.vue";
+	export default {
+		components: { HeaderBar, Sidebar, LoggedHeaderBar },
+	};
+</script>

@@ -1,0 +1,76 @@
+.btn-outline button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: 1px solid #858aff;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #858aff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-outline button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: #f5f4f4;
+}
+
+.btn-content button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #858aff;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-content button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: rgb(98, 103, 213);
+}
+
+button[type=button]:hover {
+  cursor: pointer;
+}
+
+#header-bar {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  border-bottom: 1px solid #858aff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+#header-bar #title {
+  padding-left: 50px;
+}
+#header-bar #title h2 {
+  font-family: "Poppins", sans-serif;
+  color: #47464b;
+  font-weight: 600;
+  font-size: 24px;
+}
+#header-bar #account-actions {
+  padding-right: 50px;
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 540px) {
+  #header-bar {
+    flex-direction: column;
+  }
+  #header-bar #title {
+    padding: 20px 0 0 0;
+  }
+  #header-bar #account-actions {
+    padding: 0 0 20px 0;
+  }
+}
+
+/*# sourceMappingURL=base-header-bar.css.map */

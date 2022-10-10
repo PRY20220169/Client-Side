@@ -1,0 +1,100 @@
+.btn-outline button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: 1px solid #858aff;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #858aff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-outline button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: #f5f4f4;
+}
+
+.btn-content button[type=button] {
+  all: unset;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #858aff;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btn-content button[type=button]:active {
+  transition: 300ms;
+  transform: scale(0.95);
+  background-color: rgb(98, 103, 213);
+}
+
+button[type=button]:hover {
+  cursor: pointer;
+}
+
+.article-details {
+  padding: 100px;
+}
+.article-details #container-article {
+  border: 1.5px solid #B9BABF;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #47464b;
+}
+.article-details #container-article h2 {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+.article-details #container-article h3 {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+.article-details #container-article a {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  color: #858aff;
+}
+.article-details #container-article a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.article-details #container-article #article-journal {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.article-details #container-article #article-journal span {
+  color: #858aff;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+.article-details #container-article #article-journal #journal-details div {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
+.article-details #container-article #article-journal #journal-details div h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.article-details #container-article p {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  padding-bottom: 15px;
+}
+
+/*# sourceMappingURL=base-article-details.css.map */

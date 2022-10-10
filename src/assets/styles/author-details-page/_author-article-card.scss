@@ -1,0 +1,102 @@
+@use "../general-colors";
+@use "../general-styles";
+
+#author-publications{
+  width: 100%;
+
+  .publications__header{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: "Poppins", sans-serif;
+    h2{
+      font-weight: 500;
+    }
+    a{
+      color: general-colors.$primary-color;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+
+  .publications{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .publications__publication{
+      border: 1.5px solid general-colors.$secondary-font-color;
+      box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      font-family: "Poppins", sans-serif;
+      padding: 20px 20px 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+
+      .publication__info{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .info__title{
+          max-width: 800px;
+          h3{
+            font-weight: 400;
+            color: general-colors.$primary-color;
+          }
+        }
+
+        .info__authors{
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          h4{
+            color: general-colors.$primary-font-color;
+            font-weight: 400;
+          }
+        }
+
+        .info__journal{
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          h5{
+            font-size: 14px;
+            font-weight: 400;
+          }
+          a{
+            font-size: 14px;
+            font-weight: 400;
+            color: general-colors.$primary-color;
+          }
+          a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+
+      }
+
+      .publication__metric{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100px;
+        height: 130px;
+        h1{
+          color: general-colors.$primary-color;
+        }
+        h3{
+          font-weight: 400;
+        }
+      }
+
+
+
+
+    }
+  }
+
+
+}

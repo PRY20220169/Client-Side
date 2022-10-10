@@ -1,0 +1,74 @@
+@use "../general-colors";
+
+#nav-bar {
+  padding-top: 50px;
+  padding-left: 75px;
+  //background: pink;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  gap: 10px;
+
+  h3{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+
+
+  .nav-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .search-bar {
+      background-color: #F7F8FC;
+      border-radius: 10px;
+      display: flex;
+      justify-content: flex-start;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      width: 500px;
+
+
+      .bx {
+        padding: 10px 0 10px 10px;
+        //padding: 0 10px;
+        font-size: 28px;
+        color: general-colors.$secondary-font-color;
+      }
+
+      input[type="text"] {
+        all: unset;
+        //background-color: #F7F8FC;
+        //padding: 8px;
+        color: general-colors.$primary-font-color;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        padding: 0 10px;
+        width: 425px;
+      }
+
+      input[type="text"]::placeholder {
+        color: general-colors.$secondary-font-color;
+      }
+
+    }
+
+    #search-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+
+      .btn-content {
+        button[type="button"] {
+          padding: 14px 50px;
+          font-size: 14px;
+          white-space: nowrap;
+        }
+      }
+
+    }
+  }
+
+}
