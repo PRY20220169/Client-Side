@@ -1,0 +1,7 @@
+@use "author-card";
+@use "author-article-card";
+
+#content-author-details{
+  display: flex;
+  gap: 70px;
+}
