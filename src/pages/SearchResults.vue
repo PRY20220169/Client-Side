@@ -134,10 +134,19 @@
 				this.documents = [];
 				this.documents = [articlesByKeyword.data.content];
 				this.documents = [...articlesByCategory.data.content];
-				this.documents.filter(
-					(v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
-				);
-
+				const uniqueArray = this.documents.filter((value, index) => {
+					const _value = JSON.stringify(value);
+					return (
+						index ===
+						this.documents.findIndex((obj) => {
+							return JSON.stringify(obj) === _value;
+						})
+					);
+				});
+				// this.documents.filter(
+				// 	(v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+				// );
+				this.documents = uniqueArray;
 				this.filteredDocuments = this.documents;
 				this.documents.map((item) => {
 					item.publicationDate = new Date(item.publicationDate);
