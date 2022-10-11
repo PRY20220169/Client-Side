@@ -58,7 +58,8 @@
 						:document="doc"
 					></pub-article>
 				</div>
-				<div v-if="filteredDocuments.length == 0">
+				<div v-if="loading" class="lds-dual-ring"></div>
+				<div v-if="filteredDocuments.length == 0 && !loading">
 					<h3>No articles found</h3>
 				</div>
 			</section>
@@ -115,6 +116,7 @@
 				},
 				qsearch: "",
 				parameters: [] as string[],
+				loading: false,
 			};
 		},
 		methods: {
@@ -122,6 +124,10 @@
 				this.getDocuments();
 			},
 			async getDocuments() {
+				this.documents = [];
+				this.filteredDocuments = [];
+				this.loading = true;
+
 				this.parameters = this.qsearch.split(",");
 				const articlesByKeyword = await axios.post(
 					`${process.env.VUE_APP_API_URL}/api/articles/search/keywords`,
@@ -132,8 +138,9 @@
 					{ categories: this.parameters }
 				);
 				this.documents = [];
-				this.documents = [articlesByKeyword.data.content];
-				this.documents = [...articlesByCategory.data.content];
+				this.filteredDocuments = [];
+				this.documents = articlesByKeyword.data.content;
+				this.documents.push(...articlesByCategory.data.content);
 				const uniqueArray = this.documents.filter((value, index) => {
 					const _value = JSON.stringify(value);
 					return (
@@ -154,6 +161,7 @@
 				this.filteredDocuments.map((item) => {
 					item.publicationDate = new Date(item.publicationDate);
 				});
+				this.loading = false;
 			},
 			filterDocuments() {
 				const { years, types, quartiles } = this.filterOptions;
@@ -246,4 +254,29 @@
 
 <style lang="scss" scoped>
 	@import "../assets/styles/search-results-page/base-search-rs-page";
+
+	.lds-dual-ring {
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+	}
+	.lds-dual-ring:after {
+		content: " ";
+		display: block;
+		width: 64px;
+		height: 64px;
+		margin: 8px;
+		border-radius: 50%;
+		border: 6px solid #5860ff;
+		border-color: #5860ff transparent #5860ff transparent;
+		animation: lds-dual-ring 1.2s linear infinite;
+	}
+	@keyframes lds-dual-ring {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
 </style>
