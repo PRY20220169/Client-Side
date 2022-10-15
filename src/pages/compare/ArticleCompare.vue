@@ -6,7 +6,9 @@
 		<div id="article-compare__content">
 			<div class="article-card" v-for="(art, i) of articles" :key="i">
 				<div class="card__title">
-					<h3 class="font-bold">{{ art.title }}</h3>
+					<router-link :to="`/article-details/${art.id}`">
+						<h3 class="font-bold underline">{{ art.title }}</h3>
+					</router-link>
 				</div>
 				<hr />
 				<div class="card__details">
