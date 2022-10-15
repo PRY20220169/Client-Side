@@ -5,14 +5,13 @@
 		>
 			<ul>
 				<li class="mb-2">
-					<router-link
-						class="flex items-center justify-center flex-col p-2 text-base font-normal text-white rounded-lg hover:bg-gray-100"
-						to="/"
-						><Icon icon="bx-search-alt-2" width="36" height="36" />
-						<span class="text-xs flex-1 whitespace-nowrap"
-							>Search</span
-						></router-link
+					<div
+						class="flex items-center justify-center flex-col p-2 text-base font-normal text-white rounded-lg hover:bg-gray-100 hover:cursor-pointer"
+						@click="goToSearch()"
 					>
+						<Icon icon="bx-search-alt-2" width="36" height="36" />
+						<span class="text-xs flex-1 whitespace-nowrap">Search</span>
+					</div>
 				</li>
 				<li class="mb-2">
 					<router-link
@@ -45,6 +44,19 @@
 		name: "side-bar",
 		components: {
 			Icon,
+		},
+		methods: {
+			goToSearch() {
+				let q = this.$store.getters.getQuery;
+				if (q === "") {
+					this.$router.push("/");
+				} else {
+					this.$router.push({
+						path: "/search-results",
+						query: { q: q },
+					});
+				}
+			},
 		},
 	};
 </script>
