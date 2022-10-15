@@ -17,6 +17,7 @@
 							type="text"
 							placeholder="Bibliometrics, scientific, workflow"
 							v-model="searchText"
+							@keypress.enter="searchElement()"
 						/>
 					</div>
 					<custom-multiple-select
@@ -61,6 +62,12 @@
 		methods: {
 			setSelectedOption(option) {
 				this.selectedOption = option;
+			},
+			searchElement() {
+				this.$router.push({
+					name: "search-results",
+					query: { q: this.searchText },
+				});
 			},
 		},
 	};
