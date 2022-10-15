@@ -32,6 +32,7 @@ export default new Vuex.Store({
 		isLogged: false,
 		token: "",
 		userId: null,
+		query: "",
 	},
 	getters: {
 		getArticles(state) {
@@ -42,6 +43,9 @@ export default new Vuex.Store({
 		},
 		getJournals(state) {
 			return state.journals;
+		},
+		getQuery(state) {
+			return state.query;
 		},
 	},
 	mutations: {
@@ -75,6 +79,9 @@ export default new Vuex.Store({
 				return e.id !== journal.id;
 			});
 		},
+		updateQuery(state, query: string) {
+			state.query = query;
+		},
 		login(state: any, loginInfo: any) {
 			state.isLogged = true;
 			state.token = loginInfo.token;
@@ -103,6 +110,9 @@ export default new Vuex.Store({
 		},
 		removeJournalOfComparison(context, journal: Journal) {
 			context.commit("removeJournal", journal);
+		},
+		updateQuery(context, query: string) {
+			context.commit("updateQuery", query);
 		},
 		login(context: any, loginInfo: any) {
 			context.commit("login", loginInfo);
