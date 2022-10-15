@@ -9,9 +9,14 @@
 				v-for="(journal, i) of journals"
 				:key="i"
 			>
-				<p class="text-2xl text-center font-regular text-black h-16">
-					{{ journal.name }}
-				</p>
+				<router-link :to="`/journal-details/${journal.id}`">
+					<p
+						class="text-2xl text-center font-regular text-black h-16 underline"
+					>
+						{{ journal.name }}
+					</p>
+				</router-link>
+
 				<p class="text-lg font-medium text-black">Metrics</p>
 				<p class="text-md text-gray-dark">Publication Metrics:</p>
 				<div class="flex flex-row mb-4">

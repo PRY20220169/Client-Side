@@ -1,7 +1,10 @@
 <template>
 	<main class="search-results">
 		<nav id="nav-bar">
-			<h3>{{ filteredDocuments.length }} resultados de su búsqueda</h3>
+			<div>
+				<h3 v-if="!loading">{{ filteredDocuments.length }} search results</h3>
+				<h3 v-if="loading">Searching...</h3>
+			</div>
 			<div class="nav-actions">
 				<div class="search-bar">
 					<i class="bx bx-search-alt-2"></i>
@@ -53,6 +56,7 @@
 			<section id="content-section">
 				<div v-if="filteredDocuments.length > 0" class="space-y-5">
 					<pub-article
+						class="mb-5"
 						v-for="(doc, i) of filteredDocuments"
 						:key="i"
 						:document="doc"
@@ -80,7 +84,7 @@
 			return {
 				filters: [
 					{
-						title: "Año de publicación",
+						title: "Year of Publication",
 						categoryType: "Year",
 						options: [
 							{ name: "2022", checked: false },
@@ -99,11 +103,13 @@
 					// 	],
 					// },
 					{
-						title: "Quartil",
+						title: "Quartile",
 						categoryType: "Quartile",
 						options: [
 							{ name: "Q1", checked: false },
 							{ name: "Q2", checked: false },
+							{ name: "Q3", checked: false },
+							{ name: "Q4", checked: false },
 						],
 					},
 				],
@@ -121,6 +127,11 @@
 		},
 		methods: {
 			async updateSearch() {
+				this.$router.push({
+					path: "/search-results",
+					query: { q: this.qsearch },
+				});
+				this.$store.dispatch("updateQuery", this.qsearch);
 				this.getDocuments();
 			},
 			async getDocuments() {
@@ -244,10 +255,12 @@
 		},
 		created() {
 			this.qsearch = this.$route.query.q as string;
+			this.$store.dispatch("updateQuery", this.qsearch);
 			this.getDocuments();
 		},
 		mounted() {
 			this.qsearch = this.$route.query.q as string;
+			this.$store.dispatch("updateQuery", this.qsearch);
 		},
 	});
 </script>
