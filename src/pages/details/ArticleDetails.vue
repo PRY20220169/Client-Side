@@ -15,10 +15,13 @@
 						})
 					"
 				>
-					{{ getNameAuthor(article.authors.length - 1, i, author) }}
+					<p
+						class="inline-block underline cursor-pointer transition ease-in-out mb-0"
+					>
+						{{ getNameAuthor(article.authors.length - 1, i, author) }}
+					</p>
 				</a>
 			</h3>
-			<a @click="getCollections({})">+ Add to Collection</a>
 			<v-dialog v-model="dialogCompose" width="500">
 				<v-card>
 					<v-card-title> My Collections </v-card-title>
@@ -47,44 +50,47 @@
 					</v-card-actions>
 				</v-card>
 			</v-dialog>
-			<div v-if="isSelected" class="btn-content">
-				<button type="button" @click="removeArticleFromComparePage">
+			<div class="flex space-x-2">
+				<div
+					class="w-fit border rounded-lg border-main text-center text-main font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:bg-main hover:text-white transition ease-in-out"
+					@click="getCollections({})"
+				>
+					Add to Collection
+				</div>
+				<div
+					v-if="isSelected"
+					class="w-fit border rounded-lg border-main text-center text-main font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:bg-main hover:text-white transition ease-in-out"
+					@click="removeArticleFromComparePage"
+				>
 					Uncheck compare item
-				</button>
-			</div>
-			<div v-if="!isSelected" class="btn-outline">
-				<button type="button" @click="addArticleToComparePage">
+				</div>
+				<div
+					v-if="!isSelected"
+					class="w-fit border rounded-lg border-main text-center text-main font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:bg-main hover:text-white transition ease-in-out"
+					@click="addArticleToComparePage"
+				>
 					Mark item to compare
-				</button>
+				</div>
 			</div>
-			<div id="article-journal">
+			<div>
 				<a
-					class="text-2xl"
+					class="text-2xl inline-block underline cursor-pointer transition ease-in-out mt-4"
 					@click="$router.push(`/journal-details/${article.journal.id}`)"
 					>{{ article.journal.name }}</a
 				>
 				<div id="journal-details">
-					<div>
-						Volume:
-						<h3>{{ article.volume }}</h3>
-					</div>
-					<div>
-						DOI:
-						<h3>10.1016/j.cmpb.2010.10.003</h3>
-					</div>
-					<div>
+					<h3 class="text-lg mt-5">
 						Published:
-						<h3>
-							{{
+						<span class="font-normal"
+							>{{
 								article.publicationDate.toLocaleString("EN", { month: "long" })
 							}}
-							{{ article.publicationDate.getFullYear() }}
-						</h3>
-					</div>
-					<div>
-						Document Type:
-						<h3>{{ article.typeArticle }}</h3>
-					</div>
+							{{ article.publicationDate.getFullYear() }}</span
+						>
+					</h3>
+					<h3 class="text-lg mt-1">
+						Document Type: <span class="font-normal">Article</span>
+					</h3>
 				</div>
 			</div>
 			<h3>Abstract</h3>

@@ -6,23 +6,35 @@
 		</div>
 		<div class="info-article">
 			<a @click="$router.push(`/article-details/${document.id}`)">
-				<h5>{{ document.title }}</h5>
+				<h5
+					class="inline-block underline cursor-pointer transition ease-in-out"
+				>
+					{{ document.title }}
+				</h5>
 			</a>
 			<h6>
 				<a
+					class="underline"
 					v-for="(author, i) of document.authors"
 					:key="i"
 					@click="$router.push(`/author-details/${author.id}`)"
 				>
-					{{ getNameAuthor(document.authors.length - 1, i, author) }}
+					<p
+						class="inline-block underline cursor-pointer transition ease-in-out mb-0"
+					>
+						{{ getNameAuthor(document.authors.length - 1, i, author) }}
+					</p>
 				</a>
 			</h6>
-			<span
+			<span class="flex"
 				>{{ document.publicationDate.toLocaleString("EN", { month: "long" }) }}
 				{{ document.publicationDate.getFullYear() }} |
-				<a @click="$router.push(`/journal-details/${document.journal.id}`)">{{
-					document.journal.name
-				}}</a>
+				<p
+					class="inline-block underline cursor-pointer text-main transition ease-in-out ml-2"
+					@click="$router.push(`/journal-details/${document.journal.id}`)"
+				>
+					{{ document.journal.name }}
+				</p>
 				{{ document.volume }}</span
 			>
 			<p>
