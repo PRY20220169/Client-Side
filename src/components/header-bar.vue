@@ -1,7 +1,7 @@
 <template>
 	<header id="header-bar">
 		<div id="title" class="flex items-center">
-      <img src="../assets/images/upc.png" alt="">
+      <img src="../assets/images/upc.png" alt="" class="w-10 mr-2">
 			<h2
 				class="hover:cursor-pointer hover:brightness-90 transition ease-in-out"
 				@click="goToHome()"
