@@ -48,11 +48,19 @@
 				:key="i"
 			>
 				<div class="metadata-type">
-					<h2>{{ metric.score }}</h2>
-					<i class="bx bx-link-external"></i>
+          <a
+              class="text-main mb-4"
+              :href="`https://www.scimagojr.com/journalsearch.php?q=${document.journal.scimagoId}&tip=sid&clean=0`"
+              target="_blank"
+          >
+            <div class="flex items-center">
+              <h2 class="mr-2">{{ metric.score }}</h2>
+              <i class="bx bx-link-external"></i>
+            </div>
+          </a>
 				</div>
 
-				<div>
+				<div class="mt-n4">
 					<h5>{{ metric.name }}</h5>
 					<h6>From {{ metric.source }}</h6>
 				</div>
