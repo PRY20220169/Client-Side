@@ -62,14 +62,14 @@
 					class="w-fit border rounded-lg border-main text-center text-main font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:bg-main hover:text-white transition ease-in-out"
 					@click="removeArticleFromComparePage"
 				>
-					Uncheck compare item
+          Remove Article to compare
 				</div>
 				<div
 					v-if="!isSelected"
 					class="w-fit border rounded-lg border-main text-center text-main font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:bg-main hover:text-white transition ease-in-out"
 					@click="addArticleToComparePage"
 				>
-					Mark item to compare
+					Add Article to compare
 				</div>
 			</div>
 			<div>
