@@ -1,6 +1,7 @@
 <template>
 	<header id="header-bar">
 		<div id="title">
+      <img src="../assets/images/upc.png" alt="">
 			<h2
 				class="hover:cursor-pointer hover:brightness-90 transition ease-in-out"
 				@click="goToHome()"
