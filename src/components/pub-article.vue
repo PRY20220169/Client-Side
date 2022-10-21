@@ -40,6 +40,13 @@
 			<p>
 				{{ document.description }}
 			</p>
+      <div
+          class="flex items-center w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out"
+          @click="getCitationFromArticle(document)"
+      >
+        <img src="../assets/icons/quote.svg" alt="" class="ml-n1 mr-3" />
+        Copy Citation to Clipboard
+      </div>
 		</div>
 		<div class="bb-data-article">
 			<div
@@ -66,8 +73,10 @@
 	import { Article } from "@/interfaces/article.interface";
 	import { PropType } from "vue";
 	import { Author } from "@/interfaces/author.interface";
+  import Vue from "vue";
+  import axios from "axios";
 
-	export default {
+	export default Vue.extend ({
 		name: "pub-article",
 		props: {
 			document: {
@@ -81,8 +90,28 @@
 					return `and ${author.lastName}, ${author.firstName.substring(0, 1)}.`;
 				return `${author.lastName}, ${author.firstName.substring(0, 1)}.`;
 			},
+      async getCitationFromArticle(article: any) {
+        try {
+          let { data } = await axios.get(
+              `${process.env.VUE_APP_API_URL}/api/articles/${article.id}/reference`
+          );
+          await navigator.clipboard.writeText(data.reference);
+          this.$swal.fire({
+            icon: "success",
+            title: "Citation Copied To Clipboard",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+        } catch (error) {
+          this.$swal.fire({
+            icon: "error",
+            title: "Could Not Copy Citation",
+            text: "Please Try Again Later",
+          });
+        }
+      },
 		},
-	};
+	});
 </script>
 
 <style lang="scss" scoped>
