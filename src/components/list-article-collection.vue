@@ -33,7 +33,7 @@
 				class="flex items-center w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out"
 				@click="getCitationFromArticle(document)"
 			>
-				<img src="../assets/icons/quote.svg" alt="" class="mr-2" />
+				<img src="../assets/icons/quote.svg" alt="" class="ml-n1 mr-3" />
 				Copy Citation to Clipboard
 			</div>
 		</div>
