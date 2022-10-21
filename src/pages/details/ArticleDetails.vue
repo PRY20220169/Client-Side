@@ -69,9 +69,20 @@
 					class="w-fit border rounded-lg border-main text-center text-main font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:bg-main hover:text-white transition ease-in-out"
 					@click="addArticleToComparePage"
 				>
-					Add Article to compare
+					Compare Article
 				</div>
 			</div>
+      <div class="flex space-x-2">
+        <div class="btn-content">
+          <div
+              class="flex items-center w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out"
+              @click="CopyCitationToClipboard()"
+          >
+            <img src="../../assets/icons/quote.svg" alt="" class="ml-n1 mr-3" />
+            Copy Citation to Clipboard
+          </div>
+        </div>
+      </div>
 			<div>
         <span class="text-2xl transition ease-in-out mt-4 font-semibold">
           Journal:
@@ -249,6 +260,26 @@
 				}
 				this.dialogCompose = false;
 			},
+      async CopyCitationToClipboard() {
+        try {
+          let { data } = await axios.get(
+              `${process.env.VUE_APP_API_URL}/api/articles/${this.$route.params.id}/reference`
+          );
+          await navigator.clipboard.writeText(data.reference);
+          this.$swal.fire({
+            icon: "success",
+            title: "Citation Copied To Clipboard",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+        } catch (error) {
+          this.$swal.fire({
+            icon: "error",
+            title: "Could Not Copy Citation",
+            text: "Please Try Again Later",
+          });
+        }
+      },
 		},
 		updated() {
 			this.isParentActive = typeof this.$refs.rv === "undefined";
