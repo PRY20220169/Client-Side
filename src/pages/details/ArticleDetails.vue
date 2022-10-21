@@ -15,7 +15,11 @@
 						})
 					"
 				>
-					{{ getNameAuthor(article.authors.length - 1, i, author) }}
+					<p
+						class="inline-block underline cursor-pointer transition ease-in-out mb-0"
+					>
+						{{ getNameAuthor(article.authors.length - 1, i, author) }}
+					</p>
 				</a>
 			</h3>
 			<a @click="getCollections({})">+ Add to Collection</a>
@@ -59,7 +63,7 @@
 			</div>
 			<div id="article-journal">
 				<a
-					class="text-2xl"
+					class="text-2xl inline-block underline cursor-pointer transition ease-in-out"
 					@click="$router.push(`/journal-details/${article.journal.id}`)"
 					>{{ article.journal.name }}</a
 				>
