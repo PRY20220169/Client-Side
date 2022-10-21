@@ -73,6 +73,9 @@
 				</div>
 			</div>
 			<div>
+        <span class="text-2xl transition ease-in-out mt-4 font-semibold">
+          Journal:
+        </span>
 				<a
 					class="text-2xl inline-block underline cursor-pointer transition ease-in-out mt-4"
 					@click="$router.push(`/journal-details/${article.journal.id}`)"
