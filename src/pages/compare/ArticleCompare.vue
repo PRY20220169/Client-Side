@@ -29,9 +29,10 @@
 					<hr />
 					<h3 class="text-main">Journal: {{ art.journal.name }}</h3>
 					<div
-						class="w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-secondary hover:bg-white hover:text-secondary transition ease-in-out mx-auto mt-5"
+						class="flex items-center w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out mx-auto mt-5"
 						@click="removeArticleFromComparePage(art)"
 					>
+						<img src="../../assets/icons/delete.svg" alt="" class="mr-2" />
 						Remove Article
 					</div>
 				</div>
