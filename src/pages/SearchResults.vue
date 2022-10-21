@@ -12,6 +12,7 @@
 						type="text"
 						placeholder="Bibliometrics, scientific, workflow"
 						v-model="qsearch"
+            @keypress.enter="updateSearch()"
 					/>
 				</div>
 				<div id="search-buttons">
