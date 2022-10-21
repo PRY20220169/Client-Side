@@ -60,9 +60,10 @@
 					{{ journal.publisher }}
 				</p>
 				<div
-					class="w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-secondary hover:bg-white hover:text-secondary transition ease-in-out mb-6 mx-auto"
+					class="flex items-center w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out mb-6 mx-auto"
 					@click="removeJournalFromComparePage(journal)"
 				>
+					<img src="../../assets/icons/delete.svg" alt="" class="mr-2" />
 					Remove Journal
 				</div>
 			</div>

@@ -30,9 +30,10 @@
 			</p>
 			<a @click="removeFromCollection({})">- Remove From Collection</a>
 			<div
-				class="w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-main hover:bg-white hover:text-main transition ease-in-out"
+				class="flex items-center w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out"
 				@click="getCitationFromArticle(document)"
 			>
+				<img src="../assets/icons/quote.svg" alt="" class="mr-2" />
 				Copy Citation to Clipboard
 			</div>
 		</div>
