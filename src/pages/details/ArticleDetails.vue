@@ -62,17 +62,20 @@
 					class="w-fit border rounded-lg border-main text-center text-main font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:bg-main hover:text-white transition ease-in-out"
 					@click="removeArticleFromComparePage"
 				>
-					Uncheck compare item
+          Remove Article to compare
 				</div>
 				<div
 					v-if="!isSelected"
 					class="w-fit border rounded-lg border-main text-center text-main font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:bg-main hover:text-white transition ease-in-out"
 					@click="addArticleToComparePage"
 				>
-					Mark item to compare
+					Add Article to compare
 				</div>
 			</div>
 			<div>
+        <span class="text-2xl transition ease-in-out mt-4 font-semibold">
+          Journal:
+        </span>
 				<a
 					class="text-2xl inline-block underline cursor-pointer transition ease-in-out mt-4"
 					@click="$router.push(`/journal-details/${article.journal.id}`)"
