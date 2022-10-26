@@ -14,15 +14,17 @@
 					<button
 						@click="createCollection()"
 						type="button"
-						class="bg-main text-white font-normal text-sm rounded-lg p-2 px-6 hover:brightness-90 transition ease-in-out"
+						class="flex items-center bg-main text-white font-normal text-sm rounded-lg p-2 px-6 hover:brightness-90 transition ease-in-out"
 					>
+						<img src="../../assets/icons/new_folder.svg" alt="" class="ml-n1 mr-3" />
 						New Collection
 					</button>
 					<button
 						@click="deleteCollections()"
 						type="button"
-						class="bg-secondary text-white font-normal text-sm rounded-lg p-2 px-6 hover:brightness-90 transition ease-in-out"
+						class="flex items-center bg-secondary text-white font-normal text-sm rounded-lg p-2 px-6 hover:brightness-90 transition ease-in-out"
 					>
+						<img src="../../assets/icons/delete.svg" alt="" class="ml-n1 mr-3" />
 						Delete Collection
 					</button>
 				</div>

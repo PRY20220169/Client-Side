@@ -1,7 +1,10 @@
 <template>
 	<main class="search-results">
 		<nav id="nav-bar">
-			<h3>{{ filteredDocuments.length }} resultados de su búsqueda</h3>
+			<div>
+				<h3 v-if="!loading">{{ filteredDocuments.length }} search results</h3>
+				<h3 v-if="loading">Searching...</h3>
+			</div>
 			<div class="nav-actions">
 				<div class="search-bar">
 					<i class="bx bx-search-alt-2"></i>
@@ -9,6 +12,7 @@
 						type="text"
 						placeholder="Bibliometrics, scientific, workflow"
 						v-model="qsearch"
+            @keypress.enter="updateSearch()"
 					/>
 				</div>
 				<div id="search-buttons">
@@ -53,12 +57,14 @@
 			<section id="content-section">
 				<div v-if="filteredDocuments.length > 0" class="space-y-5">
 					<pub-article
+						class="mb-5"
 						v-for="(doc, i) of filteredDocuments"
 						:key="i"
 						:document="doc"
 					></pub-article>
 				</div>
-				<div v-if="filteredDocuments.length == 0">
+				<div v-if="loading" class="lds-dual-ring"></div>
+				<div v-if="filteredDocuments.length == 0 && !loading">
 					<h3>No articles found</h3>
 				</div>
 			</section>
@@ -79,7 +85,7 @@
 			return {
 				filters: [
 					{
-						title: "Año de publicación",
+						title: "Year of Publication",
 						categoryType: "Year",
 						options: [
 							{ name: "2022", checked: false },
@@ -98,11 +104,13 @@
 					// 	],
 					// },
 					{
-						title: "Quartil",
+						title: "Quartile",
 						categoryType: "Quartile",
 						options: [
 							{ name: "Q1", checked: false },
 							{ name: "Q2", checked: false },
+							{ name: "Q3", checked: false },
+							{ name: "Q4", checked: false },
 						],
 					},
 				],
@@ -115,13 +123,23 @@
 				},
 				qsearch: "",
 				parameters: [] as string[],
+				loading: false,
 			};
 		},
 		methods: {
 			async updateSearch() {
+				this.$router.push({
+					path: "/search-results",
+					query: { q: this.qsearch },
+				});
+				this.$store.dispatch("updateQuery", this.qsearch);
 				this.getDocuments();
 			},
 			async getDocuments() {
+				this.documents = [];
+				this.filteredDocuments = [];
+				this.loading = true;
+
 				this.parameters = this.qsearch.split(",");
 				const articlesByKeyword = await axios.post(
 					`${process.env.VUE_APP_API_URL}/api/articles/search/keywords`,
@@ -132,8 +150,9 @@
 					{ categories: this.parameters }
 				);
 				this.documents = [];
-				this.documents = [articlesByKeyword.data.content];
-				this.documents = [...articlesByCategory.data.content];
+				this.filteredDocuments = [];
+				this.documents = articlesByKeyword.data.content;
+				this.documents.push(...articlesByCategory.data.content);
 				const uniqueArray = this.documents.filter((value, index) => {
 					const _value = JSON.stringify(value);
 					return (
@@ -154,6 +173,7 @@
 				this.filteredDocuments.map((item) => {
 					item.publicationDate = new Date(item.publicationDate);
 				});
+				this.loading = false;
 			},
 			filterDocuments() {
 				const { years, types, quartiles } = this.filterOptions;
@@ -236,14 +256,41 @@
 		},
 		created() {
 			this.qsearch = this.$route.query.q as string;
+			this.$store.dispatch("updateQuery", this.qsearch);
 			this.getDocuments();
 		},
 		mounted() {
 			this.qsearch = this.$route.query.q as string;
+			this.$store.dispatch("updateQuery", this.qsearch);
 		},
 	});
 </script>
 
 <style lang="scss" scoped>
 	@import "../assets/styles/search-results-page/base-search-rs-page";
+
+	.lds-dual-ring {
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+	}
+	.lds-dual-ring:after {
+		content: " ";
+		display: block;
+		width: 64px;
+		height: 64px;
+		margin: 8px;
+		border-radius: 50%;
+		border: 6px solid #5860ff;
+		border-color: #5860ff transparent #5860ff transparent;
+		animation: lds-dual-ring 1.2s linear infinite;
+	}
+	@keyframes lds-dual-ring {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
 </style>

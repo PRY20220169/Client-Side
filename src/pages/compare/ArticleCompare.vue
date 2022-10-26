@@ -6,7 +6,9 @@
 		<div id="article-compare__content">
 			<div class="article-card" v-for="(art, i) of articles" :key="i">
 				<div class="card__title">
-					<h3 class="font-bold">{{ art.title }}</h3>
+					<router-link :to="`/article-details/${art.id}`">
+						<h3 class="font-bold underline">{{ art.title }}</h3>
+					</router-link>
 				</div>
 				<hr />
 				<div class="card__details">
@@ -27,9 +29,10 @@
 					<hr />
 					<h3 class="text-main">Journal: {{ art.journal.name }}</h3>
 					<div
-						class="w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-secondary hover:bg-white hover:text-secondary transition ease-in-out mx-auto mt-5"
+						class="flex items-center w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out mx-auto mt-5"
 						@click="removeArticleFromComparePage(art)"
 					>
+						<img src="../../assets/icons/delete.svg" alt="" class="ml-n1 mr-3" />
 						Remove Article
 					</div>
 				</div>
