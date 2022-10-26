@@ -7,26 +7,19 @@
 			<div id="content-actions">
 				<div id="search-options">
 					<CustomSelect
-						:options="[
-							'Authors',
-							'Source title',
-							'Article title',
-							'Keywords',
-							'Language',
-						]"
-						:default="'Article title'"
+						:options="['Article']"
+						:default="'Article'"
 						@selectedOption="setSelectedOption"
 					/>
-
 					<div class="search-bar">
 						<i class="bx bx-search-alt-2"></i>
 						<input
 							type="text"
 							placeholder="Bibliometrics, scientific, workflow"
 							v-model="searchText"
+							@keypress.enter="searchElement()"
 						/>
 					</div>
-
 					<custom-multiple-select
 						:options="[
 							{ name: 'AND', checked: false },
@@ -36,9 +29,6 @@
 					/>
 				</div>
 				<div id="search-buttons">
-					<div class="btn-outline">
-						<button type="button">Advanced Search</button>
-					</div>
 					<div class="btn-content">
 						<button
 							type="button"
@@ -72,6 +62,12 @@
 		methods: {
 			setSelectedOption(option) {
 				this.selectedOption = option;
+			},
+			searchElement() {
+				this.$router.push({
+					name: "search-results",
+					query: { q: this.searchText },
+				});
 			},
 		},
 	};

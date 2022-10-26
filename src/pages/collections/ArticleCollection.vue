@@ -7,9 +7,10 @@
 					<div class="btn-content">
 						<div
 							v-if="filteredDocuments.length != 0"
-							class="w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-main hover:bg-white hover:text-main transition ease-in-out"
+							class="flex items-center w-fit border rounded-lg bg-main text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out"
 							@click="CopyReferencesToClipboard()"
 						>
+							<img src="../../assets/icons/quote.svg" alt="" class="ml-n1 mr-3" />
 							Copy References to Clipboard
 						</div>
 					</div>

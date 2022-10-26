@@ -43,7 +43,10 @@
 						:href="`https://www.scimagojr.com/journalsearch.php?q=${journal.scimagoId}&tip=sid`"
 						target="_blank"
 					>
-						<span class="font-medium">Open in Scimago</span>
+						<span
+							class="font-medium inline-block underline cursor-pointer transition ease-in-out mb-0"
+							>Open in Scimago</span
+						>
 					</a>
 					<h3 class="text-lg font-semibold mt-6 mb-4">Bibliometrics:</h3>
 					<div

@@ -9,9 +9,14 @@
 				v-for="(journal, i) of journals"
 				:key="i"
 			>
-				<p class="text-2xl text-center font-regular text-black h-16">
-					{{ journal.name }}
-				</p>
+				<router-link :to="`/journal-details/${journal.id}`">
+					<p
+						class="text-2xl text-center font-regular text-black h-16 underline"
+					>
+						{{ journal.name }}
+					</p>
+				</router-link>
+
 				<p class="text-lg font-medium text-black">Metrics</p>
 				<p class="text-md text-gray-dark">Publication Metrics:</p>
 				<div class="flex flex-row mb-4">
@@ -55,9 +60,10 @@
 					{{ journal.publisher }}
 				</p>
 				<div
-					class="w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:border-secondary hover:bg-white hover:text-secondary transition ease-in-out mb-6 mx-auto"
+					class="flex items-center w-fit border rounded-lg bg-secondary text-white text-center font-normal text-sm py-2.5 px-6 hover:cursor-pointer hover:brightness-75 transition ease-in-out mb-6 mx-auto"
 					@click="removeJournalFromComparePage(journal)"
 				>
+					<img src="../../assets/icons/delete.svg" alt="" class="ml-n1 mr-3" />
 					Remove Journal
 				</div>
 			</div>
